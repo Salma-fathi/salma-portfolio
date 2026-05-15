@@ -120,11 +120,11 @@ I am a **Data Analyst and Business Intelligence Specialist** with **8+ years of 
 - **Phone:** +971 50 874 7965
 - **Location:** Dubai, UAE
 - **LinkedIn:** [linkedin.com/in/salma-mohammed](https://linkedin.com/in/salma-mohammed)
-- **GitHub:** [github.com/salma-portfolio](https://github.com/salma-portfolio)
+- **GitHub:** [github.com/salma-portfolio](https://github.com/Salma-fathi/salma-portfolio)
 
 ## 🚀 Portfolio Website
 
-Visit my interactive portfolio at: **[https://salma-portfolio.github.io](https://salma-portfolio.github.io)**
+Visit my interactive portfolio at: **[https://salma-fathi.github.io/salma-portfolio/](https://salma-fathi.github.io/salma-portfolio/)**
 
 The portfolio features:
 - Professional profile and summary
