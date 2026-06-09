@@ -1,5 +1,29 @@
 # Salma Mohammed - Data Analyst & Business Intelligence Portfolio
 
+## Local development
+
+This project now includes a small Express backend for the contact form.
+
+1. Copy the environment example and fill in SMTP settings:
+
+```bash
+cp .env.example .env
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Start the app:
+
+```bash
+npm run dev
+```
+
+The server serves `index.html` from the workspace root and exposes the contact endpoint at `POST /api/contact`.
+
 Welcome to my professional portfolio! This website showcases my expertise in data analysis, business intelligence, and statistical modeling across multiple industries.
 
 ## 👋 About Me
