@@ -3,45 +3,29 @@
 
 <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description"
-        content="Salma Mohammed - Data Analyst & Business Intelligence Specialist. Open-source portfolio showcasing data-driven business impact." />
+        content="Salma Mohammed — Data Analyst & Business Intelligence Specialist. Turning complex data into measurable business value." />
     <title>Salma Mohammed — Data Analyst & BI Specialist</title>
 
-    <!-- Tailwind CDN (production-friendly for GitHub Pages) -->
     <script src="https://cdn.tailwindcss.com"></script>
-
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Sora:wght@600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=DM+Mono:wght@400;500&display=swap"
         rel="stylesheet">
-
-    <!-- Font Awesome (icons) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity=""
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous" />
 
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            DEFAULT: '#06b6d4', /* cyan-400 */
-                            muted: '#0ea5a4'
-                        }
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Sora', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
-
     <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         :root {
             color-scheme: dark;
         }
@@ -51,408 +35,1467 @@
         }
 
         body {
-            background-color: #0f172a;
-            /* slate-950 */
+            background-color: #080d1a;
+            color: #94a3b8;
+            font-family: 'DM Sans', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(34, 211, 238, 0.018) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(34, 211, 238, 0.018) 1px, transparent 1px);
+            background-size: 72px 72px;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .page-wrap {
+            position: relative;
+            z-index: 1;
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            font-family: 'DM Sans', sans-serif;
+            color: #f1f5f9;
+            line-height: 1.15;
+        }
+
+        h1 {
+            font-size: clamp(2.1rem, 4.5vw, 3.4rem);
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        p {
+            line-height: 1.75;
+        }
+
+        .eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #22d3ee;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        .divider {
+            border: none;
+            border-top: 1px solid rgba(255, 255, 255, 0.055);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            padding: 28px;
+        }
+
+        .card-sm {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .tag {
+            display: inline-flex;
+            align-items: center;
+            font-family: 'DM Mono', monospace;
+            font-size: 0.7rem;
+            letter-spacing: 0.02em;
+            padding: 3px 10px;
+            border-radius: 5px;
+            background: rgba(34, 211, 238, 0.06);
+            border: 1px solid rgba(34, 211, 238, 0.13);
+            color: #7dd3fc;
+            white-space: nowrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 12px;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+        }
+
+        .badge-emerald {
+            background: rgba(52, 211, 153, 0.08);
+            border: 1px solid rgba(52, 211, 153, 0.2);
+            color: #34d399;
+        }
+
+        .badge-sky {
+            background: rgba(56, 189, 248, 0.08);
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            color: #38bdf8;
+        }
+
+        .badge-violet {
+            background: rgba(167, 139, 250, 0.1);
+            border: 1px solid rgba(167, 139, 250, 0.2);
+            color: #a78bfa;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #22d3ee;
+            color: #050c1a;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 600;
+            font-size: 0.875rem;
+            padding: 12px 22px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.18s, box-shadow 0.18s;
+            white-space: nowrap;
+        }
+
+        .btn-primary:hover {
+            background: #06b6d4;
+            box-shadow: 0 0 0 4px rgba(34, 211, 238, 0.16);
+        }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.04);
+            color: #e2e8f0;
+            font-family: 'DM Sans', sans-serif;
+            font-weight: 500;
+            font-size: 0.875rem;
+            padding: 11px 20px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.11);
+            cursor: pointer;
+            text-decoration: none;
+            transition: background 0.18s, border-color 0.18s;
+            white-space: nowrap;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: rgba(255, 255, 255, 0.22);
+        }
+
+        .btn-sm {
+            padding: 8px 14px !important;
+            font-size: 0.78rem !important;
+        }
+
+        /* Navbar */
+        #navbar {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            background: rgba(8, 13, 26, 0.85);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.055);
+        }
+
+        .nav-inner {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 0 24px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .nav-logo span {
+            color: #22d3ee;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: #64748b;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.2s;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #22d3ee;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #e2e8f0;
+        }
+
+        .nav-links a:hover::after {
+            transform: scaleX(1);
+        }
+
+        #mobile-btn {
+            display: none;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: #94a3b8;
+            padding: 8px 10px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        #mobile-nav {
+            display: none;
+            background: rgba(8, 13, 26, 0.97);
+            border-top: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 20px 24px;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        #mobile-nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        #mobile-nav.open {
+            display: flex;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 80px 0 64px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 56px;
+            align-items: start;
+        }
+
+        /* Dashboard */
+        .dashboard-wrap {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(34, 211, 238, 0.12);
+            background: #0a101f;
+            box-shadow: 0 0 60px rgba(34, 211, 238, 0.06), 0 24px 64px rgba(0, 0, 0, 0.5);
+        }
+
+        .dashboard-wrap svg {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        /* Metrics */
+        .metrics-strip {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            margin-top: 36px;
+        }
+
+        .metric-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 16px 14px;
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .metric-num {
+            font-family: 'DM Mono', monospace;
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #22d3ee;
+            letter-spacing: -0.02em;
+            text-shadow: 0 0 28px rgba(34, 211, 238, 0.3);
+        }
+
+        .metric-label {
+            font-size: 0.7rem;
+            color: #475569;
+            line-height: 1.4;
+        }
+
+        /* Stack */
+        .stack-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .stack-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 12px;
+            padding: 18px;
+            transition: border-color 0.2s;
+        }
+
+        .stack-card:hover {
+            border-color: rgba(34, 211, 238, 0.2);
+        }
+
+        .stack-icon {
+            font-size: 1rem;
+            color: #22d3ee;
+            margin-bottom: 10px;
+        }
+
+        .stack-title {
+            font-size: 0.82rem;
+            font-weight: 600;
+            color: #f1f5f9;
+            margin-bottom: 10px;
+        }
+
+        .stack-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        /* Projects */
+        .project-list {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .project-card {
+            background: rgba(255, 255, 255, 0.025);
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            border-radius: 14px;
+            padding: 32px;
+            transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s, border-color 0.25s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(34, 211, 238, 0.13);
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+        }
+
+        .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .project-meta {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+            flex-wrap: wrap;
+        }
+
+        .project-year {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.72rem;
+            color: #334155;
+        }
+
+        .project-body {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .problem-label {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.65rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: #334155;
+            margin-bottom: 8px;
+        }
+
+        .problem-text {
+            font-size: 0.875rem;
+            color: #64748b;
+            line-height: 1.7;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            flex-shrink: 0;
+        }
+
+        .project-footer {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .tag-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .notebook-note {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            color: #1e3a5f;
+        }
+
+        /* Experience */
+        .exp-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+        }
+
+        .timeline {
+            position: relative;
+            padding-left: 24px;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            bottom: 40px;
+            width: 1px;
+            background: linear-gradient(to bottom, rgba(34, 211, 238, 0.35), transparent);
+        }
+
+        .tl-item {
+            position: relative;
+            margin-bottom: 32px;
+        }
+
+        .tl-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .tl-dot {
+            position: absolute;
+            left: -28px;
+            top: 6px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #22d3ee;
+            box-shadow: 0 0 0 3px #080d1a;
+        }
+
+        .tl-dot-dim {
+            background: rgba(34, 211, 238, 0.35);
+        }
+
+        .tl-dot-faint {
+            background: rgba(34, 211, 238, 0.15);
+        }
+
+        .tl-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 6px;
+        }
+
+        .tl-role {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .tl-date {
+            font-family: 'DM Mono', monospace;
+            font-size: 0.68rem;
+            color: #334155;
+            white-space: nowrap;
+        }
+
+        .tl-desc {
+            font-size: 0.82rem;
+            color: #475569;
+            line-height: 1.65;
+        }
+
+        /* About */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+        }
+
+        .about-body p {
+            font-size: 0.9375rem;
+            color: #64748b;
+            margin-bottom: 16px;
+        }
+
+        .about-body p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.055);
+            padding: 40px 0 32px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #f1f5f9;
+        }
+
+        .footer-logo span {
+            color: #22d3ee;
+        }
+
+        .footer-sub {
+            font-size: 0.75rem;
+            color: #1e3a5f;
+            margin-top: 4px;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .social-row a {
+            color: #334155;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+            text-decoration: none;
+        }
+
+        .social-row a:hover {
+            color: #94a3b8;
+        }
+
+        .copyright {
+            font-size: 0.72rem;
+            color: #1e3a5f;
+            margin-top: 20px;
+        }
+
+        .section {
+            padding: 72px 0;
+        }
+
+        /* Reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .reveal {
+                opacity: 1;
+                transform: none;
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .hero {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                padding: 56px 0 48px;
+            }
+
+            .hero-right {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            #mobile-btn {
+                display: block;
+            }
+
+            .nav-desktop {
+                display: none !important;
+            }
+
+            .exp-grid {
+                grid-template-columns: 1fr;
+                gap: 36px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .project-body {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 700px) {
+            .stack-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .metrics-strip {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 500px) {
+            .project-card {
+                padding: 20px;
+            }
+
+            .project-header {
+                flex-direction: column;
+            }
         }
     </style>
 </head>
 
-<body class="text-slate-300 antialiased">
-    <!-- Premium Navbar -->
-    <header class="sticky top-0 z-50">
-        <nav class="backdrop-blur-sm bg-slate-900/60 border-b border-white/6">
-            <div class="mx-auto max-w-7xl px-6 py-4 flex items-center justify-between">
-                <!-- Logo -->
-                <a href="#home" class="flex items-center gap-2">
-                    <span class="text-white font-display text-xl font-semibold">Salma<span
-                            class="text-brand">.</span></span>
+<body>
+
+    <!-- NAVBAR -->
+    <header id="navbar">
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">Salma<span>.</span></a>
+            <nav class="nav-desktop" style="display:flex;align-items:center;gap:32px;">
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#stack">Stack</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                </ul>
+                <a href="/Salma_Mohammed_CV.pdf" target="_blank" rel="noopener noreferrer" class="btn-secondary btn-sm">
+                    <i class="fa-solid fa-arrow-down-to-line" style="font-size:0.72rem;"></i> Download CV
                 </a>
-
-                <!-- Links -->
-                <div class="hidden md:flex items-center gap-8">
-                    <a href="#about" class="text-slate-300 hover:text-white text-sm font-medium">About</a>
-                    <a href="#stack" class="text-slate-300 hover:text-white text-sm font-medium">Tech Stack</a>
-                    <a href="#projects" class="text-slate-300 hover:text-white text-sm font-medium">Projects</a>
-                    <a href="#experience" class="text-slate-300 hover:text-white text-sm font-medium">Experience</a>
-
-                    <!-- Outlined Download CV -->
-                    <a href="/Salma_Mohammed_CV.pdf" target="_blank" rel="noopener noreferrer"
-                        class="rounded-full px-4 py-2 text-sm font-semibold text-white border border-white/10 hover:bg-white/6 transition">
-                        <i class="fa-solid fa-download mr-2"></i>Download CV
-                    </a>
-                </div>
-
-                <!-- Mobile menu button -->
-                <div class="md:hidden">
-                    <button id="mobileToggle" aria-label="Open menu" class="p-2 rounded-md bg-white/5 text-slate-200">
-                        <i class="fa-solid fa-bars"></i>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile nav -->
-            <div id="mobileNav" class="hidden md:hidden border-t border-white/6 bg-slate-900/80">
-                <div class="px-6 py-4 flex flex-col gap-3">
-                    <a href="#about" class="text-slate-300 hover:text-white">About</a>
-                    <a href="#stack" class="text-slate-300 hover:text-white">Tech Stack</a>
-                    <a href="#projects" class="text-slate-300 hover:text-white">Projects</a>
-                    <a href="#experience" class="text-slate-300 hover:text-white">Experience</a>
-                    <a href="/Salma_Mohammed_CV.pdf" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center gap-2 rounded-full px-4 py-2 bg-white/5 text-white font-semibold mt-2">
-                        <i class="fa-solid fa-download"></i> Download CV
-                    </a>
-                </div>
-            </div>
-        </nav>
+            </nav>
+            <button id="mobile-btn" aria-label="Open menu" onclick="toggleMobileNav()">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+        <div id="mobile-nav">
+            <a href="#about" onclick="closeMobileNav()">About</a>
+            <a href="#stack" onclick="closeMobileNav()">Stack</a>
+            <a href="#projects" onclick="closeMobileNav()">Projects</a>
+            <a href="#experience" onclick="closeMobileNav()">Experience</a>
+            <a href="/Salma_Mohammed_CV.pdf" target="_blank" class="btn-secondary btn-sm"
+                style="width:fit-content;margin-top:4px;">
+                <i class="fa-solid fa-arrow-down-to-line" style="font-size:0.72rem;"></i> Download CV
+            </a>
+        </div>
     </header>
 
-    <main id="home" class="mx-auto max-w-7xl px-6 py-16">
-        <!-- High-Converting Hero -->
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-            <div>
-                <p
-                    class="inline-flex items-center gap-2 rounded-full bg-slate-800/50 px-3 py-1 text-sm font-medium text-slate-300">
-                    Open-source • GitHub Pages ready</p>
+    <!-- MAIN -->
+    <main id="home">
+        <div class="page-wrap">
 
-                <h1 class="mt-6 text-slate-100 font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight">
-                    Turning Data Into Business Value with Clarity and Precision.
-                </h1>
+            <!-- HERO -->
+            <section class="hero">
 
-                <p class="mt-6 text-lg text-slate-300 max-w-2xl leading-relaxed">
-                    I help product and executive teams convert complex data into actionable insights, measurable KPIs,
-                    and scalable analytics.
-                    My work focuses on robust pipelines, reproducible notebooks, and executive dashboards that drive
-                    decisions.
-                </p>
+                <!-- Left -->
+                <div class="hero-left">
+                    <span class="eyebrow">Data Analyst &amp; BI Specialist</span>
 
-                <div class="mt-8 flex flex-col sm:flex-row gap-4">
-                    <a href="#projects"
-                        class="inline-flex items-center justify-center gap-3 rounded-full bg-brand px-5 py-3 text-sm font-semibold text-slate-950 shadow hover:bg-brand-muted transition">
-                        Explore Projects
-                        <i class="fa-solid fa-arrow-right"></i>
-                    </a>
+                    <h1>Turning Data Into<br><span style="color:#22d3ee;">Business Value</span><br>with Clarity &amp;
+                        Precision.</h1>
 
-                    <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
-                        class="inline-flex items-center justify-center gap-3 rounded-full border border-white/10 px-5 py-3 text-sm font-semibold text-white hover:bg-white/4 transition">
-                        <i class="fa-brands fa-github"></i> View GitHub
-                    </a>
-                </div>
+                    <p style="margin-top:20px;font-size:1rem;color:#64748b;max-width:480px;line-height:1.8;">
+                        I help product and executive teams convert complex datasets into actionable insights, scalable
+                        pipelines, and dashboards that drive real decisions.
+                    </p>
 
-                <!-- High-Impact Metrics Row (directly under CTAs) -->
-                <div class="mt-6 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl">
-                    <div class="rounded-xl bg-slate-900/60 border border-white/6 p-4 text-center">
-                        <div class="text-3xl sm:text-4xl font-black text-cyan-400">2.5M+</div>
-                        <div class="mt-1 text-sm text-slate-300">Records Analyzed</div>
+                    <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:28px;">
+                        <a href="#projects" class="btn-primary">
+                            Explore Projects <i class="fa-solid fa-arrow-right" style="font-size:0.72rem;"></i>
+                        </a>
+                        <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
+                            class="btn-secondary">
+                            <i class="fa-brands fa-github"></i> View GitHub
+                        </a>
                     </div>
-                    <div class="rounded-xl bg-slate-900/60 border border-white/6 p-4 text-center">
-                        <div class="text-3xl sm:text-4xl font-black text-cyan-400">7+</div>
-                        <div class="mt-1 text-sm text-slate-300">Interactive Dashboards</div>
-                    </div>
-                    <div class="rounded-xl bg-slate-900/60 border border-white/6 p-4 text-center">
-                        <div class="text-3xl sm:text-4xl font-black text-cyan-400">$10M+</div>
-                        <div class="mt-1 text-sm text-slate-300">Business Value Tracked</div>
-                    </div>
-                    <div class="rounded-xl bg-slate-900/60 border border-white/6 p-4 text-center">
-                        <div class="text-3xl sm:text-4xl font-black text-cyan-400">94.9%</div>
-                        <div class="mt-1 text-sm text-slate-300">Model Accuracy</div>
-                    </div>
-                </div>
-            </div>
 
-            <!-- Right column: quick profile and CTA -->
-            <aside class="space-y-6">
-                <div class="rounded-2xl border border-white/6 bg-slate-900/50 p-6">
-                    <h3 class="text-slate-100 font-semibold text-xl">Salma Mohammed</h3>
-                    <p class="mt-2 text-slate-300">Data Analyst & Business Intelligence Specialist — building
-                        reproducible analytics and executive dashboards.</p>
-                    <div class="mt-4 flex flex-wrap gap-3">
-                        <span class="rounded-full bg-slate-800/40 px-3 py-1 text-sm text-slate-300">Python</span>
-                        <span class="rounded-full bg-slate-800/40 px-3 py-1 text-sm text-slate-300">SQL</span>
-                        <span class="rounded-full bg-slate-800/40 px-3 py-1 text-sm text-slate-300">Power BI</span>
-                        <span class="rounded-full bg-slate-800/40 px-3 py-1 text-sm text-slate-300">Plotly</span>
+                    <!-- Metrics -->
+                    <div class="metrics-strip">
+                        <div class="metric-card">
+                            <div class="metric-num" id="m1">2.5M+</div>
+                            <div class="metric-label">Records<br>Analyzed</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-num" id="m2">7+</div>
+                            <div class="metric-label">Live<br>Dashboards</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-num" id="m3">$10M+</div>
+                            <div class="metric-label">Business Value<br>Tracked</div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-num" id="m4">94.9%</div>
+                            <div class="metric-label">Model<br>Accuracy</div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="rounded-2xl border border-white/6 bg-gradient-to-br from-slate-900/60 to-slate-800/50 p-6">
-                    <h4 class="text-slate-100 font-semibold">Open-source Ready</h4>
-                    <p class="mt-2 text-slate-300 text-sm">All project code, notebooks, and SQL scripts are available in
-                        my public GitHub repositories for review and reuse.</p>
+                <!-- Right: Embedded SVG Dashboard -->
+                <div class="hero-right">
+                    <div class="dashboard-wrap">
+                        <svg viewBox="0 0 680 430" xmlns="http://www.w3.org/2000/svg" role="img"
+                            aria-label="BI dashboard mockup with KPI cards, revenue trend, segment bar chart, and live ETL pipeline">
+                            <defs>
+                                <marker id="dbarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5"
+                                    markerHeight="5" orient="auto-start-reverse">
+                                    <path d="M2 1L8 5L2 9" fill="none" stroke="#1e3a5f" stroke-width="1.5"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </marker>
+                            </defs>
+
+                            <!-- BG -->
+                            <rect width="680" height="430" fill="#0a101f" />
+
+                            <!-- Top bar -->
+                            <rect x="0" y="0" width="680" height="40" fill="#080d18" />
+                            <rect x="16" y="12" width="56" height="16" rx="4" fill="#0f172a" />
+                            <rect x="80" y="12" width="44" height="16" rx="4" fill="#0f172a" />
+                            <rect x="132" y="12" width="52" height="16" rx="4" fill="#0f172a" />
+                            <text x="24" y="24" font-family="DM Mono,monospace" font-size="10" font-weight="500"
+                                fill="#22d3ee">Analytics</text>
+                            <text x="88" y="24" font-family="DM Mono,monospace" font-size="10"
+                                fill="#334155">Reports</text>
+                            <text x="140" y="24" font-family="DM Mono,monospace" font-size="10"
+                                fill="#334155">Pipeline</text>
+                            <circle cx="584" cy="20" r="3.5" fill="#22c55e" />
+                            <text x="592" y="24" font-family="DM Mono,monospace" font-size="9"
+                                fill="#22c55e">LIVE</text>
+                            <circle cx="628" cy="20" r="3.5" fill="#22d3ee" />
+                            <circle cx="644" cy="20" r="3.5" fill="#f59e0b" />
+                            <circle cx="660" cy="20" r="3.5" fill="#a78bfa" />
+
+                            <!-- KPI CARDS -->
+                            <rect x="16" y="52" width="148" height="68" rx="7" fill="#0d1420" stroke="#1e3a5f"
+                                stroke-width="0.75" />
+                            <text x="28" y="70" font-family="DM Mono,monospace" font-size="8.5" fill="#334155"
+                                letter-spacing="0.08em">TOTAL REVENUE</text>
+                            <text x="28" y="95" font-family="DM Sans,sans-serif" font-size="19" font-weight="600"
+                                fill="#22d3ee">$10.4M</text>
+                            <text x="28" y="111" font-family="DM Mono,monospace" font-size="8.5" fill="#22c55e">▲ 18.2%
+                                vs prev qtr</text>
+
+                            <rect x="174" y="52" width="148" height="68" rx="7" fill="#0d1420" stroke="#1e3a5f"
+                                stroke-width="0.75" />
+                            <text x="186" y="70" font-family="DM Mono,monospace" font-size="8.5" fill="#334155"
+                                letter-spacing="0.08em">RETENTION RATE</text>
+                            <text x="186" y="95" font-family="DM Sans,sans-serif" font-size="19" font-weight="600"
+                                fill="#22d3ee">87.3%</text>
+                            <text x="186" y="111" font-family="DM Mono,monospace" font-size="8.5" fill="#22c55e">▲ 12.0%
+                                churn reduced</text>
+
+                            <rect x="332" y="52" width="148" height="68" rx="7" fill="#0d1420" stroke="#1e3a5f"
+                                stroke-width="0.75" />
+                            <text x="344" y="70" font-family="DM Mono,monospace" font-size="8.5" fill="#334155"
+                                letter-spacing="0.08em">MODEL ACCURACY</text>
+                            <text x="344" y="95" font-family="DM Sans,sans-serif" font-size="19" font-weight="600"
+                                fill="#34d399">94.9%</text>
+                            <text x="344" y="111" font-family="DM Mono,monospace" font-size="8.5" fill="#22c55e">▲
+                                +3.1pp vs baseline</text>
+
+                            <rect x="490" y="52" width="174" height="68" rx="7" fill="#0d1420" stroke="#1e3a5f"
+                                stroke-width="0.75" />
+                            <text x="502" y="70" font-family="DM Mono,monospace" font-size="8.5" fill="#334155"
+                                letter-spacing="0.08em">RECORDS PROCESSED</text>
+                            <text x="502" y="95" font-family="DM Sans,sans-serif" font-size="19" font-weight="600"
+                                fill="#22d3ee">2.5M+</text>
+                            <text x="502" y="111" font-family="DM Mono,monospace" font-size="8.5" fill="#22c55e">▲ 340K
+                                this quarter</text>
+
+                            <!-- LINE CHART -->
+                            <rect x="16" y="132" width="328" height="162" rx="7" fill="#0d1420" stroke="#1e3a5f"
+                                stroke-width="0.75" />
+                            <text x="28" y="150" font-family="DM Mono,monospace" font-size="8.5" fill="#334155"
+                                letter-spacing="0.07em">REVENUE TREND — 8 QUARTERS</text>
+                            <line x1="52" y1="165" x2="330" y2="165" stroke="#131f36" stroke-width="0.75" />
+                            <line x1="52" y1="188" x2="330" y2="188" stroke="#131f36" stroke-width="0.75" />
+                            <line x1="52" y1="211" x2="330" y2="211" stroke="#131f36" stroke-width="0.75" />
+                            <line x1="52" y1="234" x2="330" y2="234" stroke="#131f36" stroke-width="0.75" />
+                            <line x1="52" y1="272" x2="330" y2="272" stroke="#131f36" stroke-width="0.75" />
+                            <text x="26" y="168" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f">10M</text>
+                            <text x="26" y="191" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f">7M</text>
+                            <text x="26" y="214" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f">5M</text>
+                            <text x="26" y="237" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f">3M</text>
+                            <polygon
+                                points="58,247 90,232 123,218 156,208 189,197 222,188 255,176 288,167 288,272 58,272"
+                                fill="#22d3ee" opacity="0.06" />
+                            <polyline points="58,247 90,232 123,218 156,208 189,197 222,188 255,176 288,167" fill="none"
+                                stroke="#22d3ee" stroke-width="1.75" stroke-linejoin="round" />
+                            <circle cx="58" cy="247" r="2.5" fill="#22d3ee" />
+                            <circle cx="90" cy="232" r="2.5" fill="#22d3ee" />
+                            <circle cx="123" cy="218" r="2.5" fill="#22d3ee" />
+                            <circle cx="156" cy="208" r="2.5" fill="#22d3ee" />
+                            <circle cx="189" cy="197" r="2.5" fill="#22d3ee" />
+                            <circle cx="222" cy="188" r="2.5" fill="#22d3ee" />
+                            <circle cx="255" cy="176" r="2.5" fill="#22d3ee" />
+                            <circle cx="288" cy="167" r="3.5" fill="#22d3ee" stroke="#0a101f" stroke-width="2" />
+                            <text x="56" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Q1</text>
+                            <text x="90" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Q2</text>
+                            <text x="123" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Q3</text>
+                            <text x="156" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Q4</text>
+                            <text x="189" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Q5</text>
+                            <text x="222" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Q6</text>
+                            <text x="255" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Q7</text>
+                            <text x="288" y="284" font-family="DM Mono,monospace" font-size="8" fill="#22d3ee"
+                                text-anchor="middle">Q8</text>
+
+                            <!-- BAR CHART -->
+                            <rect x="354" y="132" width="310" height="162" rx="7" fill="#0d1420" stroke="#1e3a5f"
+                                stroke-width="0.75" />
+                            <text x="366" y="150" font-family="DM Mono,monospace" font-size="8.5" fill="#334155"
+                                letter-spacing="0.07em">SEGMENT PERFORMANCE</text>
+                            <line x1="366" y1="165" x2="654" y2="165" stroke="#131f36" stroke-width="0.75" />
+                            <line x1="366" y1="190" x2="654" y2="190" stroke="#131f36" stroke-width="0.75" />
+                            <line x1="366" y1="215" x2="654" y2="215" stroke="#131f36" stroke-width="0.75" />
+                            <line x1="366" y1="240" x2="654" y2="240" stroke="#131f36" stroke-width="0.75" />
+                            <line x1="366" y1="272" x2="654" y2="272" stroke="#131f36" stroke-width="0.75" />
+                            <rect x="384" y="197" width="30" height="75" rx="3" fill="#22d3ee" opacity="0.82" />
+                            <rect x="430" y="218" width="30" height="54" rx="3" fill="#34d399" opacity="0.82" />
+                            <rect x="476" y="184" width="30" height="88" rx="3" fill="#22d3ee" opacity="0.82" />
+                            <rect x="522" y="226" width="30" height="46" rx="3" fill="#34d399" opacity="0.82" />
+                            <rect x="568" y="208" width="30" height="64" rx="3" fill="#22d3ee" opacity="0.82" />
+                            <text x="399" y="194" font-family="DM Mono,monospace" font-size="8" fill="#22d3ee"
+                                text-anchor="middle">4.2M</text>
+                            <text x="445" y="215" font-family="DM Mono,monospace" font-size="8" fill="#34d399"
+                                text-anchor="middle">3.1M</text>
+                            <text x="491" y="181" font-family="DM Mono,monospace" font-size="8" fill="#22d3ee"
+                                text-anchor="middle">5.0M</text>
+                            <text x="537" y="223" font-family="DM Mono,monospace" font-size="8" fill="#34d399"
+                                text-anchor="middle">2.7M</text>
+                            <text x="583" y="205" font-family="DM Mono,monospace" font-size="8" fill="#22d3ee"
+                                text-anchor="middle">3.8M</text>
+                            <text x="399" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Retail</text>
+                            <text x="445" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Finance</text>
+                            <text x="491" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Health</text>
+                            <text x="537" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">Supply</text>
+                            <text x="583" y="284" font-family="DM Mono,monospace" font-size="8" fill="#1e3a5f"
+                                text-anchor="middle">SaaS</text>
+
+                            <!-- ETL PIPELINE -->
+                            <rect x="16" y="306" width="648" height="108" rx="7" fill="#080d18" stroke="#131f36"
+                                stroke-width="0.75" />
+                            <text x="28" y="323" font-family="DM Mono,monospace" font-size="8.5" fill="#334155"
+                                letter-spacing="0.07em">ETL PIPELINE — DATA FLOW</text>
+                            <!-- node 1 -->
+                            <rect x="28" y="332" width="82" height="38" rx="6" fill="#0d1828" stroke="#1e3a5f"
+                                stroke-width="0.75" />
+                            <text x="69" y="347" font-family="DM Mono,monospace" font-size="8.5" fill="#475569"
+                                text-anchor="middle">Sources</text>
+                            <text x="69" y="361" font-family="DM Mono,monospace" font-size="8" fill="#22d3ee"
+                                text-anchor="middle">CSV·API·DB</text>
+                            <line x1="110" y1="351" x2="134" y2="351" stroke="#1e3a5f" stroke-width="1"
+                                marker-end="url(#dbarr)" />
+                            <!-- node 2 -->
+                            <rect x="136" y="332" width="82" height="38" rx="6" fill="#0d1f38" stroke="#1e4060"
+                                stroke-width="0.75" />
+                            <text x="177" y="347" font-family="DM Mono,monospace" font-size="8.5" fill="#7dd3fc"
+                                text-anchor="middle">Ingest</text>
+                            <text x="177" y="361" font-family="DM Mono,monospace" font-size="8" fill="#60a5fa"
+                                text-anchor="middle">Python·ETL</text>
+                            <line x1="218" y1="351" x2="242" y2="351" stroke="#1e3a5f" stroke-width="1"
+                                marker-end="url(#dbarr)" />
+                            <!-- node 3 -->
+                            <rect x="244" y="332" width="82" height="38" rx="6" fill="#0a2420" stroke="#1e4a40"
+                                stroke-width="0.75" />
+                            <text x="285" y="347" font-family="DM Mono,monospace" font-size="8.5" fill="#6ee7b7"
+                                text-anchor="middle">Transform</text>
+                            <text x="285" y="361" font-family="DM Mono,monospace" font-size="8" fill="#34d399"
+                                text-anchor="middle">dbt·SQL</text>
+                            <line x1="326" y1="351" x2="350" y2="351" stroke="#1e3a5f" stroke-width="1"
+                                marker-end="url(#dbarr)" />
+                            <!-- node 4 -->
+                            <rect x="352" y="332" width="82" height="38" rx="6" fill="#0d1f38" stroke="#1e4060"
+                                stroke-width="0.75" />
+                            <text x="393" y="347" font-family="DM Mono,monospace" font-size="8.5" fill="#7dd3fc"
+                                text-anchor="middle">Warehouse</text>
+                            <text x="393" y="361" font-family="DM Mono,monospace" font-size="8" fill="#60a5fa"
+                                text-anchor="middle">PostgreSQL</text>
+                            <line x1="434" y1="351" x2="458" y2="351" stroke="#1e3a5f" stroke-width="1"
+                                marker-end="url(#dbarr)" />
+                            <!-- node 5 -->
+                            <rect x="460" y="332" width="82" height="38" rx="6" fill="#16143a" stroke="#2d2a6e"
+                                stroke-width="0.75" />
+                            <text x="501" y="347" font-family="DM Mono,monospace" font-size="8.5" fill="#a5b4fc"
+                                text-anchor="middle">ML Model</text>
+                            <text x="501" y="361" font-family="DM Mono,monospace" font-size="8" fill="#818cf8"
+                                text-anchor="middle">sklearn</text>
+                            <line x1="542" y1="351" x2="566" y2="351" stroke="#1e3a5f" stroke-width="1"
+                                marker-end="url(#dbarr)" />
+                            <!-- node 6 -->
+                            <rect x="568" y="332" width="82" height="38" rx="6" fill="#0a2420" stroke="#1e4a40"
+                                stroke-width="0.75" />
+                            <text x="609" y="347" font-family="DM Mono,monospace" font-size="8.5" fill="#6ee7b7"
+                                text-anchor="middle">Dashboard</text>
+                            <text x="609" y="361" font-family="DM Mono,monospace" font-size="8" fill="#34d399"
+                                text-anchor="middle">Power BI</text>
+                            <!-- status -->
+                            <text x="28" y="396" font-family="DM Mono,monospace" font-size="8.5"
+                                fill="#1e3a5f">Status:</text>
+                            <rect x="62" y="386" width="46" height="14" rx="4" fill="#052e16" stroke="#15803d"
+                                stroke-width="0.5" />
+                            <text x="85" y="396" font-family="DM Mono,monospace" font-size="8" fill="#4ade80"
+                                text-anchor="middle">● LIVE</text>
+                            <text x="116" y="396" font-family="DM Mono,monospace" font-size="8.5" fill="#1e3a5f">Last
+                                run: 4 min ago</text>
+                            <text x="280" y="396" font-family="DM Mono,monospace" font-size="8.5"
+                                fill="#1e3a5f">Records: 2.5M</text>
+                            <text x="390" y="396" font-family="DM Mono,monospace" font-size="8.5"
+                                fill="#1e3a5f">Quality: 99.2%</text>
+                            <text x="490" y="396" font-family="DM Mono,monospace" font-size="8.5" fill="#1e3a5f">Uptime:
+                                99.9%</text>
+                            <text x="590" y="396" font-family="DM Mono,monospace" font-size="8.5"
+                                fill="#22d3ee">Healthy</text>
+                            <!-- accent bar -->
+                            <rect x="16" y="416" width="648" height="2" rx="1" fill="#0d1828" />
+                            <rect x="16" y="416" width="280" height="2" rx="1" fill="#22d3ee" opacity="0.3" />
+                            <rect x="16" y="416" width="120" height="2" rx="1" fill="#22d3ee" opacity="0.6" />
+                        </svg>
+                    </div>
+
+                    <!-- Legend -->
+                    <div style="display:flex;gap:20px;margin-top:12px;padding:0 4px;flex-wrap:wrap;">
+                        <div style="display:flex;align-items:center;gap:6px;">
+                            <div style="width:8px;height:8px;border-radius:50%;background:#22d3ee;"></div>
+                            <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:#334155;">Revenue /
+                                retention</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:6px;">
+                            <div style="width:8px;height:8px;border-radius:50%;background:#34d399;"></div>
+                            <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:#334155;">Growth
+                                segments</span>
+                        </div>
+                        <div style="display:flex;align-items:center;gap:6px;">
+                            <div style="width:8px;height:8px;border-radius:50%;background:#a78bfa;"></div>
+                            <span style="font-family:'DM Mono',monospace;font-size:0.65rem;color:#334155;">ML
+                                pipeline</span>
+                        </div>
+                    </div>
                 </div>
-            </aside>
-        </section>
 
-        <!-- Project Showcase (The Core) -->
-        <section id="projects" class="mt-16 space-y-8">
-            <h2 class="text-slate-100 font-display text-2xl font-bold">Featured Projects</h2>
+            </section>
 
-            <!-- Project Row 1 -->
-            <article class="rounded-2xl border border-white/6 bg-slate-900/50 p-8">
-                <div class="flex items-start justify-between gap-6">
-                    <div class="max-w-3xl">
-                        <div class="flex items-center gap-3">
-                            <h3 class="text-slate-100 text-2xl font-semibold">E-Commerce Customer Intelligence</h3>
-                            <time class="text-sm text-slate-400">• 2023</time>
-                        </div>
+            <hr class="divider">
 
-                        <div class="mt-4 flex items-center gap-3">
-                            <span
-                                class="text-xs font-semibold rounded-md bg-emerald-600/10 text-emerald-300 px-2 py-1">Impact:
-                                +12% retention</span>
-                        </div>
-
-                        <p class="mt-5 text-slate-300 leading-relaxed">
-                            <strong>Problem:</strong> High churn and difficulty prioritizing customer recovery actions
-                            across channels.
-                            <br />
-                            <strong>Data Solution:</strong> RFM segmentation, CLV modeling and a churn prediction
-                            pipeline combined into an executive dashboard used to target retention campaigns.
-                        </p>
-
-                        <div class="mt-5 flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">Python</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">SQL</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">Plotly</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">Power BI</span>
+            <!-- TECH STACK -->
+            <section id="stack" class="section reveal">
+                <span class="eyebrow">Tools &amp; Technologies</span>
+                <h2 style="margin-bottom:32px;">Tech Stack</h2>
+                <div class="stack-grid">
+                    <div class="stack-card">
+                        <div class="stack-icon"><i class="fa-solid fa-database"></i></div>
+                        <div class="stack-title">Data Engineering</div>
+                        <div class="stack-tags">
+                            <span class="tag">SQL</span><span class="tag">PostgreSQL</span><span
+                                class="tag">dbt</span><span class="tag">ETL</span>
                         </div>
                     </div>
-
-                    <div class="flex flex-col items-end gap-3">
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-brand-muted transition">
-                                <i class="fa-brands fa-github"></i> View Code
-                            </a>
-                            <a href="https://salma-fathi.github.io/salma-portfolio/" target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 rounded-full border border-white/8 px-4 py-2 text-sm text-white hover:bg-white/4 transition">
-                                Live Dashboard Demo
-                            </a>
-                        </div>
-                        <div class="text-sm text-slate-400 text-right">Notebook & scripts included in repo</div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project Row 2 -->
-            <article class="rounded-2xl border border-white/6 bg-slate-900/50 p-8">
-                <div class="flex items-start justify-between gap-6">
-                    <div class="max-w-3xl">
-                        <div class="flex items-center gap-3">
-                            <h3 class="text-slate-100 text-2xl font-semibold">Portfolio Risk & Allocation Analyzer</h3>
-                            <time class="text-sm text-slate-400">• 2022</time>
-                        </div>
-
-                        <div class="mt-4 flex items-center gap-3">
-                            <span class="text-xs font-semibold rounded-md bg-sky-500/10 text-sky-300 px-2 py-1">Impact:
-                                +18% decision confidence</span>
-                        </div>
-
-                        <p class="mt-5 text-slate-300 leading-relaxed">
-                            <strong>Problem:</strong> Lack of reproducible risk metrics and inconsistent portfolio
-                            reporting.
-                            <br />
-                            <strong>Data Solution:</strong> Time-series returns ingestion, risk metric library (Sharpe,
-                            VaR, drawdown) and an allocation optimizer with clear dashboards for portfolio managers.
-                        </p>
-
-                        <div class="mt-5 flex flex-wrap gap-2">
-                            <span class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">Pandas</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">SQL</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">Plotly</span>
+                    <div class="stack-card">
+                        <div class="stack-icon"><i class="fa-brands fa-python"></i></div>
+                        <div class="stack-title">Analytics &amp; ML</div>
+                        <div class="stack-tags">
+                            <span class="tag">Python</span><span class="tag">Pandas</span><span
+                                class="tag">scikit-learn</span><span class="tag">Jupyter</span>
                         </div>
                     </div>
-
-                    <div class="flex flex-col items-end gap-3">
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-brand-muted transition">
-                                <i class="fa-brands fa-github"></i> View Code
-                            </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 rounded-full border border-white/8 px-4 py-2 text-sm text-white hover:bg-white/4 transition">
-                                Live Dashboard Demo
-                            </a>
-                        </div>
-                        <div class="text-sm text-slate-400 text-right">SQL scripts and notebooks available</div>
-                    </div>
-                </div>
-            </article>
-
-            <!-- Project Row 3 -->
-            <article class="rounded-2xl border border-white/6 bg-slate-900/50 p-8">
-                <div class="flex items-start justify-between gap-6">
-                    <div class="max-w-3xl">
-                        <div class="flex items-center gap-3">
-                            <h3 class="text-slate-100 text-2xl font-semibold">Healthcare Readmission Predictor</h3>
-                            <time class="text-sm text-slate-400">• 2021</time>
-                        </div>
-
-                        <div class="mt-4 flex items-center gap-3">
-                            <span
-                                class="text-xs font-semibold rounded-md bg-violet-600/10 text-violet-300 px-2 py-1">Impact:
-                                94.9% accuracy</span>
-                        </div>
-
-                        <p class="mt-5 text-slate-300 leading-relaxed">
-                            <strong>Problem:</strong> Excess readmissions without clear risk stratification and
-                            intervention workflow.
-                            <br />
-                            <strong>Data Solution:</strong> Patient-level feature engineering, classification model, and
-                            risk-based dashboard integrated into clinical workflows to prioritize follow-up care.
-                        </p>
-
-                        <div class="mt-5 flex flex-wrap gap-2">
-                            <span
-                                class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">scikit-learn</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">Jupyter</span>
-                            <span class="px-3 py-1 rounded-full bg-slate-800/40 text-sm text-slate-300">SQL</span>
+                    <div class="stack-card">
+                        <div class="stack-icon"><i class="fa-solid fa-chart-column"></i></div>
+                        <div class="stack-title">Visualization &amp; BI</div>
+                        <div class="stack-tags">
+                            <span class="tag">Power BI</span><span class="tag">Plotly</span><span
+                                class="tag">Tableau</span><span class="tag">DAX</span>
                         </div>
                     </div>
-
-                    <div class="flex flex-col items-end gap-3">
-                        <div class="flex gap-3">
-                            <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                                rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 rounded-full bg-brand px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-brand-muted transition">
-                                <i class="fa-brands fa-github"></i> View Code
-                            </a>
-                            <a href="#" target="_blank" rel="noopener noreferrer"
-                                class="inline-flex items-center gap-2 rounded-full border border-white/8 px-4 py-2 text-sm text-white hover:bg-white/4 transition">
-                                Live Dashboard Demo
-                            </a>
-                        </div>
-                        <div class="text-sm text-slate-400 text-right">Model notebooks and evaluation reports included
+                    <div class="stack-card">
+                        <div class="stack-icon"><i class="fa-brands fa-git-alt"></i></div>
+                        <div class="stack-title">Infrastructure</div>
+                        <div class="stack-tags">
+                            <span class="tag">Git</span><span class="tag">GitHub Actions</span><span
+                                class="tag">Docker</span><span class="tag">Streamlit</span>
                         </div>
                     </div>
                 </div>
-            </article>
-        </section>
+            </section>
 
-        <!-- Experience Timeline & Education -->
-        <section id="experience" class="mt-16">
-            <h2 class="text-slate-100 font-display text-2xl font-bold">Experience & Education</h2>
+            <hr class="divider">
 
-            <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- Timeline -->
-                <div
-                    class="relative pl-8 before:content-[''] before:absolute before:left-3 before:top-0 before:bottom-0 before:w-[2px] before:bg-white/6">
-                    <!-- Item 1 -->
-                    <div class="relative mb-8">
-                        <div
-                            class="absolute left-0 -ml-1 top-1.5 w-3 h-3 rounded-full bg-cyan-400 border-2 border-slate-900">
-                        </div>
-                        <div class="ml-6">
-                            <div class="flex items-baseline justify-between">
-                                <h3 class="text-slate-100 font-semibold">Data Analyst / BI Specialist</h3>
-                                <time class="text-sm text-slate-400">2020 — Present</time>
+            <!-- PROJECTS -->
+            <section id="projects" class="section">
+                <span class="eyebrow">Case Studies</span>
+                <h2 style="margin-bottom:32px;">Featured Projects</h2>
+
+                <div class="project-list">
+
+                    <!-- Project 1 -->
+                    <article class="project-card reveal">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-meta">
+                                    <h3>E-Commerce Customer Intelligence</h3>
+                                    <span class="project-year">2023</span>
+                                </div>
+                                <span class="badge badge-emerald">
+                                    <i class="fa-solid fa-arrow-trend-up" style="font-size:0.65rem;"></i> +12% customer
+                                    retention
+                                </span>
                             </div>
-                            <p class="mt-2 text-slate-300 text-sm">Led analytics programs across e-commerce and
-                                healthcare; developed KPIs and dashboards used by executives.</p>
-                        </div>
-                    </div>
-
-                    <!-- Item 2 -->
-                    <div class="relative mb-8">
-                        <div
-                            class="absolute left-0 -ml-1 top-1.5 w-3 h-3 rounded-full bg-cyan-400 border-2 border-slate-900">
-                        </div>
-                        <div class="ml-6">
-                            <div class="flex items-baseline justify-between">
-                                <h3 class="text-slate-100 font-semibold">Analytics Consultant</h3>
-                                <time class="text-sm text-slate-400">2017 — 2020</time>
+                            <div class="project-actions">
+                                <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
+                                    rel="noopener noreferrer" class="btn-primary btn-sm">
+                                    <i class="fa-brands fa-github" style="font-size:0.75rem;"></i> View Code
+                                </a>
+                                <a href="https://salma-fathi.github.io/salma-portfolio/" target="_blank"
+                                    rel="noopener noreferrer" class="btn-secondary btn-sm">
+                                    Live Demo <i class="fa-solid fa-arrow-up-right-from-square"
+                                        style="font-size:0.65rem;"></i>
+                                </a>
                             </div>
-                            <p class="mt-2 text-slate-300 text-sm">Consulted on analytics implementations, ETL pipelines
-                                and dashboard rollouts for mid-size clients.</p>
                         </div>
-                    </div>
-
-                    <!-- Item 3 (Education) -->
-                    <div class="relative mb-8">
-                        <div
-                            class="absolute left-0 -ml-1 top-1.5 w-3 h-3 rounded-full bg-cyan-400 border-2 border-slate-900">
-                        </div>
-                        <div class="ml-6">
-                            <div class="flex items-baseline justify-between">
-                                <h3 class="text-slate-100 font-semibold">BSc — Statistics & Computer Science</h3>
-                                <time class="text-sm text-slate-400">2015 — 2023</time>
+                        <div class="project-body">
+                            <div>
+                                <div class="problem-label">Problem</div>
+                                <p class="problem-text">High churn with no clear way to prioritize customer recovery
+                                    across product lines and channels. Teams were acting on intuition rather than data
+                                    signals, leading to wasted campaign spend.</p>
                             </div>
-                            <p class="mt-2 text-slate-300 text-sm">University of Khartoum — coursework: Regression, Time
-                                Series, ML, Database Design.</p>
+                            <div>
+                                <div class="problem-label">Data Solution</div>
+                                <p class="problem-text">Built RFM segmentation, CLV modeling, and a churn prediction
+                                    pipeline across 1.2M+ records. Delivered an executive Power BI dashboard for
+                                    campaign targeting — driving a 12% lift in retention within one quarter.</p>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="tag-row">
+                                <span class="tag">Python</span><span class="tag">SQL</span><span class="tag">Power
+                                    BI</span><span class="tag">Plotly</span><span class="tag">RFM
+                                    Segmentation</span><span class="tag">scikit-learn</span>
+                            </div>
+                            <span class="notebook-note">Notebook &amp; SQL scripts included</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card reveal">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-meta">
+                                    <h3>Portfolio Risk &amp; Allocation Analyzer</h3>
+                                    <span class="project-year">2022</span>
+                                </div>
+                                <span class="badge badge-sky">
+                                    <i class="fa-solid fa-shield-halved" style="font-size:0.65rem;"></i> +18% decision
+                                    confidence
+                                </span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
+                                    rel="noopener noreferrer" class="btn-primary btn-sm">
+                                    <i class="fa-brands fa-github" style="font-size:0.75rem;"></i> View Code
+                                </a>
+                                <a href="#" class="btn-secondary btn-sm">
+                                    Live Demo <i class="fa-solid fa-arrow-up-right-from-square"
+                                        style="font-size:0.65rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div>
+                                <div class="problem-label">Problem</div>
+                                <p class="problem-text">Portfolio managers used inconsistent spreadsheets for risk
+                                    reporting — producing conflicting metrics and slowing down allocation decisions
+                                    across three funds.</p>
+                            </div>
+                            <div>
+                                <div class="problem-label">Data Solution</div>
+                                <p class="problem-text">Designed a reproducible risk metric library (Sharpe ratio, VaR,
+                                    max drawdown) fed by automated time-series ingestion. Delivered clean allocation
+                                    dashboards used weekly by portfolio managers.</p>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="tag-row">
+                                <span class="tag">Python</span><span class="tag">Pandas</span><span
+                                    class="tag">SQL</span><span class="tag">Plotly</span><span class="tag">Time
+                                    Series</span><span class="tag">Financial Modeling</span>
+                            </div>
+                            <span class="notebook-note">SQL scripts &amp; notebooks available</span>
+                        </div>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card reveal">
+                        <div class="project-header">
+                            <div>
+                                <div class="project-meta">
+                                    <h3>Healthcare Readmission Predictor</h3>
+                                    <span class="project-year">2021</span>
+                                </div>
+                                <span class="badge badge-violet">
+                                    <i class="fa-solid fa-bullseye" style="font-size:0.65rem;"></i> 94.9% classification
+                                    accuracy
+                                </span>
+                            </div>
+                            <div class="project-actions">
+                                <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
+                                    rel="noopener noreferrer" class="btn-primary btn-sm">
+                                    <i class="fa-brands fa-github" style="font-size:0.75rem;"></i> View Code
+                                </a>
+                                <a href="#" class="btn-secondary btn-sm">
+                                    Live Demo <i class="fa-solid fa-arrow-up-right-from-square"
+                                        style="font-size:0.65rem;"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div>
+                                <div class="problem-label">Problem</div>
+                                <p class="problem-text">High 30-day readmission rates with no systematic risk
+                                    stratification — clinicians had no data-driven signal to prioritize follow-up
+                                    interventions after discharge.</p>
+                            </div>
+                            <div>
+                                <div class="problem-label">Data Solution</div>
+                                <p class="problem-text">Patient-level feature engineering across clinical and
+                                    administrative data. Trained a gradient-boosted classifier (94.9% accuracy) and
+                                    integrated risk scores into a clinical dashboard, enabling targeted post-discharge
+                                    care.</p>
+                            </div>
+                        </div>
+                        <div class="project-footer">
+                            <div class="tag-row">
+                                <span class="tag">scikit-learn</span><span class="tag">Python</span><span
+                                    class="tag">SQL</span><span class="tag">Jupyter</span><span class="tag">Feature
+                                    Engineering</span><span class="tag">Classification</span>
+                            </div>
+                            <span class="notebook-note">Model notebooks &amp; evaluation reports included</span>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <hr class="divider">
+
+            <!-- ABOUT -->
+            <section id="about" class="section reveal">
+                <span class="eyebrow">About</span>
+                <h2 style="margin-bottom:32px;">Who I Am</h2>
+                <div class="about-grid">
+                    <div class="about-body">
+                        <p>I'm a Data Analyst and BI Specialist focused on bridging the gap between raw data and real
+                            decisions. My work sits at the intersection of clean engineering and clear communication — I
+                            build the pipelines and models, then translate them into dashboards executives actually use.
+                        </p>
+                        <p>With a background in Statistics and Computer Science from the University of Khartoum and over
+                            six years working across e-commerce, finance, and healthcare, I've developed a strong point
+                            of view: good analytics is only as valuable as the action it enables.</p>
+                        <p>I default to reproducibility — version-controlled notebooks, documented SQL, and modular
+                            pipelines that don't break when the source data changes.</p>
+                    </div>
+                    <div style="display:flex;flex-direction:column;gap:14px;">
+                        <div class="card-sm">
+                            <div class="problem-label" style="margin-bottom:12px;">Certifications</div>
+                            <ul style="display:flex;flex-direction:column;gap:8px;list-style:none;">
+                                <li
+                                    style="display:flex;align-items:flex-start;gap:8px;font-size:0.82rem;color:#475569;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color:rgba(34,211,238,0.5);margin-top:2px;font-size:0.72rem;flex-shrink:0;"></i>
+                                    Power BI Professional (PL-300) — In Progress
+                                </li>
+                                <li
+                                    style="display:flex;align-items:flex-start;gap:8px;font-size:0.82rem;color:#475569;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color:rgba(34,211,238,0.5);margin-top:2px;font-size:0.72rem;flex-shrink:0;"></i>
+                                    Google Analytics Certified
+                                </li>
+                                <li
+                                    style="display:flex;align-items:flex-start;gap:8px;font-size:0.82rem;color:#475569;">
+                                    <i class="fa-solid fa-circle-check"
+                                        style="color:rgba(34,211,238,0.5);margin-top:2px;font-size:0.72rem;flex-shrink:0;"></i>
+                                    Advanced SQL for Analytics
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="card-sm">
+                            <div class="problem-label" style="margin-bottom:10px;">Domain Focus</div>
+                            <div class="tag-row">
+                                <span class="tag">E-Commerce</span><span class="tag">FinTech</span><span
+                                    class="tag">Healthcare</span><span class="tag">Supply Chain</span>
+                            </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                <!-- Education & Short Notes -->
-                <div class="space-y-6">
-                    <div class="rounded-2xl border border-white/6 bg-slate-900/50 p-6">
-                        <h4 class="text-slate-100 font-semibold">Technical Highlights</h4>
-                        <ul class="mt-3 text-slate-300 list-disc list-inside space-y-2 text-sm">
-                            <li>Production dashboards (Power BI, Plotly) with monitoring and alerts</li>
-                            <li>Reproducible notebooks and version-controlled pipelines</li>
-                            <li>Strong SQL and data modeling experience for analytics-ready tables</li>
-                        </ul>
+            <hr class="divider">
+
+            <!-- EXPERIENCE -->
+            <section id="experience" class="section reveal">
+                <span class="eyebrow">Background</span>
+                <h2 style="margin-bottom:32px;">Experience &amp; Education</h2>
+                <div class="exp-grid">
+
+                    <div>
+                        <div class="problem-label" style="margin-bottom:20px;">Work History</div>
+                        <div class="timeline">
+                            <div class="tl-item">
+                                <div class="tl-dot"></div>
+                                <div class="tl-top">
+                                    <span class="tl-role">Data Analyst / BI Specialist</span>
+                                    <span class="tl-date">2020 — Present</span>
+                                </div>
+                                <p class="tl-desc">Led analytics programs across e-commerce and healthcare verticals.
+                                    Delivered KPI frameworks and executive dashboards adopted organization-wide. Manages
+                                    a library of 7+ live Power BI reports.</p>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-dot tl-dot-dim"></div>
+                                <div class="tl-top">
+                                    <span class="tl-role">Analytics Consultant</span>
+                                    <span class="tl-date">2017 — 2020</span>
+                                </div>
+                                <p class="tl-desc">Designed ETL pipelines, reporting schemas, and dashboard rollouts for
+                                    mid-market clients across retail and financial services. Owned end-to-end delivery
+                                    from scoping to handoff.</p>
+                            </div>
+                            <div class="tl-item">
+                                <div class="tl-dot tl-dot-faint"></div>
+                                <div class="tl-top">
+                                    <span class="tl-role">Data Associate</span>
+                                    <span class="tl-date">2015 — 2017</span>
+                                </div>
+                                <p class="tl-desc">Built initial reporting infrastructure and SQL-based dimensional
+                                    models for an early-stage analytics team. Established standards for data
+                                    documentation and notebook reproducibility.</p>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="rounded-2xl border border-white/6 bg-slate-900/50 p-6">
-                        <h4 class="text-slate-100 font-semibold">Certifications & Training</h4>
-                        <p class="mt-2 text-slate-300 text-sm">Power BI Professional (In Progress), Google Analytics,
-                            Advanced SQL for Analytics.</p>
+                    <div style="display:flex;flex-direction:column;gap:16px;">
+                        <div>
+                            <div class="problem-label" style="margin-bottom:16px;">Education</div>
+                            <div class="card-sm">
+                                <div style="display:flex;align-items:flex-start;gap:12px;">
+                                    <div
+                                        style="width:36px;height:36px;border-radius:8px;background:rgba(34,211,238,0.07);border:1px solid rgba(34,211,238,0.12);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">
+                                        <i class="fa-solid fa-graduation-cap"
+                                            style="color:rgba(34,211,238,0.7);font-size:0.85rem;"></i>
+                                    </div>
+                                    <div>
+                                        <div style="font-size:0.875rem;font-weight:600;color:#f1f5f9;">BSc — Statistics
+                                            &amp; Computer Science</div>
+                                        <div
+                                            style="font-family:'DM Mono',monospace;font-size:0.68rem;color:#334155;margin-top:3px;">
+                                            University of Khartoum · 2015 – 2023</div>
+                                        <p style="font-size:0.8rem;color:#475569;margin-top:8px;line-height:1.6;">Core
+                                            coursework: Regression Analysis, Time Series, Machine Learning, Database
+                                            Design &amp; SQL.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="card-sm">
+                            <div class="problem-label" style="margin-bottom:12px;">Technical Strengths</div>
+                            <ul style="display:flex;flex-direction:column;gap:8px;list-style:none;">
+                                <li
+                                    style="display:flex;align-items:flex-start;gap:8px;font-size:0.82rem;color:#475569;">
+                                    <i class="fa-solid fa-check"
+                                        style="color:rgba(34,211,238,0.45);margin-top:3px;font-size:0.7rem;flex-shrink:0;"></i>
+                                    Production dashboards (Power BI, Plotly) with monitoring and automated alerts
+                                </li>
+                                <li
+                                    style="display:flex;align-items:flex-start;gap:8px;font-size:0.82rem;color:#475569;">
+                                    <i class="fa-solid fa-check"
+                                        style="color:rgba(34,211,238,0.45);margin-top:3px;font-size:0.7rem;flex-shrink:0;"></i>
+                                    Reproducible notebooks and version-controlled data pipelines
+                                </li>
+                                <li
+                                    style="display:flex;align-items:flex-start;gap:8px;font-size:0.82rem;color:#475569;">
+                                    <i class="fa-solid fa-check"
+                                        style="color:rgba(34,211,238,0.45);margin-top:3px;font-size:0.7rem;flex-shrink:0;"></i>
+                                    Strong SQL and dimensional modeling for analytics-ready data marts
+                                </li>
+                                <li
+                                    style="display:flex;align-items:flex-start;gap:8px;font-size:0.82rem;color:#475569;">
+                                    <i class="fa-solid fa-check"
+                                        style="color:rgba(34,211,238,0.45);margin-top:3px;font-size:0.7rem;flex-shrink:0;"></i>
+                                    End-to-end ML delivery: feature engineering, training, evaluation, deployment
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Footer -->
-        <footer class="mt-16 border-t border-white/6 pt-10 pb-16">
-            <div
-                class="mx-auto max-w-7xl flex flex-col md:flex-row items-start md:items-center justify-between gap-6 px-0">
-                <div>
-                    <div class="flex items-center gap-3">
-                        <span class="text-slate-100 font-display text-lg font-semibold">Salma<span
-                                class="text-brand">.</span></span>
-                        <span class="text-sm text-slate-400">Data Analyst & BI Specialist</span>
-                    </div>
-                    <p class="mt-3 text-sm text-slate-400 max-w-xl">Open-source portfolio. Code, notebooks and
-                        dashboards available on GitHub for transparent review.</p>
                 </div>
+            </section>
 
-                <div class="flex items-center gap-4">
-                    <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
-                        class="text-slate-300 hover:text-white">
-                        <span class="sr-only">GitHub</span>
-                        <i class="fa-brands fa-github fa-lg"></i>
-                    </a>
-                    <a href="https://www.linkedin.com/in/salma-mohammed" target="_blank" rel="noopener noreferrer"
-                        class="text-slate-300 hover:text-white">
-                        <span class="sr-only">LinkedIn</span>
-                        <i class="fa-brands fa-linkedin fa-lg"></i>
-                    </a>
-                    <a href="mailto:salmafathelrhman@gmail.com" class="text-slate-300 hover:text-white">
-                        <span class="sr-only">Email</span>
-                        <i class="fa-solid fa-envelope fa-lg"></i>
-                    </a>
-                </div>
-            </div>
-
-            <div class="mt-8 mx-auto max-w-7xl text-sm text-slate-500 px-0">
-                <p>© 2024 Salma Mohammed. Built for GitHub Pages using CDN-hosted assets. All project code is public on
-                    GitHub.</p>
-            </div>
-        </footer>
+        </div>
     </main>
 
+    <!-- FOOTER -->
+    <footer style="position:relative;z-index:1;">
+        <div class="page-wrap">
+            <div class="footer">
+                <div>
+                    <div class="footer-logo">Salma<span>.</span></div>
+                    <div class="footer-sub">Data Analyst &amp; BI Specialist — open-source portfolio</div>
+                </div>
+                <div class="social-row">
+                    <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
+                        aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/salma-mohammed" target="_blank" rel="noopener noreferrer"
+                        aria-label="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="mailto:salmafathelrhman@gmail.com" aria-label="Email"><i
+                            class="fa-solid fa-envelope"></i></a>
+                </div>
+            </div>
+            <p class="copyright">© 2026 Salma Mohammed. All project
+                .</p>
+        </div>
+    </footer>
+
     <script>
-        // Mobile nav toggle
-        const mobileToggle = document.getElementById('mobileToggle');
-        const mobileNav = document.getElementById('mobileNav');
-        mobileToggle?.addEventListener('click', () => {
-            mobileNav.classList.toggle('hidden');
-        });
+        function toggleMobileNav() {
+            document.getElementById('mobile-nav').classList.toggle('open');
+        }
+        function closeMobileNav() {
+            document.getElementById('mobile-nav').classList.remove('open');
+        }
+
+        // Scroll reveal
+        const io = new IntersectionObserver(
+            entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+            { threshold: 0.07 }
+        );
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+        // Animated metric counters
+        function animateValue(el, endVal, suffix, prefix, duration, decimals) {
+            const step = 16;
+            const steps = duration / step;
+            let current = 0;
+            const inc = endVal / steps;
+            const timer = setInterval(() => {
+                current += inc;
+                if (current >= endVal) { current = endVal; clearInterval(timer); }
+                const display = decimals > 0 ? current.toFixed(decimals) : Math.round(current).toLocaleString();
+                el.textContent = (prefix || '') + display + (suffix || '');
+            }, step);
+        }
+
+        const metricsEl = document.querySelector('.metrics-strip');
+        let countersRun = false;
+        const metricObs = new IntersectionObserver(entries => {
+            if (entries[0].isIntersecting && !countersRun) {
+                countersRun = true;
+                animateValue(document.getElementById('m1'), 2.5, 'M+', '', 1200, 1);
+                animateValue(document.getElementById('m2'), 7, '+', '', 800, 0);
+                animateValue(document.getElementById('m3'), 10, 'M+', '$', 1400, 0);
+                animateValue(document.getElementById('m4'), 94.9, '%', '', 1300, 1);
+            }
+        }, { threshold: 0.3 });
+        if (metricsEl) metricObs.observe(metricsEl);
     </script>
+
 </body>
 
 </html>
