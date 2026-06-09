@@ -1,8 +1,26 @@
 # Salma Mohammed - Data Analyst & Business Intelligence Portfolio
 
-## Local development
+## Streamlit app
 
-This project now includes a small Express backend for the contact form.
+The interactive portfolio is now available as a Streamlit app in `app.py`.
+
+1. Create a virtual environment and install the Python dependencies:
+
+```bash
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
+2. Launch the app:
+
+```bash
+streamlit run app.py
+```
+
+## Existing web portfolio
+
+This repository also includes the original static portfolio site and Express contact backend.
 
 1. Copy the environment example and fill in SMTP settings:
 
@@ -10,13 +28,13 @@ This project now includes a small Express backend for the contact form.
 cp .env.example .env
 ```
 
-2. Install dependencies:
+2. Install Node dependencies:
 
 ```bash
 npm install
 ```
 
-3. Start the app:
+3. Start the site:
 
 ```bash
 npm run dev
