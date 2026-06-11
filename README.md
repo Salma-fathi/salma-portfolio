@@ -48,6 +48,17 @@ Welcome to my professional portfolio! This website showcases my expertise in dat
 
 I am a **Data Analyst and Business Intelligence Specialist** with **8+ years of analytical expertise**. I specialize in transforming complex datasets into strategic business insights through advanced statistical analysis, predictive modeling, and interactive dashboard development.
 
+## How I Structure Case Studies
+
+Every project writeup in this portfolio follows a simple STAR pattern so the business value is obvious at a glance:
+
+- **Situation:** the business blocker, risk, or inefficiency
+- **Task:** the exact responsibility I owned
+- **Action:** the technical work I executed in SQL, Python, and BI tools
+- **Result:** the measurable outcome, such as revenue lift, time saved, or risk reduced
+
+I also make the data-cleaning work visible: before/after snapshots, deduplication logic, null handling, and transformation steps are documented so recruiters can see the engineering depth behind the dashboard.
+
 **Key Highlights:**
 - 📊 **2.5M+ records analyzed** across 7 major enterprise projects
 - 📈 **7 interactive dashboards** developed for real-time monitoring
@@ -87,7 +98,15 @@ I am a **Data Analyst and Business Intelligence Specialist** with **8+ years of 
 - AWS, Google Cloud, Microsoft Azure
 - ETL Processes & Data Integration
 
+### Advanced Querying & Modeling
+- SQL window functions for ranking, running totals, and cohort analysis
+- CTE-based query structuring for cleaner, testable transformations
+- Dimensional modeling and star-schema design for analytics-ready marts
+- Data validation and reconciliation for clean source-to-dashboard pipelines
+
 ## 📊 Featured Projects
+
+Each featured project is written to answer three recruiter questions fast: what was broken, what I changed, and what business outcome improved.
 
 ### 1. E-Commerce Customer Analytics
 - **Dataset:** 500,000 transactions
@@ -215,6 +234,8 @@ All projects include interactive dashboards with:
 - Business Requirements Analysis
 - Stakeholder Management
 - Data-Driven Decision Making
+- SQL window functions, CTE optimization, and dimensional modeling
+- Clean data storytelling with before/after evidence
 
 ---
 
