@@ -1146,7 +1146,7 @@
                     <p class="section-subtitle mt-3 max-w-xl">End-to-end analytics projects — from raw data to executive
                         dashboards — each measured against real business outcomes.</p>
                 </div>
-                <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/salmamohammed11111" target="_blank" rel="noopener noreferrer"
                     class="btn-secondary mt-6 lg:mt-0 w-fit"><i class="fa-brands fa-github"></i> View All on GitHub</a>
             </div>
 
@@ -1521,44 +1521,75 @@
                     <h3 class="font-display font-bold text-lg text-dark mb-1">LinkedIn</h3>
                     <p class="text-text-muted text-sm">/in/salma-mohammed</p>
                 </a>
-                <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/salmamohammed11111" target="_blank" rel="noopener noreferrer"
                     class="contact-card group">
                     <div
                         class="contact-icon bg-gray-100 text-gray-700 group-hover:bg-gray-800 group-hover:text-white transition-all">
                         <i class="fa-brands fa-github"></i></div>
                     <h3 class="font-display font-bold text-lg text-dark mb-1">GitHub</h3>
-                    <p class="text-text-muted text-sm">@Salma-fathi</p>
+                    <p class="text-text-muted text-sm">@salmamohammed11111</p>
                 </a>
             </div>
             <div class="max-w-2xl mx-auto reveal">
                 <div class="bg-white rounded-2xl border border-gray-border p-8 shadow-card">
                     <form
-                        onsubmit="event.preventDefault(); alert('Thanks for reaching out! This is a demo form — connect via email or LinkedIn.');">
+                        action="https://formspree.io/f/YOUR_FORM_ID"
+                        method="POST"
+                        id="contact-form">
                         <div class="grid md:grid-cols-2 gap-6 mb-6">
                             <div>
                                 <label class="block text-sm font-medium text-dark mb-2">Name</label>
-                                <input type="text" placeholder="Your name"
+                                <input type="text" name="name" required placeholder="Your name"
                                     class="w-full px-4 py-3 rounded-xl border border-gray-border bg-gray-soft text-dark placeholder-text-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
                             </div>
                             <div>
                                 <label class="block text-sm font-medium text-dark mb-2">Email</label>
-                                <input type="email" placeholder="you@company.com"
+                                <input type="email" name="email" required placeholder="you@company.com"
                                     class="w-full px-4 py-3 rounded-xl border border-gray-border bg-gray-soft text-dark placeholder-text-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
                             </div>
                         </div>
                         <div class="mb-6">
                             <label class="block text-sm font-medium text-dark mb-2">Subject</label>
-                            <input type="text" placeholder="Project inquiry / Collaboration"
+                            <input type="text" name="subject" placeholder="Project inquiry / Collaboration"
                                 class="w-full px-4 py-3 rounded-xl border border-gray-border bg-gray-soft text-dark placeholder-text-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
                         </div>
                         <div class="mb-6">
                             <label class="block text-sm font-medium text-dark mb-2">Message</label>
-                            <textarea rows="4" placeholder="Tell me about your project, timeline, and goals..."
+                            <textarea rows="4" name="message" required placeholder="Tell me about your project, timeline, and goals..."
                                 class="w-full px-4 py-3 rounded-xl border border-gray-border bg-gray-soft text-dark placeholder-text-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"></textarea>
                         </div>
                         <button type="submit" class="btn-primary w-full justify-center"><i
                                 class="fa-solid fa-paper-plane"></i> Send Message</button>
+                        <p id="form-status" class="text-sm text-center mt-4"></p>
                     </form>
+                    <script>
+                        const contactForm = document.getElementById('contact-form');
+                        const formStatus = document.getElementById('form-status');
+                        if (contactForm) {
+                            contactForm.addEventListener('submit', async function (e) {
+                                e.preventDefault();
+                                const data = new FormData(contactForm);
+                                try {
+                                    const response = await fetch(contactForm.action, {
+                                        method: 'POST',
+                                        body: data,
+                                        headers: { 'Accept': 'application/json' }
+                                    });
+                                    if (response.ok) {
+                                        formStatus.textContent = "Thanks — your message was sent! I'll get back to you soon.";
+                                        formStatus.style.color = '#16a34a';
+                                        contactForm.reset();
+                                    } else {
+                                        formStatus.textContent = "Something went wrong. Please email me directly instead.";
+                                        formStatus.style.color = '#dc2626';
+                                    }
+                                } catch (err) {
+                                    formStatus.textContent = "Something went wrong. Please email me directly instead.";
+                                    formStatus.style.color = '#dc2626';
+                                }
+                            });
+                        }
+                    </script>
                 </div>
             </div>
         </div>
@@ -1575,7 +1606,7 @@
                     </p>
                 </div>
                 <div class="flex items-center gap-6">
-                    <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
+                    <a href="https://github.com/salmamohammed11111" target="_blank" rel="noopener noreferrer"
                         class="w-10 h-10 rounded-xl bg-white border border-gray-border flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-all"><i
                             class="fa-brands fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/salma-mohammed" target="_blank" rel="noopener noreferrer"
