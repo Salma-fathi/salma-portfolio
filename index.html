@@ -12,7 +12,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
         crossorigin="anonymous">
@@ -22,27 +22,28 @@
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Space Grotesk', 'sans-serif'],
+                        sans: ['IBM Plex Sans', 'sans-serif'],
+                        display: ['IBM Plex Serif', 'serif'],
+                        mono: ['IBM Plex Mono', 'monospace'],
                     },
                     colors: {
-                        primary: '#0EA5E9',
-                        'primary-dark': '#0284C7',
-                        'primary-light': '#E0F2FE',
-                        accent: '#F59E0B',
-                        'accent-light': '#FEF3C7',
-                        dark: '#0F172A',
-                        'dark-soft': '#1E293B',
-                        'gray-soft': '#F8FAFC',
-                        'gray-border': '#E2E8F0',
-                        'text-body': '#475569',
-                        'text-muted': '#94A3B8',
+                        primary: '#2F6E68',
+                        'primary-dark': '#204E4A',
+                        'primary-light': '#E3ECE7',
+                        accent: '#B54834',
+                        'accent-light': '#F2E2DB',
+                        dark: '#1B2A28',
+                        'dark-soft': '#263835',
+                        'gray-soft': '#EAEEE6',
+                        'gray-border': '#D3D9CC',
+                        'text-body': '#3E4A45',
+                        'text-muted': '#7C8A80',
                     },
                     boxShadow: {
-                        soft: '0 4px 20px -2px rgba(0, 0, 0, 0.06)',
-                        card: '0 1px 3px rgba(0, 0, 0, 0.05), 0 8px 24px rgba(0, 0, 0, 0.04)',
-                        'card-hover': '0 1px 3px rgba(0, 0, 0, 0.05), 0 20px 40px rgba(0, 0, 0, 0.08)',
-                        glow: '0 0 40px rgba(14, 165, 233, 0.15)',
+                        soft: '0 2px 10px -2px rgba(27, 42, 40, 0.06)',
+                        card: '0 1px 0 rgba(27, 42, 40, 0.04)',
+                        'card-hover': '0 1px 0 rgba(27, 42, 40, 0.04), 0 12px 24px rgba(27, 42, 40, 0.06)',
+                        glow: '0 0 40px rgba(47, 110, 104, 0.15)',
                     }
                 }
             }
@@ -50,6 +51,16 @@
     </script>
 
     <style>
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+            }
+        }
         *,
         *::before,
         *::after {
@@ -63,9 +74,9 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #FFFFFF;
-            color: #475569;
+            font-family: 'IBM Plex Sans', sans-serif;
+            background: #F3F5EF;
+            color: #3E4A45;
             -webkit-font-smoothing: antialiased;
         }
 
@@ -74,24 +85,24 @@
         }
 
         ::-webkit-scrollbar-track {
-            background: #F8FAFC;
+            background: #EAEEE6;
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #CBD5E1;
+            background: #B7C0AE;
             border-radius: 4px;
         }
 
         .nav-blur {
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
-            background: rgba(255, 255, 255, 0.85);
-            border-bottom: 1px solid rgba(226, 232, 240, 0.6);
+            background: rgba(243, 245, 239, 0.88);
+            border-bottom: 1px solid rgba(211, 217, 204, 0.8);
         }
 
         .nav-link {
             position: relative;
-            color: #64748B;
+            color: #7C8A80;
             font-weight: 500;
             font-size: 0.875rem;
             transition: color 0.3s ease;
@@ -104,13 +115,13 @@
             left: 0;
             width: 0;
             height: 2px;
-            background: #0EA5E9;
+            background: #2F6E68;
             border-radius: 2px;
             transition: width 0.3s ease;
         }
 
         .nav-link:hover {
-            color: #0F172A;
+            color: #1B2A28;
         }
 
         .nav-link:hover::after {
@@ -118,7 +129,7 @@
         }
 
         .nav-link.active {
-            color: #0EA5E9;
+            color: #2F6E68;
         }
 
         .nav-link.active::after {
@@ -126,40 +137,20 @@
         }
 
         .hero-bg {
-            background: linear-gradient(135deg, #FFFFFF 0%, #F0F9FF 40%, #FFF7ED 70%, #FEFCE8 100%);
             position: relative;
             overflow: hidden;
-        }
-
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.06) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
-        }
-
-        .hero-bg::after {
-            content: '';
-            position: absolute;
-            bottom: -30%;
-            left: -10%;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(245, 158, 11, 0.05) 0%, transparent 70%);
-            border-radius: 50%;
-            pointer-events: none;
+            background-color: #F3F5EF;
+            background-image:
+                linear-gradient(rgba(27, 42, 40, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(27, 42, 40, 0.05) 1px, transparent 1px);
+            background-size: 48px 48px;
+            background-position: center top;
+            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
+            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
         }
 
         .float-shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.15;
-            animation: float 6s ease-in-out infinite;
+            display: none;
         }
 
         @keyframes float {
@@ -178,46 +169,42 @@
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: #0EA5E9;
-            color: white;
+            background: #2F6E68;
+            color: #F3F5EF;
             font-weight: 600;
             font-size: 0.875rem;
-            padding: 12px 24px;
-            border-radius: 12px;
-            border: none;
+            padding: 12px 22px;
+            border-radius: 6px;
+            border: 1px solid #2F6E68;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
+            transition: all 0.2s ease;
         }
 
         .btn-primary:hover {
-            background: #0284C7;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(14, 165, 233, 0.4);
+            background: #204E4A;
+            border-color: #204E4A;
         }
 
         .btn-secondary {
             display: inline-flex;
             align-items: center;
             gap: 8px;
-            background: white;
-            color: #0F172A;
+            background: transparent;
+            color: #1B2A28;
             font-weight: 600;
             font-size: 0.875rem;
-            padding: 12px 24px;
-            border-radius: 12px;
-            border: 1.5px solid #E2E8F0;
+            padding: 12px 22px;
+            border-radius: 6px;
+            border: 1px solid #D3D9CC;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .btn-secondary:hover {
-            border-color: #0EA5E9;
-            color: #0EA5E9;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+            border-color: #2F6E68;
+            color: #2F6E68;
         }
 
         .btn-outline {
@@ -225,21 +212,20 @@
             align-items: center;
             gap: 8px;
             background: transparent;
-            color: #0EA5E9;
+            color: #2F6E68;
             font-weight: 600;
             font-size: 0.875rem;
-            padding: 12px 24px;
-            border-radius: 12px;
-            border: 1.5px solid #0EA5E9;
+            padding: 12px 22px;
+            border-radius: 6px;
+            border: 1px solid #2F6E68;
             cursor: pointer;
             text-decoration: none;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .btn-outline:hover {
-            background: #0EA5E9;
-            color: white;
-            transform: translateY(-2px);
+            background: #2F6E68;
+            color: #F3F5EF;
         }
 
         .section {
@@ -247,28 +233,38 @@
         }
 
         .eyebrow {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 0.75rem;
-            font-weight: 600;
-            letter-spacing: 0.15em;
+            font-weight: 500;
+            letter-spacing: 0.1em;
             text-transform: uppercase;
-            color: #0EA5E9;
-            display: inline-block;
+            color: #2F6E68;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
             margin-bottom: 16px;
         }
 
+        .eyebrow::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: #2F6E68;
+            display: inline-block;
+        }
+
         .section-title {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'IBM Plex Serif', serif;
             font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            color: #0F172A;
+            font-weight: 600;
+            color: #1B2A28;
             line-height: 1.15;
-            letter-spacing: -0.02em;
+            letter-spacing: -0.01em;
         }
 
         .section-subtitle {
             font-size: 1.05rem;
-            color: #64748B;
+            color: #7C8A80;
             max-width: 560px;
             line-height: 1.7;
             margin-top: 12px;
@@ -281,11 +277,11 @@
         }
 
         .bento-card {
-            background: white;
-            border: 1px solid #E2E8F0;
-            border-radius: 20px;
+            background: #F9FAF6;
+            border: 1px solid #D3D9CC;
+            border-radius: 8px;
             padding: 28px;
-            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
             position: relative;
             overflow: hidden;
         }
@@ -296,16 +292,15 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 3px;
-            background: linear-gradient(90deg, #0EA5E9, #F59E0B);
+            height: 2px;
+            background: #2F6E68;
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: opacity 0.2s ease;
         }
 
         .bento-card:hover {
-            transform: translateY(-4px);
-            border-color: #0EA5E9;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: #2F6E68;
+            box-shadow: 0 1px 0 rgba(27, 42, 40, 0.04), 0 12px 24px rgba(27, 42, 40, 0.05);
         }
 
         .bento-card:hover::before {
@@ -326,20 +321,19 @@
         }
 
         .project-card {
-            background: white;
-            border: 1px solid #E2E8F0;
-            border-radius: 20px;
+            background: #F9FAF6;
+            border: 1px solid #D3D9CC;
+            border-radius: 8px;
             overflow: hidden;
-            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
             display: flex;
             flex-direction: column;
             height: 100%;
         }
 
         .project-card:hover {
-            transform: translateY(-6px);
-            border-color: #0EA5E9;
-            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+            border-color: #2F6E68;
+            box-shadow: 0 1px 0 rgba(27, 42, 40, 0.04), 0 16px 32px rgba(27, 42, 40, 0.06);
         }
 
         .project-image-wrap {
@@ -362,7 +356,7 @@
         .project-image-overlay {
             position: absolute;
             inset: 0;
-            background: linear-gradient(to top, rgba(15, 23, 42, 0.6), transparent);
+            background: linear-gradient(to top, rgba(27, 42, 40, 0.65), transparent);
             opacity: 0;
             transition: opacity 0.3s ease;
             display: flex;
@@ -382,24 +376,25 @@
         }
 
         .project-title {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'IBM Plex Serif', serif;
             font-size: 1.25rem;
-            font-weight: 700;
-            color: #0F172A;
+            font-weight: 600;
+            color: #1B2A28;
             margin-bottom: 8px;
         }
 
         .project-desc {
             font-size: 0.875rem;
-            color: #64748B;
+            color: #7C8A80;
             line-height: 1.7;
             margin-bottom: 16px;
             flex: 1;
         }
 
         .star-block {
-            background: #F8FAFC;
-            border-radius: 12px;
+            background: #EFF2E9;
+            border: 1px solid #D3D9CC;
+            border-radius: 6px;
             padding: 16px;
             margin-bottom: 16px;
         }
@@ -417,98 +412,87 @@
         }
 
         .star-label {
+            font-family: 'IBM Plex Mono', monospace;
             font-weight: 600;
-            color: #0EA5E9;
+            font-size: 0.7rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: #2F6E68;
             flex-shrink: 0;
             min-width: 70px;
+            padding-top: 2px;
         }
 
         .star-text {
-            color: #475569;
+            color: #3E4A45;
         }
 
         .tag-chip {
             display: inline-flex;
             align-items: center;
             gap: 4px;
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 0.7rem;
-            font-weight: 600;
-            padding: 5px 12px;
-            border-radius: 8px;
-            background: #F0F9FF;
-            color: #0EA5E9;
-            border: 1px solid #E0F2FE;
+            font-weight: 500;
+            padding: 5px 10px;
+            border-radius: 4px;
+            background: #F3F5EF;
+            color: #1B2A28;
+            border: 1px solid #D3D9CC;
+            border-left: 3px solid #2F6E68;
             white-space: nowrap;
         }
 
         .tag-chip.sql {
-            background: #F0FDF4;
-            color: #22C55E;
-            border-color: #DCFCE7;
+            border-left-color: #4B7A4E;
         }
 
         .tag-chip.powerbi {
-            background: #FEF3C7;
-            color: #D97706;
-            border-color: #FDE68A;
+            border-left-color: #B5842E;
         }
 
         .tag-chip.python {
-            background: #FEF2F2;
-            color: #EF4444;
-            border-color: #FECACA;
+            border-left-color: #B54834;
         }
 
         .tag-chip.ml {
-            background: #F5F3FF;
-            color: #8B5CF6;
-            border-color: #DDD6FE;
+            border-left-color: #5A5A8C;
         }
 
         .tag-chip.r {
-            background: #F0FDF4;
-            color: #15803D;
-            border-color: #BBF7D0;
+            border-left-color: #4B7A4E;
         }
 
         .tag-chip.tableau {
-            background: #ECFCCB;
-            color: #65A30D;
-            border-color: #D9F99D;
+            border-left-color: #B5842E;
         }
 
         .tag-chip.nlp {
-            background: #FDF2F8;
-            color: #DB2777;
-            border-color: #FBCFE8;
+            border-left-color: #8C4B72;
         }
 
         .tag-chip.spc {
-            background: #E0F2FE;
-            color: #0369A1;
-            border-color: #BAE6FD;
+            border-left-color: #2F6E68;
         }
 
         .stat-card {
-            background: white;
-            border: 1px solid #E2E8F0;
-            border-radius: 16px;
+            background: #F9FAF6;
+            border: 1px solid #D3D9CC;
+            border-radius: 8px;
             padding: 24px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             cursor: pointer;
         }
 
         .stat-card:hover {
-            border-color: #0EA5E9;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+            border-color: #2F6E68;
         }
 
         .stat-icon {
             width: 48px;
             height: 48px;
-            border-radius: 14px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -517,16 +501,16 @@
         }
 
         .stat-value {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'IBM Plex Serif', serif;
             font-size: 2rem;
-            font-weight: 700;
-            color: #0F172A;
+            font-weight: 600;
+            color: #1B2A28;
             line-height: 1.2;
         }
 
         .stat-label {
             font-size: 0.8rem;
-            color: #94A3B8;
+            color: #7C8A80;
             margin-top: 4px;
         }
 
@@ -542,7 +526,7 @@
             top: 8px;
             bottom: 40px;
             width: 2px;
-            background: linear-gradient(to bottom, #0EA5E9, #E2E8F0);
+            background: linear-gradient(to bottom, #2F6E68, #D3D9CC);
         }
 
         .tl-item {
@@ -561,49 +545,48 @@
             width: 14px;
             height: 14px;
             border-radius: 50%;
-            background: white;
-            border: 3px solid #0EA5E9;
-            box-shadow: 0 0 0 4px #F0F9FF;
+            background: #F3F5EF;
+            border: 3px solid #2F6E68;
+            box-shadow: 0 0 0 4px #E3ECE7;
         }
 
         .tl-role {
             font-size: 1rem;
             font-weight: 600;
-            color: #0F172A;
+            color: #1B2A28;
         }
 
         .tl-date {
-            font-family: 'Space Grotesk', sans-serif;
+            font-family: 'IBM Plex Mono', monospace;
             font-size: 0.75rem;
-            color: #94A3B8;
+            color: #7C8A80;
         }
 
         .tl-desc {
             font-size: 0.85rem;
-            color: #64748B;
+            color: #7C8A80;
             line-height: 1.65;
             margin-top: 6px;
         }
 
         .contact-card {
-            background: white;
-            border: 1px solid #E2E8F0;
-            border-radius: 20px;
+            background: #F9FAF6;
+            border: 1px solid #D3D9CC;
+            border-radius: 8px;
             padding: 32px;
             text-align: center;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
         }
 
         .contact-card:hover {
-            border-color: #0EA5E9;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 28px rgba(0, 0, 0, 0.06);
+            border-color: #2F6E68;
+            box-shadow: 0 12px 28px rgba(27, 42, 40, 0.05);
         }
 
         .contact-icon {
             width: 56px;
             height: 56px;
-            border-radius: 16px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -612,13 +595,13 @@
         }
 
         .footer-link {
-            color: #64748B;
+            color: #7C8A80;
             text-decoration: none;
             transition: color 0.2s;
         }
 
         .footer-link:hover {
-            color: #0EA5E9;
+            color: #2F6E68;
         }
 
         .reveal {
@@ -638,12 +621,12 @@
             top: 100%;
             left: 0;
             right: 0;
-            background: white;
-            border-bottom: 1px solid #E2E8F0;
+            background: #F3F5EF;
+            border-bottom: 1px solid #D3D9CC;
             padding: 20px 24px;
             flex-direction: column;
             gap: 16px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 10px 30px rgba(27, 42, 40, 0.08);
         }
 
         #mobile-nav.open {
@@ -651,7 +634,7 @@
         }
 
         #mobile-nav a {
-            color: #64748B;
+            color: #7C8A80;
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
@@ -659,10 +642,148 @@
         }
 
         #mobile-nav a:hover {
-            color: #0EA5E9;
+            color: #2F6E68;
         }
 
-        @media (max-width: 1024px) {
+        /* Query Console — hero signature element */
+        .query-console {
+            background: #1B2A28;
+            border-radius: 10px;
+            border: 1px solid #2F4440;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(27, 42, 40, 0.25);
+            font-family: 'IBM Plex Mono', monospace;
+        }
+
+        .qc-titlebar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 16px;
+            background: #16211F;
+            border-bottom: 1px solid #2F4440;
+        }
+
+        .qc-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .qc-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #3E4A45;
+        }
+
+        .qc-filename {
+            font-size: 0.7rem;
+            color: #8FA39D;
+            letter-spacing: 0.02em;
+        }
+
+        .qc-body {
+            padding: 20px 20px 8px;
+            font-size: 0.8rem;
+            line-height: 1.85;
+        }
+
+        .qc-line {
+            display: flex;
+            gap: 16px;
+        }
+
+        .qc-num {
+            color: #45564F;
+            user-select: none;
+            min-width: 14px;
+            text-align: right;
+        }
+
+        .qc-kw {
+            color: #7FB0A8;
+        }
+
+        .qc-col {
+            color: #E3ECE7;
+        }
+
+        .qc-str {
+            color: #D9A05B;
+        }
+
+        .qc-fn {
+            color: #C48BAE;
+        }
+
+        .qc-cur {
+            display: inline-block;
+            width: 7px;
+            height: 15px;
+            background: #7FB0A8;
+            margin-left: 2px;
+            vertical-align: text-bottom;
+            animation: blink 1s step-end infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        .qc-divider {
+            border-top: 1px dashed #2F4440;
+            margin: 12px 0;
+        }
+
+        .qc-result {
+            padding: 4px 20px 18px;
+        }
+
+        .qc-result-label {
+            font-size: 0.68rem;
+            color: #5C736C;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .qc-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.72rem;
+        }
+
+        .qc-table th {
+            text-align: left;
+            color: #7FB0A8;
+            font-weight: 500;
+            padding: 4px 10px 6px 0;
+            border-bottom: 1px solid #2F4440;
+        }
+
+        .qc-table td {
+            color: #C6D3CD;
+            padding: 5px 10px 5px 0;
+            border-bottom: 1px solid #223330;
+        }
+
+        .qc-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .qc-risk {
+            color: #D97F65;
+            font-weight: 600;
+        }
             .bento-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -745,9 +866,6 @@
 
     <!-- ===== HERO ===== -->
     <section id="home" class="hero-bg min-h-screen flex items-center pt-16 relative">
-        <div class="float-shape w-64 h-64 bg-primary" style="top:15%;right:10%;animation-delay:0s;"></div>
-        <div class="float-shape w-48 h-48 bg-accent" style="bottom:20%;left:5%;animation-delay:2s;"></div>
-        <div class="float-shape w-32 h-32 bg-purple-400" style="top:40%;right:30%;animation-delay:4s;"></div>
 
         <div class="max-w-7xl mx-auto px-6 py-20 w-full relative z-10">
             <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -768,89 +886,73 @@
                     </div>
                     <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-gray-border">
                         <div>
-                            <div class="font-display font-bold text-2xl text-dark">2.5M+</div>
-                            <div class="text-text-muted text-sm">Records Analyzed</div>
+                            <div class="font-display font-bold text-2xl text-dark">3</div>
+                            <div class="text-text-muted text-sm">Portfolio Projects</div>
                         </div>
                         <div>
-                            <div class="font-display font-bold text-2xl text-dark">7+</div>
-                            <div class="text-text-muted text-sm">Enterprise Projects</div>
+                            <div class="font-display font-bold text-2xl text-dark">4</div>
+                            <div class="text-text-muted text-sm">Tools: SQL, Python, Power BI, Scikit-learn</div>
                         </div>
                         <div>
-                            <div class="font-display font-bold text-2xl text-dark">$10M+</div>
-                            <div class="text-text-muted text-sm">Value Tracked</div>
-                        </div>
-                        <div>
-                            <div class="font-display font-bold text-2xl text-dark">94.9%</div>
-                            <div class="text-text-muted text-sm">Model Accuracy</div>
+                            <div class="font-display font-bold text-2xl text-dark">100%</div>
+                            <div class="text-text-muted text-sm">Open-Source & Reproducible</div>
                         </div>
                     </div>
                 </div>
                 <div class="reveal relative" style="transition-delay:0.3s;">
-                    <div class="relative z-10">
-                        <img src="https://img.freepik.com/free-vector/data-inform-illustration-concept_114360-864.jpg?w=826"
-                            alt="Cartoon illustration of a data analyst working with charts and dashboards on a laptop"
-                            class="w-full max-w-md mx-auto rounded-3xl shadow-card"
-                            onerror="this.style.display='none';document.getElementById('hero-fallback').style.display='flex';">
-                        <div id="hero-fallback" style="display:none;"
-                            class="w-full max-w-md mx-auto aspect-square bg-gradient-to-br from-primary-light to-accent-light rounded-3xl flex items-center justify-center border border-gray-border">
-                            <svg viewBox="0 0 400 400" class="w-3/4 h-3/4">
-                                <ellipse cx="200" cy="380" rx="140" ry="20" fill="#E2E8F0" opacity="0.5" />
-                                <rect x="80" y="280" width="240" height="12" rx="6" fill="#CBD5E1" />
-                                <rect x="100" y="292" width="8" height="40" rx="4" fill="#94A3B8" />
-                                <rect x="292" y="292" width="8" height="40" rx="4" fill="#94A3B8" />
-                                <rect x="130" y="220" width="140" height="90" rx="8" fill="#1E293B" />
-                                <rect x="138" y="228" width="124" height="70" rx="4" fill="#0EA5E9" />
-                                <rect x="150" y="248" width="40" height="30" rx="2" fill="white" opacity="0.3" />
-                                <rect x="200" y="238" width="40" height="40" rx="2" fill="white" opacity="0.3" />
-                                <polyline points="155,268 165,258 175,262 185,250" fill="none" stroke="white"
-                                    stroke-width="2" stroke-linecap="round" />
-                                <rect x="160" y="180" width="80" height="100" rx="20" fill="#F59E0B" />
-                                <circle cx="200" cy="150" r="45" fill="#FDBA74" />
-                                <path
-                                    d="M155,140 Q160,90 200,90 Q240,90 245,140 Q245,160 235,150 Q200,130 165,150 Q155,160 155,140"
-                                    fill="#1E293B" />
-                                <circle cx="185" cy="155" r="5" fill="#1E293B" />
-                                <circle cx="215" cy="155" r="5" fill="#1E293B" />
-                                <path d="M190,170 Q200,178 210,170" fill="none" stroke="#1E293B" stroke-width="2"
-                                    stroke-linecap="round" />
-                                <rect x="130" y="200" width="30" height="12" rx="6" fill="#FDBA74"
-                                    transform="rotate(-20 145 206)" />
-                                <rect x="240" y="200" width="30" height="12" rx="6" fill="#FDBA74"
-                                    transform="rotate(20 255 206)" />
-                                <circle cx="320" cy="120" r="25" fill="#0EA5E9" opacity="0.15" />
-                                <text x="320" y="125" text-anchor="middle" font-family="Space Grotesk" font-size="14"
-                                    font-weight="700" fill="#0EA5E9">+12%</text>
-                                <circle cx="90" cy="160" r="20" fill="#22C55E" opacity="0.15" />
-                                <text x="90" y="165" text-anchor="middle" font-family="Space Grotesk" font-size="12"
-                                    font-weight="700" fill="#22C55E">SQL</text>
-                                <circle cx="340" cy="220" r="22" fill="#F59E0B" opacity="0.15" />
-                                <text x="340" y="225" text-anchor="middle" font-family="Space Grotesk" font-size="12"
-                                    font-weight="700" fill="#F59E0B">BI</text>
-                            </svg>
-                        </div>
-                    </div>
-                    <div
-                        class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-card p-4 border border-gray-border hidden lg:block">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-green-50 flex items-center justify-center text-green-500">
-                                <i class="fa-solid fa-chart-line"></i></div>
-                            <div>
-                                <div class="font-display font-bold text-sm text-dark">Revenue up 18.2%</div>
-                                <div class="text-xs text-text-muted">vs last quarter</div>
+                    <div class="query-console max-w-md mx-auto">
+                        <div class="qc-titlebar">
+                            <div class="qc-dots">
+                                <span class="qc-dot"></span><span class="qc-dot"></span><span class="qc-dot"></span>
                             </div>
+                            <span class="qc-filename">deep_healthcare_analysis.sql</span>
                         </div>
-                    </div>
-                    <div
-                        class="absolute -top-4 -right-4 bg-white rounded-2xl shadow-card p-4 border border-gray-border hidden lg:block">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-10 h-10 rounded-xl bg-primary-light flex items-center justify-center text-primary">
-                                <i class="fa-solid fa-database"></i></div>
-                            <div>
-                                <div class="font-display font-bold text-sm text-dark">2.5M Records</div>
-                                <div class="text-xs text-text-muted">Processed</div>
+                        <div class="qc-body">
+                            <div class="qc-line"><span class="qc-num">1</span><span><span class="qc-kw">SELECT</span>
+                                    <span class="qc-col">patient_nbr, age, readmitted,</span></span></div>
+                            <div class="qc-line"><span class="qc-num">2</span><span
+                                    class="qc-col">&nbsp;&nbsp;num_medications,</span></div>
+                            <div class="qc-line"><span class="qc-num">3</span><span><span
+                                        class="qc-kw">&nbsp;&nbsp;NTILE</span><span class="qc-col">(5)
+                                        OVER</span> <span class="qc-col">(ORDER BY num_medications)</span></span>
                             </div>
+                            <div class="qc-line"><span class="qc-num">4</span><span><span
+                                        class="qc-kw">FROM</span> <span class="qc-col">Fact_Encounters</span></span>
+                            </div>
+                            <div class="qc-line"><span class="qc-num">5</span><span><span
+                                        class="qc-kw">WHERE</span> <span class="qc-col">readmitted =</span> <span
+                                        class="qc-str">'&lt;30'</span><span class="qc-cur"></span></span></div>
+                        </div>
+                        <div class="qc-divider"></div>
+                        <div class="qc-result">
+                            <div class="qc-result-label">// query result — 5 rows</div>
+                            <table class="qc-table">
+                                <tr>
+                                    <th>quintile</th>
+                                    <th>encounters</th>
+                                    <th>risk</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>2,041</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>2,187</td>
+                                    <td>Low</td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>2,304</td>
+                                    <td class="qc-risk">Medium</td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>2,398</td>
+                                    <td class="qc-risk">High</td>
+                                </tr>
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -864,44 +966,43 @@
             <div class="grid lg:grid-cols-2 gap-16 items-center">
                 <div class="reveal order-2 lg:order-1">
                     <div class="relative">
-                        <img src="https://img.freepik.com/free-vector/data-inform-illustration-concept_114360-864.jpg?w=826"
-                            alt="Cartoon illustration showing a person analyzing data charts and graphs on multiple screens"
-                            class="w-full max-w-lg mx-auto rounded-3xl shadow-card"
-                            onerror="this.style.display='none';document.getElementById('about-fallback').style.display='flex';">
-                        <div id="about-fallback" style="display:none;"
-                            class="w-full max-w-lg mx-auto aspect-square bg-gradient-to-br from-white to-gray-soft rounded-3xl flex items-center justify-center border border-gray-border shadow-card">
-                            <svg viewBox="0 0 400 400" class="w-3/4 h-3/4">
-                                <rect x="50" y="80" width="300" height="240" rx="20" fill="white" stroke="#E2E8F0"
-                                    stroke-width="2" />
-                                <rect x="50" y="80" width="300" height="40" rx="20" fill="#F8FAFC" />
-                                <circle cx="80" cy="100" r="6" fill="#EF4444" />
-                                <circle cx="100" cy="100" r="6" fill="#F59E0B" />
-                                <circle cx="120" cy="100" r="6" fill="#22C55E" />
-                                <rect x="70" y="140" width="120" height="80" rx="8" fill="#F0F9FF" />
-                                <rect x="80" y="200" width="20" height="12" rx="2" fill="#0EA5E9" />
-                                <rect x="108" y="185" width="20" height="27" rx="2" fill="#0EA5E9" opacity="0.7" />
-                                <rect x="136" y="170" width="20" height="42" rx="2" fill="#0EA5E9" opacity="0.5" />
-                                <rect x="164" y="155" width="20" height="57" rx="2" fill="#0EA5E9" opacity="0.3" />
-                                <rect x="210" y="140" width="120" height="80" rx="8" fill="#F0FDF4" />
-                                <polyline points="220,200 240,180 260,190 280,160 300,170 320,140" fill="none"
-                                    stroke="#22C55E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
-                                <circle cx="320" cy="140" r="4" fill="#22C55E" />
-                                <rect x="70" y="240" width="260" height="60" rx="8" fill="#FFFBEB" />
-                                <rect x="85" y="260" width="40" height="8" rx="4" fill="#F59E0B" opacity="0.3" />
-                                <rect x="85" y="275" width="80" height="8" rx="4" fill="#F59E0B" opacity="0.5" />
-                                <rect x="85" y="290" width="60" height="8" rx="4" fill="#F59E0B" opacity="0.7" />
-                                <circle cx="330" cy="320" r="35" fill="#FDBA74" />
-                                <path d="M295,310 Q300,270 330,270 Q360,270 365,310" fill="#1E293B" />
-                                <circle cx="318" cy="315" r="4" fill="#1E293B" />
-                                <circle cx="342" cy="315" r="4" fill="#1E293B" />
-                                <path d="M322,330 Q330,338 338,330" fill="none" stroke="#1E293B" stroke-width="2"
-                                    stroke-linecap="round" />
-                                <rect x="360" y="340" width="20" height="8" rx="4" fill="#FDBA74"
-                                    transform="rotate(-30 370 344)" />
+                        <div class="w-full max-w-lg mx-auto aspect-square bg-gray-soft rounded-lg flex items-center justify-center border border-gray-border shadow-card">
+                            <svg viewBox="0 0 400 400" class="w-4/5 h-4/5">
+                                <rect x="40" y="70" width="320" height="260" rx="6" fill="#F9FAF6" stroke="#D3D9CC"
+                                    stroke-width="1.5" />
+                                <rect x="40" y="70" width="320" height="36" rx="6" fill="#EAEEE6" />
+                                <circle cx="64" cy="88" r="5" fill="#B54834" />
+                                <circle cx="82" cy="88" r="5" fill="#B5842E" />
+                                <circle cx="100" cy="88" r="5" fill="#4B7A4E" />
+                                <text x="330" y="92" text-anchor="end" font-family="IBM Plex Mono" font-size="10"
+                                    fill="#7C8A80">analysis.py</text>
+
+                                <rect x="60" y="126" width="130" height="90" rx="4" fill="#EAEEE6"
+                                    stroke="#D3D9CC" />
+                                <rect x="72" y="196" width="14" height="12" fill="#2F6E68" />
+                                <rect x="92" y="180" width="14" height="28" fill="#2F6E68" opacity="0.75" />
+                                <rect x="112" y="160" width="14" height="48" fill="#2F6E68" opacity="0.55" />
+                                <rect x="132" y="145" width="14" height="63" fill="#2F6E68" opacity="0.4" />
+                                <rect x="152" y="170" width="14" height="38" fill="#2F6E68" opacity="0.3" />
+
+                                <rect x="210" y="126" width="130" height="90" rx="4" fill="#EAEEE6"
+                                    stroke="#D3D9CC" />
+                                <polyline points="222,195 240,175 258,185 276,155 294,168 312,140 328,150"
+                                    fill="none" stroke="#B54834" stroke-width="2.5" stroke-linecap="round"
+                                    stroke-linejoin="round" />
+                                <circle cx="328" cy="150" r="3.5" fill="#B54834" />
+
+                                <rect x="60" y="232" width="280" height="16" rx="2" fill="#D3D9CC" />
+                                <rect x="60" y="256" width="220" height="10" rx="2" fill="#D3D9CC" opacity="0.7" />
+                                <rect x="60" y="274" width="180" height="10" rx="2" fill="#D3D9CC" opacity="0.5" />
+                                <rect x="60" y="292" width="140" height="10" rx="2" fill="#D3D9CC" opacity="0.35" />
+
+                                <text x="192" y="245" font-family="IBM Plex Mono" font-size="10" fill="#3E4A45"
+                                    font-weight="600">readmission_rate_pct</text>
                             </svg>
                         </div>
                         <div
-                            class="absolute -bottom-6 -right-6 bg-white rounded-2xl shadow-card p-4 border border-gray-border">
+                            class="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-card p-4 border border-gray-border">
                             <div class="flex items-center gap-3">
                                 <div
                                     class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-primary text-xl">
@@ -938,13 +1039,13 @@
                         </div>
                         <div class="flex items-center gap-3">
                             <div
-                                class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center text-green-500 text-xs">
+                                class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary text-xs">
                                 <i class="fa-solid fa-certificate"></i></div><span class="text-sm text-text-body">Google
                                 Analytics Certified</span>
                         </div>
                         <div class="flex items-center gap-3">
                             <div
-                                class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-amber-600 text-xs">
+                                class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent text-xs">
                                 <i class="fa-solid fa-certificate"></i></div><span
                                 class="text-sm text-text-body">Advanced SQL for Analytics</span>
                         </div>
@@ -975,7 +1076,7 @@
                 <div class="bento-card large">
                     <div class="flex items-start justify-between mb-6">
                         <div
-                            class="w-14 h-14 rounded-2xl bg-primary-light flex items-center justify-center text-primary text-2xl">
+                            class="w-14 h-14 rounded-lg bg-primary-light flex items-center justify-center text-primary text-2xl">
                             <i class="fa-solid fa-database"></i></div>
                         <span
                             class="text-xs font-display font-semibold text-text-muted bg-gray-soft px-3 py-1 rounded-full">Core</span>
@@ -988,15 +1089,10 @@
                             class="tag-chip">dbt</span><span class="tag-chip">ETL</span><span
                             class="tag-chip">BigQuery</span>
                     </div>
-                    <div class="mt-6 pt-6 border-t border-gray-border">
-                        <img src="https://img.freepik.com/free-vector/server-concept-illustration_114360-524.jpg?w=740"
-                            alt="Cartoon illustration of database servers and data flow"
-                            class="w-full h-32 object-contain opacity-80" onerror="this.style.display='none'">
-                    </div>
                 </div>
                 <div class="bento-card">
                     <div
-                        class="w-12 h-12 rounded-xl bg-green-50 flex items-center justify-center text-green-500 text-xl mb-4">
+                        class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-primary text-xl mb-4">
                         <i class="fa-brands fa-python"></i></div>
                     <h3 class="font-display font-bold text-lg text-dark mb-2">Analytics & ML</h3>
                     <p class="text-text-body text-sm mb-4">Predictive modeling, statistical analysis, and automated
@@ -1008,7 +1104,7 @@
                 </div>
                 <div class="bento-card">
                     <div
-                        class="w-12 h-12 rounded-xl bg-purple-50 flex items-center justify-center text-purple-500 text-xl mb-4">
+                        class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center text-accent text-xl mb-4">
                         <i class="fa-solid fa-chart-pie"></i></div>
                     <h3 class="font-display font-bold text-lg text-dark mb-2">Visualization & BI</h3>
                     <p class="text-text-body text-sm mb-4">Interactive dashboards with drill-downs, KPI monitoring, and
@@ -1021,7 +1117,7 @@
                 <div class="bento-card wide">
                     <div class="flex items-start gap-6">
                         <div
-                            class="w-12 h-12 rounded-xl bg-amber-50 flex items-center justify-center text-amber-500 text-xl flex-shrink-0">
+                            class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center text-accent text-xl flex-shrink-0">
                             <i class="fa-brands fa-git-alt"></i></div>
                         <div>
                             <h3 class="font-display font-bold text-lg text-dark mb-2">Infrastructure & DevOps</h3>
@@ -1032,15 +1128,11 @@
                                     class="tag-chip">Docker</span><span class="tag-chip">Streamlit</span>
                             </div>
                         </div>
-                        <img src="https://img.freepik.com/free-vector/devops-concept-illustration_114360-5221.jpg?w=740"
-                            alt="Cartoon illustration of DevOps workflow with automation gears"
-                            class="w-32 h-24 object-contain opacity-70 hidden md:block"
-                            onerror="this.style.display='none'">
                     </div>
                 </div>
                 <div class="bento-card">
                     <div
-                        class="w-12 h-12 rounded-xl bg-rose-50 flex items-center justify-center text-rose-500 text-xl mb-4">
+                        class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center text-accent text-xl mb-4">
                         <i class="fa-solid fa-users"></i></div>
                     <h3 class="font-display font-bold text-lg text-dark mb-2">Communication</h3>
                     <p class="text-text-body text-sm mb-4">Translating technical findings into business narratives for
@@ -1051,7 +1143,7 @@
                 </div>
                 <div class="bento-card">
                     <div
-                        class="w-12 h-12 rounded-xl bg-cyan-50 flex items-center justify-center text-cyan-500 text-xl mb-4">
+                        class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-primary text-xl mb-4">
                         <i class="fa-solid fa-lightbulb"></i></div>
                     <h3 class="font-display font-bold text-lg text-dark mb-2">Methodology</h3>
                     <p class="text-text-body text-sm mb-4">STAR framework, agile analytics, and hypothesis-driven
@@ -1076,9 +1168,9 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8 reveal">
                 <div
-                    class="bg-white rounded-2xl p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group">
+                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group">
                     <div
-                        class="w-14 h-14 rounded-2xl bg-primary-light flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        class="w-14 h-14 rounded-lg bg-primary-light flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-broom"></i></div>
                     <h3 class="font-display font-bold text-lg text-dark mb-3">Data Cleaning</h3>
                     <ul class="space-y-3 text-sm text-text-body">
@@ -1094,9 +1186,9 @@
                     </ul>
                 </div>
                 <div
-                    class="bg-white rounded-2xl p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group">
+                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group">
                     <div
-                        class="w-14 h-14 rounded-2xl bg-green-50 flex items-center justify-center text-green-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        class="w-14 h-14 rounded-lg bg-primary-light flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-star"></i></div>
                     <h3 class="font-display font-bold text-lg text-dark mb-3">STAR Framework</h3>
                     <ul class="space-y-3 text-sm text-text-body">
@@ -1115,9 +1207,9 @@
                     </ul>
                 </div>
                 <div
-                    class="bg-white rounded-2xl p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group">
+                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group">
                     <div
-                        class="w-14 h-14 rounded-2xl bg-purple-50 flex items-center justify-center text-purple-500 text-2xl mb-6 group-hover:scale-110 transition-transform">
+                        class="w-14 h-14 rounded-lg bg-accent-light flex items-center justify-center text-accent text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-code"></i></div>
                     <h3 class="font-display font-bold text-lg text-dark mb-3">Technical Screening</h3>
                     <ul class="space-y-3 text-sm text-text-body">
@@ -1146,346 +1238,137 @@
                     <p class="section-subtitle mt-3 max-w-xl">End-to-end analytics projects — from raw data to executive
                         dashboards — each measured against real business outcomes.</p>
                 </div>
-                <a href="https://github.com/salmamohammed11111" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
                     class="btn-secondary mt-6 lg:mt-0 w-fit"><i class="fa-brands fa-github"></i> View All on GitHub</a>
             </div>
 
-            <!-- Bento Grid for 7 Projects -->
+            <!-- Bento Grid for 6 Projects -->
             <div class="bento-grid projects-grid">
 
-                <!-- PROJECT 1: E-Commerce (Large - spans 2 cols, 2 rows) -->
+                <!-- PROJECT 1: Stock Market Intelligence -->
                 <article class="bento-card large project-card reveal" style="transition-delay:0.05s;">
                     <div class="project-image-wrap"
                         style="height:200px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop"
-                            alt="E-Commerce Customer Analytics Dashboard showing revenue trends and customer segmentation charts">
+                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=500&fit=crop"
+                            alt="Stock market analysis dashboard showing price trends and risk metrics">
                         <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
                                     class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
                     </div>
                     <div class="flex items-center gap-2 mb-2"><span
-                            class="font-display text-xs font-semibold text-text-muted">01 / 07</span></div>
-                    <h3 class="project-title">E-Commerce Customer Analytics</h3>
-                    <p class="project-desc">Built an end-to-end customer intelligence pipeline using RFM segmentation
-                        and CLV prediction to identify at-risk customers and quantify revenue recovery potential.</p>
+                            class="font-mono text-xs font-medium text-primary">01 / 03</span></div>
+                    <h3 class="project-title">Stock Market Intelligence Dashboard</h3>
+                    <p class="project-desc">Full analytics pipeline for 5 major tech stocks — data collection,
+                        technical indicators, ML price-direction modeling, and portfolio optimization via Monte
+                        Carlo simulation.</p>
                     <div class="star-block">
-                        <div class="star-row"><span class="star-label">Situation</span><span
-                                class="star-text">High-value customers churning without early warning signals, causing
-                                significant revenue leakage.</span></div>
-                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Segment 50K
-                                customers, predict CLV, and build a churn prediction model to flag at-risk
-                                segments.</span></div>
-                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">RFM
-                                segmentation on 500K transactions, CLV prediction model (R-squared = 1.0), churn
-                                analysis via Python/SQL.</span></div>
-                        <div class="star-row"><span class="star-label">Result</span><span
-                                class="star-text"><strong>43.63% churn rate identified</strong> — <strong>$7.67M revenue
-                                    recovery</strong> opportunity uncovered across at-risk segments.</span></div>
+                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">Investors
+                                need a structured way to compare stock risk/return and build a diversified
+                                portfolio.</span></div>
+                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Build an
+                                end-to-end pipeline: collect price data, compute risk metrics, model price
+                                direction, and optimize portfolio weights.</span></div>
+                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Pulled
+                                data via yfinance, engineered technical indicators (RSI, MACD, Bollinger Bands),
+                                trained a Gradient Boosting classifier with time-series validation, and ran a
+                                5,000-iteration Monte Carlo simulation for portfolio optimization.</span></div>
+                        <div class="star-row"><span class="star-label">Result</span><span class="star-text">Identified
+                                an optimal portfolio allocation (Sharpe Ratio 1.225) and shipped an interactive
+                                Plotly Dash app with 4 analysis views.</span></div>
                     </div>
                     <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="tag-chip python">Python</span><span class="tag-chip sql">SQL</span><span
-                            class="tag-chip powerbi">Power BI</span>
+                        <span class="tag-chip python">Python</span><span class="tag-chip ml">Scikit-learn</span><span
+                            class="tag-chip">Plotly Dash</span>
                     </div>
                     <div class="flex gap-3 mt-auto">
-                        <a href="#" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                class="fa-solid fa-chart-column"></i> Live Dashboard</a>
-                        <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                            rel="noopener noreferrer" class="btn-secondary px-4 py-2.5"><i
-                                class="fa-brands fa-github"></i></a>
+                        <a href="https://github.com/Salma-fathi/stock-market-intelligence" target="_blank"
+                            rel="noopener noreferrer" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
+                                class="fa-brands fa-github"></i> View on GitHub</a>
                     </div>
                 </article>
 
-                <!-- PROJECT 2: Financial Markets Risk -->
-                <article class="bento-card project-card reveal" style="transition-delay:0.1s;">
-                    <div class="project-image-wrap"
-                        style="height:180px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&h=400&fit=crop"
-                            alt="Financial Markets Risk Analysis showing stock trading charts and portfolio metrics">
-                        <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                    class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2"><span
-                            class="font-display text-xs font-semibold text-text-muted">02 / 07</span></div>
-                    <h3 class="project-title">Financial Markets Risk Analysis</h3>
-                    <p class="project-desc">Developed a comprehensive risk assessment framework analyzing market
-                        volatility, Value-at-Risk (VaR), and portfolio optimization across 30 stocks.</p>
-                    <div class="star-block">
-                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">Portfolio
-                                managers lacked standardized risk metrics, leading to inconsistent investment
-                                decisions.</span></div>
-                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Build a
-                                reproducible risk analysis pipeline to evaluate portfolio performance and optimize
-                                allocation.</span></div>
-                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Analyzed
-                                37.5K price records via Python/R, computed VaR, Sharpe ratios, and optimized portfolio
-                                weights.</span></div>
-                        <div class="star-row"><span class="star-label">Result</span><span
-                                class="star-text"><strong>12.29% avg annual return</strong> — optimized portfolio with
-                                <strong>31.73% volatility</strong> and clear risk-adjusted metrics.</span></div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="tag-chip python">Python</span><span class="tag-chip r">R</span><span
-                            class="tag-chip tableau">Tableau</span>
-                    </div>
-                    <div class="flex gap-3 mt-auto">
-                        <a href="#" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                class="fa-solid fa-chart-line"></i> Live Dashboard</a>
-                        <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                            rel="noopener noreferrer" class="btn-secondary px-4 py-2.5"><i
-                                class="fa-brands fa-github"></i></a>
-                    </div>
-                </article>
-                <!-- PROJECT 2: Financial Analysis & Fraud Detection -->
+                <!-- PROJECT 2: Financial Transaction & Fraud Analytics -->
                 <article class="bento-card project-card reveal" style="transition-delay:0.15s;">
                     <div class="project-image-wrap"
                         style="height:180px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
                         <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
-                            alt="Financial Analysis Dashboard showing transaction trends and fraud detection metrics">
+                            alt="Financial transaction dashboard showing fraud trends and customer segments">
                         <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
                                     class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
                     </div>
                     <div class="flex items-center gap-2 mb-2"><span
-                            class="font-display text-xs font-semibold text-text-muted">New</span></div>
-                    <h3 class="project-title">Financial Transaction & Fraud Analytics</h3>
-                    <p class="project-desc">End-to-end data analytics pipeline demonstrating SQL data warehousing, Python-based RFM segmentation, and cyclical fraud trend analysis.</p>
+                            class="font-mono text-xs font-medium text-primary">02 / 03</span></div>
+                    <h3 class="project-title">Financial Transaction &amp; Fraud Analytics</h3>
+                    <p class="project-desc">Star-schema data warehouse and Python analysis pipeline covering fraud
+                        pattern detection, RFM customer segmentation, and time-series transaction trends.</p>
                     <div class="star-block">
-                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">Need to identify high-risk transaction channels and understand customer purchasing behaviors for targeted marketing.</span></div>
-                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Architect a relational data model and perform advanced analytics to uncover actionable fraud and segmentation metrics.</span>
+                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">A
+                                business needs to spot high-risk transaction channels and understand customer
+                                purchasing behavior for targeted retention.</span></div>
+                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Build a
+                                relational data model and run analytics to surface fraud patterns and customer
+                                segments.</span></div>
+                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Built a
+                                SQLite star schema, ran RFM (Recency, Frequency, Monetary) segmentation in
+                                Python/Pandas, and analyzed cyclical fraud trends by region and channel.</span>
                         </div>
-                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Built an SQLite star schema, executed RFM analysis via Python/Pandas, and designed an executive Power BI dashboard.</span></div>
-                        <div class="star-row"><span class="star-label">Result</span><span
-                                class="star-text">Successfully identified <strong>fraud-prone regions</strong> and established clear <strong>customer retention targets</strong> for stakeholders.</span>
-                        </div>
+                        <div class="star-row"><span class="star-label">Result</span><span class="star-text">Surfaced
+                                fraud-prone regions/channels and clear customer segments, visualized in a Power BI
+                                dashboard concept.</span></div>
                     </div>
                     <div class="flex flex-wrap gap-2 mb-5">
                         <span class="tag-chip sql">SQL</span><span class="tag-chip python">Python</span><span
                             class="tag-chip powerbi">Power BI</span>
                     </div>
                     <div class="flex gap-3 mt-auto">
-                        <a href="#" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                class="fa-solid fa-chart-line"></i> Live Dashboard</a>
                         <a href="https://github.com/Salma-fathi/Financial-Analysis-Project" target="_blank"
-                            rel="noopener noreferrer" class="btn-secondary px-4 py-2.5"><i
-                                class="fa-brands fa-github"></i></a>
+                            rel="noopener noreferrer" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
+                                class="fa-brands fa-github"></i> View on GitHub</a>
                     </div>
                 </article>
 
-                <!-- PROJECT 3: Healthcare -->
-                <article class="bento-card project-card reveal" style="transition-delay:0.15s;">
-                    <div class="project-image-wrap"
-                        style="height:180px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
-                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=400&fit=crop"
-                            alt="Healthcare Patient Outcomes dashboard showing patient risk scores and clinical analytics">
-                        <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                    class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2"><span
-                            class="font-display text-xs font-semibold text-text-muted">03 / 07</span></div>
-                    <h3 class="project-title">Healthcare Patient Outcomes</h3>
-                    <p class="project-desc">Built a predictive model to identify patients at high risk of 30-day
-                        readmission, enabling proactive care coordination and resource allocation.</p>
-                    <div class="star-block">
-                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">Hospital
-                                system had no way to predict costly 30-day readmissions, leading to missed intervention
-                                windows.</span></div>
-                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Develop a
-                                readmission prediction model and risk stratification system for clinical teams.</span>
-                        </div>
-                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Engineered
-                                features from 200K patient records, trained ML classifier, deployed clinical priority
-                                dashboard.</span></div>
-                        <div class="star-row"><span class="star-label">Result</span><span
-                                class="star-text"><strong>94.94% model accuracy</strong> — achieved <strong>15%
-                                    reduction</strong> in hospital readmissions through targeted interventions.</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="tag-chip python">Python</span><span class="tag-chip sql">SQL</span><span
-                            class="tag-chip ml">Machine Learning</span>
-                    </div>
-                    <div class="flex gap-3 mt-auto">
-                        <a href="#" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                class="fa-solid fa-chart-line"></i> Live Dashboard</a>
-                        <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                            rel="noopener noreferrer" class="btn-secondary px-4 py-2.5"><i
-                                class="fa-brands fa-github"></i></a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 4: Supply Chain (Wide) -->
+                <!-- PROJECT 4: Healthcare Analytics SQL (Wide) -->
                 <article class="bento-card wide project-card reveal" style="transition-delay:0.2s;">
                     <div class="flex flex-col md:flex-row gap-6 h-full">
                         <div class="md:w-2/5">
                             <div class="project-image-wrap"
                                 style="height:100%;min-height:200px;margin:-28px 0 -28px -28px;border-radius:20px 0 0 20px;">
-                                <img src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=500&fit=crop"
-                                    alt="Supply Chain Optimization dashboard showing warehouse logistics and inventory analytics">
+                                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=500&fit=crop"
+                                    alt="Healthcare analytics dashboard showing patient readmission risk">
                                 <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                            class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
+                                            class="fa-solid fa-eye mr-2"></i>Preview Schema</span></div>
                             </div>
                         </div>
                         <div class="md:w-3/5 flex flex-col">
                             <div class="flex items-center gap-2 mb-2"><span
-                                    class="font-display text-xs font-semibold text-text-muted">04 / 07</span></div>
-                            <h3 class="project-title">Supply Chain Optimization</h3>
-                            <p class="project-desc">Built an end-to-end demand forecasting and inventory optimization
-                                system across 100+ distribution locations to minimize stockouts and reduce carrying
-                                costs.</p>
+                                    class="font-mono text-xs font-medium text-primary">03 / 03</span></div>
+                            <h3 class="project-title">Healthcare Analytics: Deep SQL Insights</h3>
+                            <p class="project-desc">Star-schema SQL analysis of a 10-year diabetic hospital
+                                readmission dataset (130 US hospitals), using window functions and CTEs to
+                                stratify patient risk.</p>
                             <div class="star-block">
                                 <div class="star-row"><span class="star-label">Situation</span><span
-                                        class="star-text">Frequent stockouts and excess inventory across 100+ locations
-                                        were eroding margins and customer satisfaction.</span></div>
-                                <div class="star-row"><span class="star-label">Task</span><span
-                                        class="star-text">Develop demand forecasting models and inventory optimization
-                                        recommendations for supply chain teams.</span></div>
+                                        class="star-text">Public patient encounter data needed structure before
+                                        readmission risk and resource-use patterns could be analyzed.</span></div>
+                                <div class="star-row"><span class="star-label">Task</span><span class="star-text">Identify
+                                        high-risk patient groups and understand what drives readmission and
+                                        resource utilization.</span></div>
                                 <div class="star-row"><span class="star-label">Action</span><span
-                                        class="star-text">Processed 150K records via SQL, applied advanced statistical
-                                        methods, built Power BI forecasting dashboard.</span></div>
+                                        class="star-text">Modeled the data as a star schema in SQLite, then wrote
+                                        advanced SQL (window functions, CTEs, quintile analysis) to build patient
+                                        risk profiles.</span></div>
                                 <div class="star-row"><span class="star-label">Result</span><span
-                                        class="star-text"><strong>87% forecasting accuracy</strong> — <strong>$2.3M
-                                            inventory optimization</strong> and <strong>22% reduction in
-                                            stockouts</strong>.</span></div>
+                                        class="star-text">A queryable risk-stratification model showing how
+                                        medication load and admission type relate to readmission rates.</span>
+                                </div>
                             </div>
                             <div class="flex flex-wrap gap-2 mb-5">
-                                <span class="tag-chip sql">SQL</span><span class="tag-chip powerbi">Power BI</span><span
-                                    class="tag-chip">Advanced Stats</span>
+                                <span class="tag-chip sql">SQL</span><span class="tag-chip">SQLite</span><span
+                                    class="tag-chip python">Python</span>
                             </div>
                             <div class="flex gap-3 mt-auto">
-                                <a href="#" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                        class="fa-solid fa-chart-column"></i> Live Dashboard</a>
-                                <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                                    rel="noopener noreferrer" class="btn-secondary px-4 py-2.5"><i
-                                        class="fa-brands fa-github"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-                <!-- PROJECT 5: Social Media -->
-                <article class="bento-card project-card reveal" style="transition-delay:0.25s;">
-                    <div class="project-image-wrap"
-                        style="height:180px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
-                        <img src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=600&h=400&fit=crop"
-                            alt="Social Media Analytics dashboard showing sentiment analysis and engagement metrics">
-                        <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                    class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2"><span
-                            class="font-display text-xs font-semibold text-text-muted">05 / 07</span></div>
-                    <h3 class="project-title">Social Media Analytics</h3>
-                    <p class="project-desc">Analyzed brand sentiment and engagement patterns across 1M social posts to
-                        optimize content strategy and audience targeting.</p>
-                    <div class="star-block">
-                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">Marketing
-                                team lacked data-driven insights into audience sentiment and content performance
-                                drivers.</span></div>
-                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Perform
-                                sentiment analysis and engagement analytics to inform content strategy and campaign
-                                optimization.</span></div>
-                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">NLP pipeline
-                                on 1M posts, sentiment classification, topic modeling, and engagement correlation
-                                analysis.</span></div>
-                        <div class="star-row"><span class="star-label">Result</span><span class="star-text"><strong>50%
-                                    positive, 15% negative, 35% neutral</strong> sentiment — optimized strategy achieved
-                                <strong>8.3% engagement rate</strong>.</span></div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="tag-chip python">Python</span><span class="tag-chip nlp">NLP</span><span
-                            class="tag-chip">Data Mining</span>
-                    </div>
-                    <div class="flex gap-3 mt-auto">
-                        <a href="#" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                class="fa-solid fa-chart-line"></i> Live Dashboard</a>
-                        <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                            rel="noopener noreferrer" class="btn-secondary px-4 py-2.5"><i
-                                class="fa-brands fa-github"></i></a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 6: Real Estate -->
-                <article class="bento-card project-card reveal" style="transition-delay:0.3s;">
-                    <div class="project-image-wrap"
-                        style="height:180px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
-                        <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=600&h=400&fit=crop"
-                            alt="Real Estate Market Analysis showing property price trends and market segmentation charts">
-                        <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                    class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2"><span
-                            class="font-display text-xs font-semibold text-text-muted">06 / 07</span></div>
-                    <h3 class="project-title">Real Estate Market Analysis</h3>
-                    <p class="project-desc">Developed a comprehensive property valuation and market segmentation model
-                        across 10 cities to support data-driven investment decisions.</p>
-                    <div class="star-block">
-                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">Investors
-                                lacked reliable price prediction models and market segmentation for portfolio
-                                diversification.</span></div>
-                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Build a
-                                multi-feature price prediction model and market segmentation analysis for real estate
-                                investments.</span></div>
-                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Analyzed
-                                300K properties via R/Python/SQL, engineered 15+ features, trained regression model,
-                                built Tableau dashboard.</span></div>
-                        <div class="star-row"><span class="star-label">Result</span><span class="star-text"><strong>15+
-                                    feature prediction model</strong> — provided <strong>data-driven investment
-                                    recommendations</strong> and clear market segmentation.</span></div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="tag-chip r">R</span><span class="tag-chip python">Python</span><span
-                            class="tag-chip sql">SQL</span><span class="tag-chip tableau">Tableau</span>
-                    </div>
-                    <div class="flex gap-3 mt-auto">
-                        <a href="#" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                class="fa-solid fa-chart-line"></i> Live Dashboard</a>
-                        <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                            rel="noopener noreferrer" class="btn-secondary px-4 py-2.5"><i
-                                class="fa-brands fa-github"></i></a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 7: Manufacturing (Wide) -->
-                <article class="bento-card wide project-card reveal" style="transition-delay:0.35s;">
-                    <div class="flex flex-col md:flex-row gap-6 h-full">
-                        <div class="md:w-2/5">
-                            <div class="project-image-wrap"
-                                style="height:100%;min-height:200px;margin:-28px 0 -28px -28px;border-radius:20px 0 0 20px;">
-                                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=500&fit=crop"
-                                    alt="Manufacturing Quality Control dashboard showing production metrics and defect analysis">
-                                <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                            class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
-                            </div>
-                        </div>
-                        <div class="md:w-3/5 flex flex-col">
-                            <div class="flex items-center gap-2 mb-2"><span
-                                    class="font-display text-xs font-semibold text-text-muted">07 / 07</span></div>
-                            <h3 class="project-title">Manufacturing Quality Control</h3>
-                            <p class="project-desc">Implemented a Statistical Process Control (SPC) system analyzing
-                                400K production measurements to monitor quality, detect defects early, and maintain
-                                process capability.</p>
-                            <div class="star-block">
-                                <div class="star-row"><span class="star-label">Situation</span><span
-                                        class="star-text">Manufacturing line experienced inconsistent quality with no
-                                        real-time defect detection or process capability tracking.</span></div>
-                                <div class="star-row"><span class="star-label">Task</span><span class="star-text">Deploy
-                                        an SPC monitoring system to track quality metrics, detect anomalies, and
-                                        maintain process capability.</span></div>
-                                <div class="star-row"><span class="star-label">Action</span><span
-                                        class="star-text">Analyzed 400K measurements via SQL, built SPC control charts,
-                                        set up Power BI real-time quality dashboard.</span></div>
-                                <div class="star-row"><span class="star-label">Result</span><span
-                                        class="star-text"><strong>99.2% pass rate</strong> — <strong>18% defect
-                                            reduction</strong> and <strong>Cpk Index of 1.89</strong> indicating
-                                        excellent process capability.</span></div>
-                            </div>
-                            <div class="flex flex-wrap gap-2 mb-5">
-                                <span class="tag-chip sql">SQL</span><span class="tag-chip powerbi">Power BI</span><span
-                                    class="tag-chip spc">SPC</span>
-                            </div>
-                            <div class="flex gap-3 mt-auto">
-                                <a href="#" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                        class="fa-solid fa-chart-column"></i> Live Dashboard</a>
-                                <a href="https://github.com/Salma-fathi/salma-portfolio" target="_blank"
-                                    rel="noopener noreferrer" class="btn-secondary px-4 py-2.5"><i
-                                        class="fa-brands fa-github"></i></a>
+                                <a href="https://github.com/Salma-fathi/Healthcare-Analytics-SQL" target="_blank"
+                                    rel="noopener noreferrer" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
+                                        class="fa-brands fa-github"></i> View on GitHub</a>
                             </div>
                         </div>
                     </div>
@@ -1521,17 +1404,17 @@
                     <h3 class="font-display font-bold text-lg text-dark mb-1">LinkedIn</h3>
                     <p class="text-text-muted text-sm">/in/salma-mohammed</p>
                 </a>
-                <a href="https://github.com/salmamohammed11111" target="_blank" rel="noopener noreferrer"
+                <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
                     class="contact-card group">
                     <div
-                        class="contact-icon bg-gray-100 text-gray-700 group-hover:bg-gray-800 group-hover:text-white transition-all">
+                        class="contact-icon bg-gray-soft text-text-body group-hover:bg-dark-soft group-hover:text-white transition-all">
                         <i class="fa-brands fa-github"></i></div>
                     <h3 class="font-display font-bold text-lg text-dark mb-1">GitHub</h3>
-                    <p class="text-text-muted text-sm">@salmamohammed11111</p>
+                    <p class="text-text-muted text-sm">@Salma-fathi</p>
                 </a>
             </div>
             <div class="max-w-2xl mx-auto reveal">
-                <div class="bg-white rounded-2xl border border-gray-border p-8 shadow-card">
+                <div class="bg-white rounded-lg border border-gray-border p-8 shadow-card">
                     <form
                         action="https://formspree.io/f/xaqragdq"
                         method="POST"
@@ -1606,7 +1489,7 @@
                     </p>
                 </div>
                 <div class="flex items-center gap-6">
-                    <a href="https://github.com/salmamohammed11111" target="_blank" rel="noopener noreferrer"
+                    <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
                         class="w-10 h-10 rounded-xl bg-white border border-gray-border flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-all"><i
                             class="fa-brands fa-github"></i></a>
                     <a href="https://www.linkedin.com/in/salma-mohammed" target="_blank" rel="noopener noreferrer"
