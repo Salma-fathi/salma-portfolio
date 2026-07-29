@@ -784,6 +784,8 @@
             color: #D97F65;
             font-weight: 600;
         }
+
+        @media (max-width: 1024px) {
             .bento-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
@@ -875,7 +877,7 @@
                         Turning Data into<br><span class="text-primary">Business Value</span><br>with Clarity.
                     </h1>
                     <p class="text-text-body text-lg leading-relaxed max-w-lg mb-8">
-                        Results-driven Data Analyst and Business Intelligence professional with 6+ years of experience
+                        Results-driven Data Analyst and Business Intelligence professional with 2+ years of experience
                         transforming complex datasets into actionable insights, scalable pipelines, and executive
                         dashboards that drive measurable outcomes.
                     </p>
@@ -901,11 +903,13 @@
                 </div>
                 <div class="reveal relative" style="transition-delay:0.3s;">
                     <div class="query-console max-w-md mx-auto">
-                        <div class="qc-titlebar">
-                            <div class="qc-dots">
+                        <div class="qc-titlebar" style="justify-content:flex-start;gap:2px;padding:0;">
+                            <div class="qc-dots" style="padding:0 12px;">
                                 <span class="qc-dot"></span><span class="qc-dot"></span><span class="qc-dot"></span>
                             </div>
-                            <span class="qc-filename">deep_healthcare_analysis.sql</span>
+                            <span class="qc-filename" style="opacity:0.45;padding:10px 12px;border-right:1px solid #2F4440;">stock_market.py</span>
+                            <span class="qc-filename" style="opacity:0.45;padding:10px 12px;border-right:1px solid #2F4440;">fraud_analysis.py</span>
+                            <span class="qc-filename" style="padding:10px 12px;background:#1B2A28;color:#7FB0A8;border-right:1px solid #2F4440;border-bottom:2px solid #7FB0A8;margin-bottom:-1px;">healthcare_analysis.sql</span>
                         </div>
                         <div class="qc-body">
                             <div class="qc-line"><span class="qc-num">1</span><span><span class="qc-kw">SELECT</span>
