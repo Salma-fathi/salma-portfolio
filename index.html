@@ -888,7 +888,7 @@
                     </div>
                     <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-gray-border">
                         <div>
-                            <div class="font-display font-bold text-2xl text-dark">3</div>
+                            <div class="font-display font-bold text-2xl text-dark">4</div>
                             <div class="text-text-muted text-sm">Portfolio Projects</div>
                         </div>
                         <div>
@@ -1232,7 +1232,7 @@
         </div>
     </section>
 
-    <!-- ===== PROJECTS (7 PROJECTS BENTO GRID) ===== -->
+    <!-- ===== PROJECTS (BENTO GRID) ===== -->
     <section id="projects" class="section">
         <div class="max-w-7xl mx-auto px-6">
             <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 reveal">
@@ -1246,7 +1246,7 @@
                     class="btn-secondary mt-6 lg:mt-0 w-fit"><i class="fa-brands fa-github"></i> View All on GitHub</a>
             </div>
 
-            <!-- Bento Grid for 6 Projects -->
+            <!-- Bento Grid for Projects -->
             <div class="bento-grid projects-grid">
 
                 <!-- PROJECT 1: Stock Market Intelligence -->
@@ -1259,7 +1259,7 @@
                                     class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
                     </div>
                     <div class="flex items-center gap-2 mb-2"><span
-                            class="font-mono text-xs font-medium text-primary">01 / 03</span></div>
+                            class="font-mono text-xs font-medium text-primary">01 / 04</span></div>
                     <h3 class="project-title">Stock Market Intelligence Dashboard</h3>
                     <p class="project-desc">Full analytics pipeline for 5 major tech stocks — data collection,
                         technical indicators, ML price-direction modeling, and portfolio optimization via Monte
@@ -1300,7 +1300,7 @@
                                     class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
                     </div>
                     <div class="flex items-center gap-2 mb-2"><span
-                            class="font-mono text-xs font-medium text-primary">02 / 03</span></div>
+                            class="font-mono text-xs font-medium text-primary">02 / 04</span></div>
                     <h3 class="project-title">Financial Transaction &amp; Fraud Analytics</h3>
                     <p class="project-desc">Star-schema data warehouse and Python analysis pipeline covering fraud
                         pattern detection, RFM customer segmentation, and time-series transaction trends.</p>
@@ -1330,6 +1330,48 @@
                     </div>
                 </article>
 
+                <!-- PROJECT 3: Olist Customer Intelligence & RFM -->
+                <article class="bento-card project-card reveal" style="transition-delay:0.18s;">
+                    <div class="project-image-wrap"
+                        style="height:180px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
+                            alt="RFM customer segmentation dashboard showing purchase recency, frequency, and monetary heatmap">
+                        <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
+                                    class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
+                    </div>
+                    <div class="flex items-center gap-2 mb-2"><span
+                            class="font-mono text-xs font-medium text-primary">03 / 04</span></div>
+                    <h3 class="project-title">Olist Customer Intelligence: RFM &amp; Retention Analytics</h3>
+                    <p class="project-desc">End-to-end PostgreSQL + Power BI case study on ~96K Brazilian e-commerce
+                        customers — RFM segmentation, cohort retention, and geographic revenue analysis surfaced in
+                        an executive dashboard.</p>
+                    <div class="star-block">
+                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">Leadership
+                                needed a clear view of which customers drive revenue and where retention was leaking,
+                                but the existing dashboard had geocoding errors and an unreadable RFM matrix.</span></div>
+                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Build the RFM
+                                scoring logic in PostgreSQL, then diagnose and fix the Power BI report so segmentation
+                                and geography insights were accurate and readable.</span></div>
+                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Wrote SQL to
+                                compute Recency/Frequency/Monetary quintile scores and segment labels, fixed a state-code
+                                geocoding bug via a DAX-mapped calculated column, and applied conditional-formatting to
+                                turn a sparse 5×5 R×F matrix into a readable heatmap.</span></div>
+                        <div class="star-row"><span class="star-label">Result</span><span class="star-text">Uncovered a
+                                3.12% repeat-purchase rate (well below the ~20–30% e-commerce benchmark) and a strong
+                                Recency–Frequency correlation, reframing retention strategy around early recency
+                                decline as a churn signal.</span></div>
+                    </div>
+                    <div class="flex flex-wrap gap-2 mb-5">
+                        <span class="tag-chip sql">PostgreSQL</span><span class="tag-chip powerbi">Power BI</span><span
+                            class="tag-chip">DAX</span>
+                    </div>
+                    <div class="flex gap-3 mt-auto">
+                        <a href="https://github.com/Salma-fathi/Olist-Customer-Intelligence-RFM" target="_blank"
+                            rel="noopener noreferrer" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
+                                class="fa-brands fa-github"></i> View on GitHub</a>
+                    </div>
+                </article>
+
                 <!-- PROJECT 4: Healthcare Analytics SQL (Wide) -->
                 <article class="bento-card wide project-card reveal" style="transition-delay:0.2s;">
                     <div class="flex flex-col md:flex-row gap-6 h-full">
@@ -1344,7 +1386,7 @@
                         </div>
                         <div class="md:w-3/5 flex flex-col">
                             <div class="flex items-center gap-2 mb-2"><span
-                                    class="font-mono text-xs font-medium text-primary">03 / 03</span></div>
+                                    class="font-mono text-xs font-medium text-primary">04 / 04</span></div>
                             <h3 class="project-title">Healthcare Analytics: Deep SQL Insights</h3>
                             <p class="project-desc">Star-schema SQL analysis of a 10-year diabetic hospital
                                 readmission dataset (130 US hospitals), using window functions and CTEs to
