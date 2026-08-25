@@ -7,6 +7,12 @@
     <meta name="description"
         content="Salma Mohammed — Results-driven Data Analyst & Business Intelligence Specialist. Turning complex data into measurable business outcomes.">
     <title>Salma Mohammed — Data Analyst & BI Specialist</title>
+    <link rel="icon"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B2A28'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%237FB0A8' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
+    <meta property="og:title" content="Salma Mohammed — Data Analyst & BI Specialist">
+    <meta property="og:description"
+        content="Turning complex data into measurable business outcomes — SQL, Python, and Power BI projects.">
+    <meta property="og:type" content="website">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -892,8 +898,8 @@
                             <div class="text-text-muted text-sm">Portfolio Projects</div>
                         </div>
                         <div>
-                            <div class="font-display font-bold text-2xl text-dark">4</div>
-                            <div class="text-text-muted text-sm">Tools: SQL, Python, Power BI, Scikit-learn</div>
+                            <div class="font-display font-bold text-2xl text-dark">6</div>
+                            <div class="text-text-muted text-sm">Tools: SQL, Python, Power BI, PostgreSQL, DAX, Scikit-learn</div>
                         </div>
                         <div>
                             <div class="font-display font-bold text-2xl text-dark">100%</div>
@@ -903,66 +909,135 @@
                 </div>
                 <div class="reveal relative" style="transition-delay:0.3s;">
                     <div class="query-console max-w-md mx-auto">
-                        <div class="qc-titlebar" style="justify-content:flex-start;gap:2px;padding:0;">
-                            <div class="qc-dots" style="padding:0 12px;">
+                        <div class="qc-titlebar" style="justify-content:flex-start;gap:0;padding:0;overflow-x:auto;">
+                            <div class="qc-dots" style="padding:0 12px;flex-shrink:0;">
                                 <span class="qc-dot"></span><span class="qc-dot"></span><span class="qc-dot"></span>
                             </div>
-                            <span class="qc-filename" style="opacity:0.45;padding:10px 12px;border-right:1px solid #2F4440;">stock_market.py</span>
-                            <span class="qc-filename" style="opacity:0.45;padding:10px 12px;border-right:1px solid #2F4440;">fraud_analysis.py</span>
-                            <span class="qc-filename" style="padding:10px 12px;background:#1B2A28;color:#7FB0A8;border-right:1px solid #2F4440;border-bottom:2px solid #7FB0A8;margin-bottom:-1px;">healthcare_analysis.sql</span>
+                            <button type="button" class="qc-tab" data-tab="stock" style="opacity:0.45;padding:10px 10px;border-right:1px solid #2F4440;background:none;border-top:none;border-left:none;color:#8FA39D;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;cursor:pointer;flex-shrink:0;">stock_market.py</button>
+                            <button type="button" class="qc-tab" data-tab="fraud" style="opacity:0.45;padding:10px 10px;border-right:1px solid #2F4440;background:none;border-top:none;border-left:none;color:#8FA39D;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;cursor:pointer;flex-shrink:0;">fraud_analysis.py</button>
+                            <button type="button" class="qc-tab" data-tab="olist" style="opacity:0.45;padding:10px 10px;border-right:1px solid #2F4440;background:none;border-top:none;border-left:none;color:#8FA39D;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;cursor:pointer;flex-shrink:0;">rfm_segmentation.sql</button>
+                            <button type="button" class="qc-tab active" data-tab="healthcare" style="padding:10px 10px;background:#1B2A28;color:#7FB0A8;border-right:1px solid #2F4440;border-top:none;border-left:none;border-bottom:2px solid #7FB0A8;margin-bottom:-1px;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;cursor:pointer;flex-shrink:0;">healthcare.sql</button>
                         </div>
-                        <div class="qc-body">
-                            <div class="qc-line"><span class="qc-num">1</span><span><span class="qc-kw">SELECT</span>
-                                    <span class="qc-col">patient_nbr, age, readmitted,</span></span></div>
-                            <div class="qc-line"><span class="qc-num">2</span><span
-                                    class="qc-col">&nbsp;&nbsp;num_medications,</span></div>
-                            <div class="qc-line"><span class="qc-num">3</span><span><span
-                                        class="qc-kw">&nbsp;&nbsp;NTILE</span><span class="qc-col">(5)
-                                        OVER</span> <span class="qc-col">(ORDER BY num_medications)</span></span>
-                            </div>
-                            <div class="qc-line"><span class="qc-num">4</span><span><span
-                                        class="qc-kw">FROM</span> <span class="qc-col">Fact_Encounters</span></span>
-                            </div>
-                            <div class="qc-line"><span class="qc-num">5</span><span><span
-                                        class="qc-kw">WHERE</span> <span class="qc-col">readmitted =</span> <span
-                                        class="qc-str">'&lt;30'</span><span class="qc-cur"></span></span></div>
-                        </div>
+                        <div class="qc-body" id="qc-code"></div>
                         <div class="qc-divider"></div>
-                        <div class="qc-result">
-                            <div class="qc-result-label">// query result — 5 rows</div>
-                            <table class="qc-table">
-                                <tr>
-                                    <th>quintile</th>
-                                    <th>encounters</th>
-                                    <th>risk</th>
-                                </tr>
-                                <tr>
-                                    <td>1</td>
-                                    <td>2,041</td>
-                                    <td>Low</td>
-                                </tr>
-                                <tr>
-                                    <td>2</td>
-                                    <td>2,187</td>
-                                    <td>Low</td>
-                                </tr>
-                                <tr>
-                                    <td>3</td>
-                                    <td>2,304</td>
-                                    <td class="qc-risk">Medium</td>
-                                </tr>
-                                <tr>
-                                    <td>4</td>
-                                    <td>2,398</td>
-                                    <td class="qc-risk">High</td>
-                                </tr>
-                            </table>
-                        </div>
+                        <div class="qc-result" id="qc-result"></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <script>
+        const qcData = {
+            healthcare: {
+                code: [
+                    '<span class="qc-kw">SELECT</span> <span class="qc-col">patient_nbr, age, readmitted,</span>',
+                    '&nbsp;&nbsp;<span class="qc-col">num_medications,</span>',
+                    '&nbsp;&nbsp;<span class="qc-kw">NTILE</span><span class="qc-col">(5) OVER (ORDER BY num_medications)</span>',
+                    '<span class="qc-kw">FROM</span> <span class="qc-col">Fact_Encounters</span>',
+                    '<span class="qc-kw">WHERE</span> <span class="qc-col">readmitted =</span> <span class="qc-str">\'&lt;30\'</span><span class="qc-cur"></span>'
+                ],
+                resultLabel: '// query result — patient risk by medication quintile',
+                headers: ['quintile', 'encounters', 'risk'],
+                rows: [
+                    ['1', '2,041', 'Low'],
+                    ['2', '2,187', 'Low'],
+                    ['3', '2,304', 'Medium', 'risk'],
+                    ['4', '2,398', 'High', 'risk']
+                ]
+            },
+            stock: {
+                code: [
+                    '<span class="qc-kw">def</span> <span class="qc-fn">add_indicators</span><span class="qc-col">(d):</span>',
+                    '&nbsp;&nbsp;<span class="qc-col">d = d.copy().sort_values(</span><span class="qc-str">\'Date\'</span><span class="qc-col">)</span>',
+                    '&nbsp;&nbsp;<span class="qc-col">d[</span><span class="qc-str">\'MA_20\'</span><span class="qc-col">] = d[</span><span class="qc-str">\'Close\'</span><span class="qc-col">].rolling(20).mean()</span>',
+                    '&nbsp;&nbsp;<span class="qc-col">d[</span><span class="qc-str">\'MA_50\'</span><span class="qc-col">] = d[</span><span class="qc-str">\'Close\'</span><span class="qc-col">].rolling(50).mean()</span>',
+                    '&nbsp;&nbsp;<span class="qc-kw">return</span> <span class="qc-col">d</span><span class="qc-cur"></span>'
+                ],
+                resultLabel: '// risk_metrics.csv — Sharpe ratio by stock',
+                headers: ['stock', 'ann. return', 'sharpe'],
+                rows: [
+                    ['AAPL', '29.95%', '0.945'],
+                    ['TSLA', '76.25%', '1.135', 'risk'],
+                    ['GOOGL', '25.98%', '0.799'],
+                    ['Optimal mix', '47.35%', '1.225', 'risk']
+                ]
+            },
+            fraud: {
+                code: [
+                    '<span class="qc-col">query_ml = </span><span class="qc-str">"""</span>',
+                    '<span class="qc-kw">SELECT</span> <span class="qc-col">f.amount, f.fraud_flag, c.country,</span>',
+                    '&nbsp;&nbsp;<span class="qc-col">ch.channel_name, t.hour, t.month</span>',
+                    '<span class="qc-kw">FROM</span> <span class="qc-col">Fact_Transactions f</span>',
+                    '<span class="qc-kw">JOIN</span> <span class="qc-col">Dim_Customers c </span><span class="qc-kw">ON</span> <span class="qc-col">f.customer_id = c.customer_id</span><span class="qc-cur"></span>'
+                ],
+                resultLabel: '// RandomForestClassifier — top predictors of fraud_flag',
+                headers: ['feature', 'source table', 'signal'],
+                rows: [
+                    ['channel_name', 'Dim_Channels', 'High', 'risk'],
+                    ['country', 'Dim_Customers', 'Medium', 'risk'],
+                    ['hour', 'Dim_Time', 'Medium', 'risk'],
+                    ['amount', 'Fact_Transactions', 'Low']
+                ]
+            },
+            olist: {
+                code: [
+                    '<span class="qc-kw">SELECT</span> <span class="qc-col">*,</span>',
+                    '&nbsp;&nbsp;<span class="qc-kw">CASE</span>',
+                    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="qc-kw">WHEN</span> <span class="qc-col">r_score>=4 AND f_score>=4 AND m_score>=4</span> <span class="qc-kw">THEN</span> <span class="qc-str">\'Champions\'</span>',
+                    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="qc-kw">WHEN</span> <span class="qc-col">r_score<=1</span> <span class="qc-kw">THEN</span> <span class="qc-str">\'Lost Customers\'</span>',
+                    '&nbsp;&nbsp;<span class="qc-kw">END</span> <span class="qc-kw">AS</span> <span class="qc-col">customer_segment</span><span class="qc-cur"></span>'
+                ],
+                resultLabel: '// RFM segmentation — repeat-purchase benchmark',
+                headers: ['metric', 'this dataset', 'e-comm avg'],
+                rows: [
+                    ['repeat-purchase rate', '3.12%', '20–30%', 'risk'],
+                    ['champions segment', 'Small %', '—'],
+                    ['at-risk segment', 'R low, F high', '—', 'risk']
+                ]
+            }
+        };
+
+        function renderQc(key) {
+            const d = qcData[key];
+            const codeEl = document.getElementById('qc-code');
+            const resultEl = document.getElementById('qc-result');
+            codeEl.innerHTML = d.code.map((line, i) =>
+                `<div class="qc-line"><span class="qc-num">${i + 1}</span><span>${line}</span></div>`
+            ).join('');
+            let rowsHtml = d.rows.map(r =>
+                `<tr><td>${r[0]}</td><td>${r[1]}</td><td class="${r[3] === 'risk' ? 'qc-risk' : ''}">${r[2]}</td></tr>`
+            ).join('');
+            resultEl.innerHTML = `
+                <div class="qc-result-label">${d.resultLabel}</div>
+                <table class="qc-table">
+                    <tr><th>${d.headers[0]}</th><th>${d.headers[1]}</th><th>${d.headers[2]}</th></tr>
+                    ${rowsHtml}
+                </table>`;
+        }
+
+        document.querySelectorAll('.qc-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.qc-tab').forEach(t => {
+                    t.classList.remove('active');
+                    t.style.opacity = '0.45';
+                    t.style.background = 'none';
+                    t.style.color = '#8FA39D';
+                    t.style.borderBottom = 'none';
+                    t.style.marginBottom = '0';
+                });
+                tab.classList.add('active');
+                tab.style.opacity = '1';
+                tab.style.background = '#1B2A28';
+                tab.style.color = '#7FB0A8';
+                tab.style.borderBottom = '2px solid #7FB0A8';
+                tab.style.marginBottom = '-1px';
+                renderQc(tab.dataset.tab);
+            });
+        });
+
+        renderQc('healthcare');
+    </script>
 
     <!-- ===== ABOUT ME ===== -->
     <section id="about" class="section bg-gray-soft">
@@ -1029,10 +1104,10 @@
                         then translate them into dashboards executives actually use.
                     </p>
                     <p class="text-text-body leading-relaxed mb-8">
-                        With a background in Statistics and Computer Science from the University of Khartoum and over
-                        six years across e-commerce, finance, healthcare, and manufacturing, I have developed a strong
-                        point of view: <strong class="text-dark">good analytics is only as valuable as the action it
-                            enables.</strong>
+                        With a background in Statistics and Computer Science from the University of Khartoum, I've
+                        built end-to-end analytics projects across e-commerce, finance, and healthcare data, and I
+                        have developed a strong point of view: <strong class="text-dark">good analytics is only as
+                            valuable as the action it enables.</strong>
                     </p>
                     <div class="space-y-3 mb-8">
                         <div class="flex items-center gap-3">
@@ -1172,7 +1247,8 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8 reveal">
                 <div
-                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group">
+                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group relative">
+                    <span class="font-mono text-xs text-text-muted absolute top-6 right-8">01</span>
                     <div
                         class="w-14 h-14 rounded-lg bg-primary-light flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-broom"></i></div>
@@ -1190,7 +1266,8 @@
                     </ul>
                 </div>
                 <div
-                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group">
+                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group relative">
+                    <span class="font-mono text-xs text-text-muted absolute top-6 right-8">02</span>
                     <div
                         class="w-14 h-14 rounded-lg bg-primary-light flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-star"></i></div>
@@ -1211,7 +1288,8 @@
                     </ul>
                 </div>
                 <div
-                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group">
+                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group relative">
+                    <span class="font-mono text-xs text-text-muted absolute top-6 right-8">03</span>
                     <div
                         class="w-14 h-14 rounded-lg bg-accent-light flex items-center justify-center text-accent text-2xl mb-6 group-hover:scale-110 transition-transform">
                         <i class="fa-solid fa-code"></i></div>
