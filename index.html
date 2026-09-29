@@ -1,1690 +1,3151 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-        content="Salma Mohammed — Results-driven Data Analyst & Business Intelligence Specialist. Turning complex data into measurable business outcomes.">
-    <title>Salma Mohammed — Data Analyst & BI Specialist</title>
-    <link rel="icon"
-        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231B2A28'/%3E%3Ctext x='16' y='22' font-family='monospace' font-size='16' font-weight='700' fill='%237FB0A8' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E">
-    <meta property="og:title" content="Salma Mohammed — Data Analyst & BI Specialist">
-    <meta property="og:description"
-        content="Turning complex data into measurable business outcomes — SQL, Python, and Power BI projects.">
-    <meta property="og:type" content="website">
-
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600;700&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous">
-
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        sans: ['IBM Plex Sans', 'sans-serif'],
-                        display: ['IBM Plex Serif', 'serif'],
-                        mono: ['IBM Plex Mono', 'monospace'],
-                    },
-                    colors: {
-                        primary: '#2F6E68',
-                        'primary-dark': '#204E4A',
-                        'primary-light': '#E3ECE7',
-                        accent: '#B54834',
-                        'accent-light': '#F2E2DB',
-                        dark: '#1B2A28',
-                        'dark-soft': '#263835',
-                        'gray-soft': '#EAEEE6',
-                        'gray-border': '#D3D9CC',
-                        'text-body': '#3E4A45',
-                        'text-muted': '#7C8A80',
-                    },
-                    boxShadow: {
-                        soft: '0 2px 10px -2px rgba(27, 42, 40, 0.06)',
-                        card: '0 1px 0 rgba(27, 42, 40, 0.04)',
-                        'card-hover': '0 1px 0 rgba(27, 42, 40, 0.04), 0 12px 24px rgba(27, 42, 40, 0.06)',
-                        glow: '0 0 40px rgba(47, 110, 104, 0.15)',
-                    }
-                }
-            }
-        }
-    </script>
-
-    <style>
-        @media (prefers-reduced-motion: reduce) {
-
-            *,
-            *::before,
-            *::after {
-                animation-duration: 0.001ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.001ms !important;
-            }
-        }
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'IBM Plex Sans', sans-serif;
-            background: #F3F5EF;
-            color: #3E4A45;
-            -webkit-font-smoothing: antialiased;
-        }
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: #EAEEE6;
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: #B7C0AE;
-            border-radius: 4px;
-        }
-
-        .nav-blur {
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            background: rgba(243, 245, 239, 0.88);
-            border-bottom: 1px solid rgba(211, 217, 204, 0.8);
-        }
-
-        .nav-link {
-            position: relative;
-            color: #7C8A80;
-            font-weight: 500;
-            font-size: 0.875rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #2F6E68;
-            border-radius: 2px;
-            transition: width 0.3s ease;
-        }
-
-        .nav-link:hover {
-            color: #1B2A28;
-        }
-
-        .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .nav-link.active {
-            color: #2F6E68;
-        }
-
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .hero-bg {
-            position: relative;
-            overflow: hidden;
-            background-color: #F3F5EF;
-            background-image:
-                linear-gradient(rgba(27, 42, 40, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(27, 42, 40, 0.05) 1px, transparent 1px);
-            background-size: 48px 48px;
-            background-position: center top;
-            -webkit-mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-            mask-image: linear-gradient(to bottom, black 60%, transparent 100%);
-        }
-
-        .float-shape {
-            display: none;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0px) rotate(0deg);
-            }
-
-            50% {
-                transform: translateY(-20px) rotate(5deg);
-            }
-        }
-
-        .btn-primary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: #2F6E68;
-            color: #F3F5EF;
-            font-weight: 600;
-            font-size: 0.875rem;
-            padding: 12px 22px;
-            border-radius: 6px;
-            border: 1px solid #2F6E68;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary:hover {
-            background: #204E4A;
-            border-color: #204E4A;
-        }
-
-        .btn-secondary {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            color: #1B2A28;
-            font-weight: 600;
-            font-size: 0.875rem;
-            padding: 12px 22px;
-            border-radius: 6px;
-            border: 1px solid #D3D9CC;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-secondary:hover {
-            border-color: #2F6E68;
-            color: #2F6E68;
-        }
-
-        .btn-outline {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background: transparent;
-            color: #2F6E68;
-            font-weight: 600;
-            font-size: 0.875rem;
-            padding: 12px 22px;
-            border-radius: 6px;
-            border: 1px solid #2F6E68;
-            cursor: pointer;
-            text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-outline:hover {
-            background: #2F6E68;
-            color: #F3F5EF;
-        }
-
-        .section {
-            padding: 100px 0;
-        }
-
-        .eyebrow {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.75rem;
-            font-weight: 500;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: #2F6E68;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-bottom: 16px;
-        }
-
-        .eyebrow::before {
-            content: '';
-            width: 20px;
-            height: 1px;
-            background: #2F6E68;
-            display: inline-block;
-        }
-
-        .section-title {
-            font-family: 'IBM Plex Serif', serif;
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 600;
-            color: #1B2A28;
-            line-height: 1.15;
-            letter-spacing: -0.01em;
-        }
-
-        .section-subtitle {
-            font-size: 1.05rem;
-            color: #7C8A80;
-            max-width: 560px;
-            line-height: 1.7;
-            margin-top: 12px;
-        }
-
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .bento-card {
-            background: #F9FAF6;
-            border: 1px solid #D3D9CC;
-            border-radius: 8px;
-            padding: 28px;
-            transition: border-color 0.25s ease, box-shadow 0.25s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .bento-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #2F6E68;
-            opacity: 0;
-            transition: opacity 0.2s ease;
-        }
-
-        .bento-card:hover {
-            border-color: #2F6E68;
-            box-shadow: 0 1px 0 rgba(27, 42, 40, 0.04), 0 12px 24px rgba(27, 42, 40, 0.05);
-        }
-
-        .bento-card:hover::before {
-            opacity: 1;
-        }
-
-        .bento-card.large {
-            grid-column: span 2;
-            grid-row: span 2;
-        }
-
-        .bento-card.wide {
-            grid-column: span 2;
-        }
-
-        .bento-card.tall {
-            grid-row: span 2;
-        }
-
-        .project-card {
-            background: #F9FAF6;
-            border: 1px solid #D3D9CC;
-            border-radius: 8px;
-            overflow: hidden;
-            transition: border-color 0.25s ease, box-shadow 0.25s ease;
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-        }
-
-        .project-card:hover {
-            border-color: #2F6E68;
-            box-shadow: 0 1px 0 rgba(27, 42, 40, 0.04), 0 16px 32px rgba(27, 42, 40, 0.06);
-        }
-
-        .project-image-wrap {
-            position: relative;
-            overflow: hidden;
-            height: 220px;
-        }
-
-        .project-image-wrap img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        .project-card:hover .project-image-wrap img {
-            transform: scale(1.05);
-        }
-
-        .project-image-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to top, rgba(27, 42, 40, 0.65), transparent);
-            opacity: 0;
-            transition: opacity 0.3s ease;
-            display: flex;
-            align-items: flex-end;
-            padding: 20px;
-        }
-
-        .project-card:hover .project-image-overlay {
-            opacity: 1;
-        }
-
-        .project-body {
-            padding: 28px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .project-title {
-            font-family: 'IBM Plex Serif', serif;
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #1B2A28;
-            margin-bottom: 8px;
-        }
-
-        .project-desc {
-            font-size: 0.875rem;
-            color: #7C8A80;
-            line-height: 1.7;
-            margin-bottom: 16px;
-            flex: 1;
-        }
-
-        .star-block {
-            background: #EFF2E9;
-            border: 1px solid #D3D9CC;
-            border-radius: 6px;
-            padding: 16px;
-            margin-bottom: 16px;
-        }
-
-        .star-row {
-            display: flex;
-            gap: 8px;
-            margin-bottom: 8px;
-            font-size: 0.8rem;
-            line-height: 1.6;
-        }
-
-        .star-row:last-child {
-            margin-bottom: 0;
-        }
-
-        .star-label {
-            font-family: 'IBM Plex Mono', monospace;
-            font-weight: 600;
-            font-size: 0.7rem;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: #2F6E68;
-            flex-shrink: 0;
-            min-width: 70px;
-            padding-top: 2px;
-        }
-
-        .star-text {
-            color: #3E4A45;
-        }
-
-        .tag-chip {
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.7rem;
-            font-weight: 500;
-            padding: 5px 10px;
-            border-radius: 4px;
-            background: #F3F5EF;
-            color: #1B2A28;
-            border: 1px solid #D3D9CC;
-            border-left: 3px solid #2F6E68;
-            white-space: nowrap;
-        }
-
-        .tag-chip.sql {
-            border-left-color: #4B7A4E;
-        }
-
-        .tag-chip.powerbi {
-            border-left-color: #B5842E;
-        }
-
-        .tag-chip.python {
-            border-left-color: #B54834;
-        }
-
-        .tag-chip.ml {
-            border-left-color: #5A5A8C;
-        }
-
-        .tag-chip.r {
-            border-left-color: #4B7A4E;
-        }
-
-        .tag-chip.tableau {
-            border-left-color: #B5842E;
-        }
-
-        .tag-chip.nlp {
-            border-left-color: #8C4B72;
-        }
-
-        .tag-chip.spc {
-            border-left-color: #2F6E68;
-        }
-
-        .stat-card {
-            background: #F9FAF6;
-            border: 1px solid #D3D9CC;
-            border-radius: 8px;
-            padding: 24px;
-            text-align: center;
-            transition: all 0.2s ease;
-            cursor: pointer;
-        }
-
-        .stat-card:hover {
-            border-color: #2F6E68;
-        }
-
-        .stat-icon {
-            width: 48px;
-            height: 48px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 12px;
-            font-size: 1.25rem;
-        }
-
-        .stat-value {
-            font-family: 'IBM Plex Serif', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: #1B2A28;
-            line-height: 1.2;
-        }
-
-        .stat-label {
-            font-size: 0.8rem;
-            color: #7C8A80;
-            margin-top: 4px;
-        }
-
-        .timeline {
-            position: relative;
-            padding-left: 32px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 7px;
-            top: 8px;
-            bottom: 40px;
-            width: 2px;
-            background: linear-gradient(to bottom, #2F6E68, #D3D9CC);
-        }
-
-        .tl-item {
-            position: relative;
-            margin-bottom: 32px;
-        }
-
-        .tl-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .tl-dot {
-            position: absolute;
-            left: -29px;
-            top: 6px;
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: #F3F5EF;
-            border: 3px solid #2F6E68;
-            box-shadow: 0 0 0 4px #E3ECE7;
-        }
-
-        .tl-role {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #1B2A28;
-        }
-
-        .tl-date {
-            font-family: 'IBM Plex Mono', monospace;
-            font-size: 0.75rem;
-            color: #7C8A80;
-        }
-
-        .tl-desc {
-            font-size: 0.85rem;
-            color: #7C8A80;
-            line-height: 1.65;
-            margin-top: 6px;
-        }
-
-        .contact-card {
-            background: #F9FAF6;
-            border: 1px solid #D3D9CC;
-            border-radius: 8px;
-            padding: 32px;
-            text-align: center;
-            transition: all 0.2s ease;
-        }
-
-        .contact-card:hover {
-            border-color: #2F6E68;
-            box-shadow: 0 12px 28px rgba(27, 42, 40, 0.05);
-        }
-
-        .contact-icon {
-            width: 56px;
-            height: 56px;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 16px;
-            font-size: 1.4rem;
-        }
-
-        .footer-link {
-            color: #7C8A80;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        .footer-link:hover {
-            color: #2F6E68;
-        }
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .reveal.visible {
-            opacity: 1;
-            transform: none;
-            transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 1, 0.36, 1);
-        }
-
-        #mobile-nav {
-            display: none;
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: #F3F5EF;
-            border-bottom: 1px solid #D3D9CC;
-            padding: 20px 24px;
-            flex-direction: column;
-            gap: 16px;
-            box-shadow: 0 10px 30px rgba(27, 42, 40, 0.08);
-        }
-
-        #mobile-nav.open {
-            display: flex;
-        }
-
-        #mobile-nav a {
-            color: #7C8A80;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            padding: 8px 0;
-        }
-
-        #mobile-nav a:hover {
-            color: #2F6E68;
-        }
-
-        /* Query Console — hero signature element */
-        .query-console {
-            background: #1B2A28;
-            border-radius: 10px;
-            border: 1px solid #2F4440;
-            overflow: hidden;
-            box-shadow: 0 20px 50px rgba(27, 42, 40, 0.25);
-            font-family: 'IBM Plex Mono', monospace;
-        }
-
-        .qc-titlebar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 10px 16px;
-            background: #16211F;
-            border-bottom: 1px solid #2F4440;
-        }
-
-        .qc-dots {
-            display: flex;
-            gap: 6px;
-        }
-
-        .qc-dot {
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: #3E4A45;
-        }
-
-        .qc-filename {
-            font-size: 0.7rem;
-            color: #8FA39D;
-            letter-spacing: 0.02em;
-        }
-
-        .qc-body {
-            padding: 20px 20px 8px;
-            font-size: 0.8rem;
-            line-height: 1.85;
-        }
-
-        .qc-line {
-            display: flex;
-            gap: 16px;
-        }
-
-        .qc-num {
-            color: #45564F;
-            user-select: none;
-            min-width: 14px;
-            text-align: right;
-        }
-
-        .qc-kw {
-            color: #7FB0A8;
-        }
-
-        .qc-col {
-            color: #E3ECE7;
-        }
-
-        .qc-str {
-            color: #D9A05B;
-        }
-
-        .qc-fn {
-            color: #C48BAE;
-        }
-
-        .qc-cur {
-            display: inline-block;
-            width: 7px;
-            height: 15px;
-            background: #7FB0A8;
-            margin-left: 2px;
-            vertical-align: text-bottom;
-            animation: blink 1s step-end infinite;
-        }
-
-        @keyframes blink {
-
-            0%,
-            50% {
-                opacity: 1;
-            }
-
-            51%,
-            100% {
-                opacity: 0;
-            }
-        }
-
-        .qc-divider {
-            border-top: 1px dashed #2F4440;
-            margin: 12px 0;
-        }
-
-        .qc-result {
-            padding: 4px 20px 18px;
-        }
-
-        .qc-result-label {
-            font-size: 0.68rem;
-            color: #5C736C;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-        }
-
-        .qc-table {
-            width: 100%;
-            border-collapse: collapse;
-            font-size: 0.72rem;
-        }
-
-        .qc-table th {
-            text-align: left;
-            color: #7FB0A8;
-            font-weight: 500;
-            padding: 4px 10px 6px 0;
-            border-bottom: 1px solid #2F4440;
-        }
-
-        .qc-table td {
-            color: #C6D3CD;
-            padding: 5px 10px 5px 0;
-            border-bottom: 1px solid #223330;
-        }
-
-        .qc-table tr:last-child td {
-            border-bottom: none;
-        }
-
-        .qc-risk {
-            color: #D97F65;
-            font-weight: 600;
-        }
-
-        @media (max-width: 1024px) {
-            .bento-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .bento-card.large {
-                grid-column: span 2;
-                grid-row: span 1;
-            }
-
-            .bento-card.tall {
-                grid-row: span 1;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .section {
-                padding: 60px 0;
-            }
-
-            .nav-desktop {
-                display: none !important;
-            }
-
-            #mobile-btn {
-                display: flex !important;
-            }
-
-            .bento-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .bento-card.large,
-            .bento-card.wide {
-                grid-column: span 1;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr !important;
-            }
-        }
-
-        @media (min-width: 769px) {
-            #mobile-btn {
-                display: none !important;
-            }
-        }
-    </style>
-    <base target="_blank">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Salma Mohammed — Data Analyst & BI Specialist</title>
+
+  <meta
+    name="description"
+    content="Salma Mohammed is a Data Analyst & BI Specialist focused on SQL, Power BI, Python, data modeling, and turning complex datasets into decision-ready insights."
+  />
+
+  <meta name="author" content="Salma Mohammed" />
+  <meta name="theme-color" content="#2F6E68" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Serif:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+  />
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ["IBM Plex Sans", "sans-serif"],
+            serif: ["IBM Plex Serif", "serif"],
+            mono: ["IBM Plex Mono", "monospace"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      --primary: #2f6e68;
+      --primary-dark: #204e4a;
+      --primary-light: #e3ece7;
+
+      --accent: #b54834;
+      --accent-light: #f2e2db;
+      --accent-on-light: #8f3826;
+
+      --dark: #1b2a28;
+      --dark-soft: #263835;
+
+      --gray-soft: #eaeee6;
+      --gray-border: #d3d9cc;
+
+      --text-body: #3e4a45;
+      --text-muted: #5c6d65;
+
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
+    body {
+      margin: 0;
+      font-family: "IBM Plex Sans", sans-serif;
+      color: var(--text-body);
+      background: #f8faf7;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    ::selection {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* =========================
+       Accessibility
+    ========================= */
+
+    :focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: -100px;
+      left: 20px;
+      z-index: 9999;
+      background: var(--dark);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+    }
+
+    .skip-link:focus {
+      top: 20px;
+    }
+
+    /* =========================
+       Typography
+    ========================= */
+
+    .font-serif {
+      font-family: "IBM Plex Serif", serif;
+    }
+
+    .font-mono {
+      font-family: "IBM Plex Mono", monospace;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--primary);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 28px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    /* =========================
+       Navigation
+    ========================= */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(248, 250, 247, 0.92);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(211, 217, 204, 0.8);
+    }
+
+    .nav-inner {
+      max-width: 1180px;
+      margin: auto;
+      height: 76px;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      font-family: "IBM Plex Serif", serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--dark);
+    }
+
+    .logo span {
+      color: var(--accent);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-links a {
+      position: relative;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 0;
+      height: 2px;
+      background: var(--accent);
+      transition: width 0.25s ease;
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--dark);
+    }
+
+    .nav-links a.active::after,
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      background: var(--primary);
+      color: white !important;
+      padding: 11px 18px;
+      border-radius: 5px;
+    }
+
+    .nav-cta::after {
+      display: none;
+    }
+
+    .nav-cta:hover {
+      background: var(--primary-dark);
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid var(--gray-border);
+      border-radius: 6px;
+      background: white;
+      color: var(--dark);
+      cursor: pointer;
+    }
+
+    /* =========================
+       Hero
+    ========================= */
+
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      padding: 150px 24px 90px;
+      display: flex;
+      align-items: center;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(47,110,104,0.09), transparent 28%),
+        radial-gradient(circle at 10% 80%, rgba(181,72,52,0.06), transparent 24%),
+        #f8faf7;
+    }
+
+    .hero-grid {
+      max-width: 1180px;
+      width: 100%;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .hero h1 {
+      margin: 18px 0 24px;
+      max-width: 720px;
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: clamp(3.1rem, 6vw, 5.7rem);
+      line-height: 0.98;
+      letter-spacing: -0.055em;
+    }
+
+    .hero h1 span {
+      color: var(--primary);
+    }
+
+    .hero-description {
+      max-width: 650px;
+      color: var(--text-body);
+      font-size: 1.12rem;
+      line-height: 1.8;
+    }
+
+    .hero-description strong {
+      color: var(--dark);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 0 20px;
+      border-radius: 5px;
+      font-size: 0.92rem;
+      font-weight: 600;
+      transition: all 0.2s ease;
+    }
+
+    .btn-primary {
+      color: white;
+      background: var(--primary);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--gray-border);
+      background: white;
+      color: var(--dark);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      margin-top: 55px;
+      max-width: 650px;
+      background: var(--gray-border);
+      border: 1px solid var(--gray-border);
+    }
+
+    .hero-stat {
+      padding: 18px;
+      background: #f8faf7;
+    }
+
+    .hero-stat strong {
+      display: block;
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: 1.55rem;
+    }
+
+    .hero-stat span {
+      display: block;
+      margin-top: 3px;
+      color: var(--text-muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+      line-height: 1.5;
+    }
+
+    /* =========================
+       Query Console
+    ========================= */
+
+    .console {
+      position: relative;
+      overflow: hidden;
+      background: var(--dark);
+      border-radius: 8px;
+      box-shadow: 0 30px 80px rgba(27, 42, 40, 0.18);
+    }
+
+    .console-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 13px 16px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .console-dots {
+      display: flex;
+      gap: 6px;
+    }
+
+    .console-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #66746f;
+    }
+
+    .console-title {
+      color: #aab8b2;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+    }
+
+    .console-tabs {
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: thin;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .console-tab {
+      flex: 0 0 auto;
+      border: 0;
+      border-right: 1px solid rgba(255,255,255,0.07);
+      background: transparent;
+      color: #72817b;
+      padding: 12px 14px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.67rem;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .console-tab:hover,
+    .console-tab.active {
+      background: #243532;
+      color: #dbe6e1;
+    }
+
+    .console-body {
+      min-height: 390px;
+      padding: 22px;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.73rem;
+      line-height: 1.8;
+    }
+
+    .code-line {
+      color: #c3d0ca;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    .code-keyword {
+      color: #8cc4bc;
+    }
+
+    .code-string {
+      color: #d6a890;
+    }
+
+    .code-comment {
+      color: #6e7e77;
+    }
+
+    .console-result {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .result-label {
+      color: #8cc4bc;
+      margin-bottom: 9px;
+    }
+
+    .result-box {
+      overflow-x: auto;
+      color: #aab8b2;
+      font-size: 0.68rem;
+    }
+
+    .result-row {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      min-width: 430px;
+      padding: 6px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .result-row.header {
+      color: #687872;
+    }
+
+    /* =========================
+       General Sections
+    ========================= */
+
+    section {
+      padding: 105px 24px;
+    }
+
+    .section-container {
+      max-width: 1180px;
+      margin: auto;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 55px;
+    }
+
+    .section-heading h2 {
+      margin: 14px 0 18px;
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      color: var(--text-muted);
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+
+    /* =========================
+       Positioning Section
+    ========================= */
+
+    .positioning {
+      background: white;
+      border-top: 1px solid var(--gray-border);
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    .positioning-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .positioning-title {
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: 2.2rem;
+      line-height: 1.15;
+    }
+
+    .positioning-title em {
+      color: var(--primary);
+      font-style: normal;
+    }
+
+    .deliver-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+
+    .deliver-card {
+      padding: 25px;
+      border: 1px solid var(--gray-border);
+      background: #fbfcfa;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .deliver-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--primary);
+    }
+
+    .deliver-number {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .deliver-card h3 {
+      margin: 14px 0 8px;
+      color: var(--dark);
+      font-size: 1rem;
+    }
+
+    .deliver-card p {
+      margin: 0;
+      color: var(--text-muted);
+      font-size: 0.87rem;
+      line-height: 1.7;
+    }
+
+    /* =========================
+       About
+    ========================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .about-title {
+      margin: 15px 0 22px;
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
+    }
+
+    .about-copy {
+      color: var(--text-body);
+      font-size: 1rem;
+      line-height: 1.9;
+    }
+
+    .about-copy strong {
+      color: var(--dark);
+    }
+
+    .credential-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .credential {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    .credential i {
+      margin-top: 3px;
+      color: var(--primary);
+    }
+
+    .credential span {
+      color: var(--text-body);
+      font-size: 0.88rem;
+    }
+
+    .about-panel {
+      padding: 35px;
+      background: var(--primary-light);
+      border: 1px solid #d2dfd9;
+    }
+
+    .about-panel-label {
+      color: var(--primary-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .about-panel h3 {
+      margin: 16px 0 18px;
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: 2rem;
+      line-height: 1.15;
+    }
+
+    .domain-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .chip {
+      padding: 7px 11px;
+      border: 1px solid rgba(47,110,104,0.2);
+      border-radius: 3px;
+      background: rgba(255,255,255,0.55);
+      color: var(--primary-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.68rem;
+    }
+
+    /* =========================
+       Skills
+    ========================= */
+
+    .skills {
+      background: var(--dark);
+      color: white;
+    }
+
+    .skills .eyebrow {
+      color: #a5c9c3;
+    }
+
+    .skills .section-heading h2 {
+      color: white;
+    }
+
+    .skills .section-heading p {
+      color: #9aa9a3;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .skill-card {
+      min-height: 210px;
+      padding: 27px;
+      border: 1px solid rgba(255,255,255,0.09);
+      background: #21312e;
+      transition: transform 0.2s ease, border-color 0.2s ease;
+    }
+
+    .skill-card:hover {
+      transform: translateY(-4px);
+      border-color: rgba(165,201,195,0.45);
+    }
+
+    .skill-icon {
+      color: #a5c9c3;
+      font-size: 1.2rem;
+    }
+
+    .skill-card h3 {
+      margin: 17px 0 13px;
+      color: white;
+      font-size: 1rem;
+    }
+
+    .skill-card p {
+      margin: 0;
+      color: #9aa9a3;
+      font-size: 0.83rem;
+      line-height: 1.75;
+    }
+
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 17px;
+    }
+
+    .skill-tag {
+      padding: 5px 8px;
+      background: rgba(255,255,255,0.05);
+      color: #bdc9c4;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+    }
+
+    /* =========================
+       Approach
+    ========================= */
+
+    .approach {
+      background: #f1f4ef;
+    }
+
+    .approach-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: var(--gray-border);
+      border: 1px solid var(--gray-border);
+    }
+
+    .approach-card {
+      min-height: 240px;
+      padding: 28px;
+      background: #f8faf7;
+    }
+
+    .approach-number {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+    }
+
+    .approach-card h3 {
+      margin: 25px 0 10px;
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: 1.4rem;
+    }
+
+    .approach-card p {
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      line-height: 1.75;
+    }
+
+    /* =========================
+       Projects
+    ========================= */
+
+    .projects {
+      background: white;
+    }
+
+    .project-list {
+      display: grid;
+      gap: 35px;
+    }
+
+    .project-card {
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 0.75fr 1.25fr;
+      border: 1px solid var(--gray-border);
+      background: #fbfcfa;
+      transition: box-shadow 0.25s ease, transform 0.25s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 22px 60px rgba(27,42,40,0.08);
+    }
+
+    .project-visual {
+      min-height: 420px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background: var(--primary-light);
+      border-right: 1px solid var(--gray-border);
+    }
+
+    .project-number {
+      color: var(--primary);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.72rem;
+      font-weight: 600;
+    }
+
+    .project-domain {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .project-visual-title {
+      margin-top: auto;
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: 2.1rem;
+      line-height: 1.1;
+    }
+
+    .project-mini-chart {
+      margin-top: 30px;
+      height: 80px;
+      display: flex;
+      align-items: end;
+      gap: 7px;
+    }
+
+    .project-mini-chart span {
+      flex: 1;
+      min-height: 15px;
+      background: var(--primary);
+      opacity: 0.7;
+    }
+
+    .project-content {
+      padding: 36px;
+    }
+
+    .project-content h3 {
+      margin: 0 0 12px;
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: 2rem;
+      line-height: 1.1;
+    }
+
+    .project-summary {
+      color: var(--text-body);
+      line-height: 1.8;
+      font-size: 0.93rem;
+    }
+
+    .project-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin: 28px 0;
+    }
+
+    .meta-box {
+      padding: 14px;
+      background: white;
+      border: 1px solid var(--gray-border);
+    }
+
+    .meta-box span {
+      display: block;
+      margin-bottom: 5px;
+      color: var(--text-muted);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+      text-transform: uppercase;
+    }
+
+    .meta-box strong {
+      color: var(--dark);
+      font-size: 0.76rem;
+      line-height: 1.4;
+    }
+
+    .story {
+      display: grid;
+      gap: 15px;
+      margin-top: 24px;
+    }
+
+    .story-item {
+      display: grid;
+      grid-template-columns: 80px 1fr;
+      gap: 15px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--gray-border);
+    }
+
+    .story-label {
+      color: var(--accent);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.66rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding-top: 2px;
+    }
+
+    .story-item p {
+      margin: 0;
+      color: var(--text-body);
+      font-size: 0.83rem;
+      line-height: 1.7;
+    }
+
+    .insight-box {
+      margin-top: 23px;
+      padding: 18px 20px;
+      background: var(--accent-light);
+      border-left: 3px solid var(--accent);
+    }
+
+    .insight-box span {
+      display: block;
+      margin-bottom: 6px;
+      color: var(--accent-on-light);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.64rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .insight-box p {
+      margin: 0;
+      color: var(--dark);
+      font-size: 0.84rem;
+      line-height: 1.7;
+    }
+
+    .project-tech {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin-top: 24px;
+    }
+
+    .project-tech span {
+      padding: 6px 9px;
+      background: var(--gray-soft);
+      color: var(--text-body);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.62rem;
+    }
+
+    .project-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 27px;
+    }
+
+    .project-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: var(--primary-dark);
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.7rem;
+      font-weight: 600;
+    }
+
+    .project-link:hover {
+      color: var(--accent);
+    }
+
+    /* =========================
+       Recruiter Section
+    ========================= */
+
+    .recruiter {
+      background: var(--primary);
+      color: white;
+    }
+
+    .recruiter-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 70px;
+      align-items: center;
+    }
+
+    .recruiter h2 {
+      margin: 15px 0 18px;
+      color: white;
+      font-family: "IBM Plex Serif", serif;
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      line-height: 1.03;
+      letter-spacing: -0.04em;
+    }
+
+    .recruiter-copy {
+      color: #d7e4df;
+      line-height: 1.8;
+    }
+
+    .recruiter-list {
+      display: grid;
+      gap: 13px;
+    }
+
+    .recruiter-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 13px;
+      padding: 17px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.06);
+    }
+
+    .recruiter-item i {
+      margin-top: 4px;
+      color: #c9ddd7;
+    }
+
+    .recruiter-item span {
+      color: #e4ece9;
+      font-size: 0.86rem;
+      line-height: 1.65;
+    }
+
+    /* =========================
+       Contact
+    ========================= */
+
+    .contact {
+      background: #f8faf7;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 70px;
+    }
+
+    .contact h2 {
+      margin: 15px 0 20px;
+      color: var(--dark);
+      font-family: "IBM Plex Serif", serif;
+      font-size: clamp(2.7rem, 5vw, 4.3rem);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+
+    .contact-copy {
+      max-width: 550px;
+      color: var(--text-muted);
+      line-height: 1.8;
+    }
+
+    .contact-links {
+      display: grid;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .contact-link {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      border: 1px solid var(--gray-border);
+      background: white;
+      transition: border-color 0.2s ease;
+    }
+
+    .contact-link:hover {
+      border-color: var(--primary);
+    }
+
+    .contact-link i {
+      width: 20px;
+      color: var(--primary);
+    }
+
+    .contact-link span {
+      color: var(--dark);
+      font-size: 0.85rem;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-card {
+      padding: 35px;
+      background: var(--dark);
+      color: white;
+    }
+
+    .contact-card h3 {
+      margin: 0 0 12px;
+      font-family: "IBM Plex Serif", serif;
+      font-size: 2rem;
+    }
+
+    .contact-card p {
+      color: #9aa9a3;
+      font-size: 0.85rem;
+      line-height: 1.8;
+    }
+
+    .contact-card .btn {
+      margin-top: 22px;
+      background: white;
+      color: var(--dark);
+    }
+
+    .contact-card .btn:hover {
+      color: var(--primary);
+    }
+
+    /* =========================
+       Footer
+    ========================= */
+
+    footer {
+      padding: 30px 24px;
+      background: var(--dark);
+      color: #82908b;
+    }
+
+    .footer-inner {
+      max-width: 1180px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer p {
+      margin: 0;
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.65rem;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-links a:hover {
+      color: white;
+    }
+
+    /* =========================
+       Reveal Animation
+    ========================= */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* =========================
+       Responsive
+    ========================= */
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .positioning-grid,
+      .about-grid,
+      .recruiter-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 55px;
+      }
+
+      .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .approach-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .project-card {
+        grid-template-columns: 1fr;
+      }
+
+      .project-visual {
+        min-height: 270px;
+        border-right: 0;
+        border-bottom: 1px solid var(--gray-border);
+      }
+
+      .project-meta {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    @media (max-width: 760px) {
+      .nav-inner {
+        height: 68px;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 16px;
+        right: 16px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 8px;
+        background: white;
+        border: 1px solid var(--gray-border);
+        box-shadow: 0 18px 45px rgba(27,42,40,0.1);
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 13px 12px;
+      }
+
+      .nav-links a::after {
+        display: none;
+      }
+
+      .nav-cta {
+        text-align: center;
+        margin-top: 4px;
+      }
+
+      .mobile-menu-btn {
+        display: block;
+      }
+
+      .hero {
+        padding: 125px 18px 70px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 14vw, 4.2rem);
+      }
+
+      .hero-description {
+        font-size: 1rem;
+      }
+
+      .hero-stats {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 75px 18px;
+      }
+
+      .section-heading {
+        margin-bottom: 38px;
+      }
+
+      .deliver-grid,
+      .skills-grid,
+      .approach-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-panel {
+        padding: 25px;
+      }
+
+      .project-content {
+        padding: 24px;
+      }
+
+      .project-visual {
+        min-height: 230px;
+        padding: 25px;
+      }
+
+      .project-visual-title {
+        font-size: 1.8rem;
+      }
+
+      .project-content h3 {
+        font-size: 1.7rem;
+      }
+
+      .project-meta {
+        grid-template-columns: 1fr;
+      }
+
+      .story-item {
+        grid-template-columns: 1fr;
+        gap: 6px;
+      }
+
+      .recruiter-grid,
+      .contact-grid {
+        gap: 40px;
+      }
+
+      .console-body {
+        min-height: 350px;
+        padding: 17px;
+        font-size: 0.65rem;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-    <!-- ===== NAVBAR ===== -->
-    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 nav-blur">
-        <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <a href="#home" class="font-display font-bold text-xl text-dark tracking-tight">Salma<span
-                    class="text-primary">.</span></a>
-            <nav class="nav-desktop flex items-center gap-8">
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#experience" class="nav-link">Experience</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <a href="#contact" class="btn-primary" style="padding:8px 18px;font-size:0.8rem;">Let's Talk</a>
-            </nav>
-            <button id="mobile-btn"
-                class="w-10 h-10 rounded-xl bg-gray-soft border border-gray-border flex items-center justify-center text-dark-soft hover:border-primary hover:text-primary transition-colors"
-                aria-label="Open menu" onclick="toggleMobileNav()">
-                <i class="fa-solid fa-bars"></i>
+  <a href="#main-content" class="skip-link">Skip to content</a>
+
+  <!-- =========================
+       NAVIGATION
+  ========================== -->
+
+  <header class="navbar">
+    <div class="nav-inner">
+
+      <a href="#home" class="logo" aria-label="Salma Mohammed home">
+        Salma<span>.</span>
+      </a>
+
+      <button
+        class="mobile-menu-btn"
+        id="mobileMenuBtn"
+        aria-label="Open navigation menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#approach">Approach</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="nav-cta">Let's Talk</a>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main id="main-content">
+
+    <!-- =========================
+         HERO
+    ========================== -->
+
+    <section class="hero" id="home">
+
+      <div class="hero-grid">
+
+        <div class="reveal">
+
+          <div class="eyebrow">
+            Data Analyst & BI Specialist
+          </div>
+
+          <h1>
+            Turning <span>Data</span><br />
+            into Clear Decisions.
+          </h1>
+
+          <p class="hero-description">
+            I use <strong>SQL, Python, Power BI, and statistics</strong>
+            to transform complex datasets into decision-ready insights —
+            from identifying the business question to building the analysis,
+            dashboard, and recommendation.
+          </p>
+
+          <div class="hero-actions">
+
+            <a href="#projects" class="btn btn-primary">
+              Explore Projects
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="#about" class="btn btn-outline">
+              About Me
+            </a>
+
+          </div>
+
+          <div class="hero-stats">
+
+            <div class="hero-stat">
+              <strong>04</strong>
+              <span>End-to-End Case Studies</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>SQL + BI</strong>
+              <span>Core Analytics Stack</span>
+            </div>
+
+            <div class="hero-stat">
+              <strong>100%</strong>
+              <span>Reproducible Portfolio Work</span>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <!-- QUERY CONSOLE -->
+
+        <div class="console reveal" aria-label="Analytics query console">
+
+          <div class="console-top">
+
+            <div class="console-dots">
+              <span class="console-dot"></span>
+              <span class="console-dot"></span>
+              <span class="console-dot"></span>
+            </div>
+
+            <span class="console-title">
+              salma.analytics / analysis_console
+            </span>
+
+          </div>
+
+          <div class="console-tabs" role="tablist">
+
+            <button
+              class="console-tab active"
+              data-query="healthcare"
+              role="tab"
+            >
+              healthcare.sql
             </button>
-        </div>
-        <div id="mobile-nav">
-            <a href="#about" onclick="closeMobileNav()">About</a>
-            <a href="#skills" onclick="closeMobileNav()">Skills</a>
-            <a href="#projects" onclick="closeMobileNav()">Projects</a>
-            <a href="#experience" onclick="closeMobileNav()">Experience</a>
-            <a href="#contact" onclick="closeMobileNav()">Contact</a>
-        </div>
-    </header>
 
-    <!-- ===== HERO ===== -->
-    <section id="home" class="hero-bg min-h-screen flex items-center pt-16 relative">
+            <button
+              class="console-tab"
+              data-query="rfm"
+              role="tab"
+            >
+              rfm.sql
+            </button>
 
-        <div class="max-w-7xl mx-auto px-6 py-20 w-full relative z-10">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal" style="transition-delay:0.1s;">
-                    <span class="eyebrow">Data Analyst & BI Specialist</span>
-                    <h1 class="font-display font-bold text-5xl lg:text-6xl text-dark leading-tight tracking-tight mb-6">
-                        Turning Data into<br><span class="text-primary">Business Value</span><br>with Clarity.
-                    </h1>
-                    <p class="text-text-body text-lg leading-relaxed max-w-lg mb-8">
-                        Results-driven Data Analyst and Business Intelligence professional with 2+ years of experience
-                        transforming complex datasets into actionable insights, scalable pipelines, and executive
-                        dashboards that drive measurable outcomes.
-                    </p>
-                    <div class="flex flex-wrap gap-4">
-                        <a href="#projects" class="btn-primary">Explore Projects <i
-                                class="fa-solid fa-arrow-right text-xs"></i></a>
-                        <a href="#about" class="btn-secondary"><i class="fa-solid fa-user"></i> About Me</a>
-                    </div>
-                    <div class="flex flex-wrap gap-8 mt-12 pt-8 border-t border-gray-border">
-                        <div>
-                            <div class="font-display font-bold text-2xl text-dark">4</div>
-                            <div class="text-text-muted text-sm">Portfolio Projects</div>
-                        </div>
-                        <div>
-                            <div class="font-display font-bold text-2xl text-dark">6</div>
-                            <div class="text-text-muted text-sm">Tools: SQL, Python, Power BI, PostgreSQL, DAX, Scikit-learn</div>
-                        </div>
-                        <div>
-                            <div class="font-display font-bold text-2xl text-dark">100%</div>
-                            <div class="text-text-muted text-sm">Open-Source & Reproducible</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal relative" style="transition-delay:0.3s;">
-                    <div class="query-console max-w-md mx-auto">
-                        <div class="qc-titlebar" style="justify-content:flex-start;gap:0;padding:0;overflow-x:auto;">
-                            <div class="qc-dots" style="padding:0 12px;flex-shrink:0;">
-                                <span class="qc-dot"></span><span class="qc-dot"></span><span class="qc-dot"></span>
-                            </div>
-                            <button type="button" class="qc-tab" data-tab="stock" style="opacity:0.45;padding:10px 10px;border-right:1px solid #2F4440;background:none;border-top:none;border-left:none;color:#8FA39D;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;cursor:pointer;flex-shrink:0;">stock_market.py</button>
-                            <button type="button" class="qc-tab" data-tab="fraud" style="opacity:0.45;padding:10px 10px;border-right:1px solid #2F4440;background:none;border-top:none;border-left:none;color:#8FA39D;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;cursor:pointer;flex-shrink:0;">fraud_analysis.py</button>
-                            <button type="button" class="qc-tab" data-tab="olist" style="opacity:0.45;padding:10px 10px;border-right:1px solid #2F4440;background:none;border-top:none;border-left:none;color:#8FA39D;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;cursor:pointer;flex-shrink:0;">rfm_segmentation.sql</button>
-                            <button type="button" class="qc-tab active" data-tab="healthcare" style="padding:10px 10px;background:#1B2A28;color:#7FB0A8;border-right:1px solid #2F4440;border-top:none;border-left:none;border-bottom:2px solid #7FB0A8;margin-bottom:-1px;font-family:'IBM Plex Mono',monospace;font-size:0.65rem;cursor:pointer;flex-shrink:0;">healthcare.sql</button>
-                        </div>
-                        <div class="qc-body" id="qc-code"></div>
-                        <div class="qc-divider"></div>
-                        <div class="qc-result" id="qc-result"></div>
-                    </div>
-                </div>
-            </div>
+            <button
+              class="console-tab"
+              data-query="fraud"
+              role="tab"
+            >
+              fraud.sql
+            </button>
+
+            <button
+              class="console-tab"
+              data-query="stock"
+              role="tab"
+            >
+              stock.py
+            </button>
+
+          </div>
+
+          <div class="console-body">
+
+            <div id="queryContent"></div>
+
+          </div>
+
         </div>
+
+      </div>
+
     </section>
 
-    <script>
-        const qcData = {
-            healthcare: {
-                code: [
-                    '<span class="qc-kw">SELECT</span> <span class="qc-col">patient_nbr, age, readmitted,</span>',
-                    '&nbsp;&nbsp;<span class="qc-col">num_medications,</span>',
-                    '&nbsp;&nbsp;<span class="qc-kw">NTILE</span><span class="qc-col">(5) OVER (ORDER BY num_medications)</span>',
-                    '<span class="qc-kw">FROM</span> <span class="qc-col">Fact_Encounters</span>',
-                    '<span class="qc-kw">WHERE</span> <span class="qc-col">readmitted =</span> <span class="qc-str">\'&lt;30\'</span><span class="qc-cur"></span>'
-                ],
-                resultLabel: '// query result — patient risk by medication quintile',
-                headers: ['quintile', 'encounters', 'risk'],
-                rows: [
-                    ['1', '2,041', 'Low'],
-                    ['2', '2,187', 'Low'],
-                    ['3', '2,304', 'Medium', 'risk'],
-                    ['4', '2,398', 'High', 'risk']
-                ]
-            },
-            stock: {
-                code: [
-                    '<span class="qc-kw">def</span> <span class="qc-fn">add_indicators</span><span class="qc-col">(d):</span>',
-                    '&nbsp;&nbsp;<span class="qc-col">d = d.copy().sort_values(</span><span class="qc-str">\'Date\'</span><span class="qc-col">)</span>',
-                    '&nbsp;&nbsp;<span class="qc-col">d[</span><span class="qc-str">\'MA_20\'</span><span class="qc-col">] = d[</span><span class="qc-str">\'Close\'</span><span class="qc-col">].rolling(20).mean()</span>',
-                    '&nbsp;&nbsp;<span class="qc-col">d[</span><span class="qc-str">\'MA_50\'</span><span class="qc-col">] = d[</span><span class="qc-str">\'Close\'</span><span class="qc-col">].rolling(50).mean()</span>',
-                    '&nbsp;&nbsp;<span class="qc-kw">return</span> <span class="qc-col">d</span><span class="qc-cur"></span>'
-                ],
-                resultLabel: '// risk_metrics.csv — Sharpe ratio by stock',
-                headers: ['stock', 'ann. return', 'sharpe'],
-                rows: [
-                    ['AAPL', '29.95%', '0.945'],
-                    ['TSLA', '76.25%', '1.135', 'risk'],
-                    ['GOOGL', '25.98%', '0.799'],
-                    ['Optimal mix', '47.35%', '1.225', 'risk']
-                ]
-            },
-            fraud: {
-                code: [
-                    '<span class="qc-col">query_ml = </span><span class="qc-str">"""</span>',
-                    '<span class="qc-kw">SELECT</span> <span class="qc-col">f.amount, f.fraud_flag, c.country,</span>',
-                    '&nbsp;&nbsp;<span class="qc-col">ch.channel_name, t.hour, t.month</span>',
-                    '<span class="qc-kw">FROM</span> <span class="qc-col">Fact_Transactions f</span>',
-                    '<span class="qc-kw">JOIN</span> <span class="qc-col">Dim_Customers c </span><span class="qc-kw">ON</span> <span class="qc-col">f.customer_id = c.customer_id</span><span class="qc-cur"></span>'
-                ],
-                resultLabel: '// RandomForestClassifier — top predictors of fraud_flag',
-                headers: ['feature', 'source table', 'signal'],
-                rows: [
-                    ['channel_name', 'Dim_Channels', 'High', 'risk'],
-                    ['country', 'Dim_Customers', 'Medium', 'risk'],
-                    ['hour', 'Dim_Time', 'Medium', 'risk'],
-                    ['amount', 'Fact_Transactions', 'Low']
-                ]
-            },
-            olist: {
-                code: [
-                    '<span class="qc-kw">SELECT</span> <span class="qc-col">*,</span>',
-                    '&nbsp;&nbsp;<span class="qc-kw">CASE</span>',
-                    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="qc-kw">WHEN</span> <span class="qc-col">r_score>=4 AND f_score>=4 AND m_score>=4</span> <span class="qc-kw">THEN</span> <span class="qc-str">\'Champions\'</span>',
-                    '&nbsp;&nbsp;&nbsp;&nbsp;<span class="qc-kw">WHEN</span> <span class="qc-col">r_score<=1</span> <span class="qc-kw">THEN</span> <span class="qc-str">\'Lost Customers\'</span>',
-                    '&nbsp;&nbsp;<span class="qc-kw">END</span> <span class="qc-kw">AS</span> <span class="qc-col">customer_segment</span><span class="qc-cur"></span>'
-                ],
-                resultLabel: '// RFM segmentation — repeat-purchase benchmark',
-                headers: ['metric', 'this dataset', 'e-comm avg'],
-                rows: [
-                    ['repeat-purchase rate', '3.12%', '20–30%', 'risk'],
-                    ['champions segment', 'Small %', '—'],
-                    ['at-risk segment', 'R low, F high', '—', 'risk']
-                ]
+
+    <!-- =========================
+         POSITIONING
+    ========================== -->
+
+    <section class="positioning" id="value">
+
+      <div class="section-container">
+
+        <div class="positioning-grid">
+
+          <div class="reveal">
+
+            <div class="eyebrow">
+              What I Deliver
+            </div>
+
+            <h2 class="positioning-title">
+              Not just dashboards.
+              <br />
+              <em>Decision-ready analysis.</em>
+            </h2>
+
+          </div>
+
+          <div class="deliver-grid reveal">
+
+            <div class="deliver-card">
+              <span class="deliver-number">01</span>
+              <h3>Business Question</h3>
+              <p>
+                Translate an ambiguous problem into measurable analytical
+                questions and KPIs.
+              </p>
+            </div>
+
+            <div class="deliver-card">
+              <span class="deliver-number">02</span>
+              <h3>Data Analysis</h3>
+              <p>
+                Clean, validate, transform, and analyze data using SQL,
+                Python, and statistics.
+              </p>
+            </div>
+
+            <div class="deliver-card">
+              <span class="deliver-number">03</span>
+              <h3>BI & Visualization</h3>
+              <p>
+                Build clear dashboards and analytical views designed around
+                decisions rather than decoration.
+              </p>
+            </div>
+
+            <div class="deliver-card">
+              <span class="deliver-number">04</span>
+              <h3>Recommendation</h3>
+              <p>
+                Turn findings into concise business implications,
+                priorities, and next actions.
+              </p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         ABOUT
+    ========================== -->
+
+    <section id="about">
+
+      <div class="section-container">
+
+        <div class="about-grid">
+
+          <div class="reveal">
+
+            <div class="eyebrow">
+              About Me
+            </div>
+
+            <h2 class="about-title">
+              Bridging the gap between
+              <span style="color:var(--primary)">raw data</span>
+              and real decisions.
+            </h2>
+
+            <p class="about-copy">
+              I am a Statistics graduate with a strong
+              interest in <strong>Data Analytics and Business Intelligence</strong>.
+            </p>
+
+            <p class="about-copy" style="margin-top:18px;">
+              My approach combines statistical thinking with practical
+              analytics engineering: understanding the data model,
+              writing reliable SQL, investigating patterns with Python,
+              and communicating findings through focused BI dashboards.
+            </p>
+
+            <div class="credential-list">
+
+              <div class="credential">
+                <i class="fa-solid fa-graduation-cap"></i>
+                <span>
+                  BS Statistics — University of Khartoum
+                </span>
+              </div>
+
+              <div class="credential">
+                <i class="fa-solid fa-database"></i>
+                <span>
+                  Focus: SQL, Data Modeling, Power BI, DAX & Python Analytics
+                </span>
+              </div>
+
+              <div class="credential">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>
+                  Portfolio built around reproducible, end-to-end analytical case studies
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="about-panel reveal">
+
+            <div class="about-panel-label">
+              Analytics Domains
+            </div>
+
+            <h3>
+              I enjoy solving problems where data can change the decision.
+            </h3>
+
+            <div class="domain-chips">
+
+              <span class="chip">E-Commerce</span>
+              <span class="chip">FinTech</span>
+              <span class="chip">Healthcare</span>
+              <span class="chip">Customer Analytics</span>
+              <span class="chip">Fraud & Risk</span>
+              <span class="chip">Retention</span>
+              <span class="chip">Financial Analytics</span>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         SKILLS
+    ========================== -->
+
+    <section class="skills" id="skills">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Technical Stack
+          </div>
+
+          <h2>
+            Tools serve the analysis.
+          </h2>
+
+          <p>
+            My core stack is centered on SQL, BI, Python, and statistical
+            analysis — supported by data modeling and reproducible workflows.
+          </p>
+
+        </div>
+
+
+        <div class="skills-grid">
+
+          <div class="skill-card reveal">
+
+            <i class="fa-solid fa-database skill-icon"></i>
+
+            <h3>SQL & Data Modeling</h3>
+
+            <p>
+              Querying, transformation, analytical modeling, window functions,
+              CTEs, segmentation, and dimensional structures.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">SQL</span>
+              <span class="skill-tag">PostgreSQL</span>
+              <span class="skill-tag">SQLite</span>
+              <span class="skill-tag">CTE</span>
+              <span class="skill-tag">Window Functions</span>
+              <span class="skill-tag">Star Schema</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <i class="fa-solid fa-chart-column skill-icon"></i>
+
+            <h3>Power BI & DAX</h3>
+
+            <p>
+              KPI design, analytical dashboards, calculated measures,
+              segmentation, drill-down analysis, and data storytelling.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">Power BI</span>
+              <span class="skill-tag">DAX</span>
+              <span class="skill-tag">KPIs</span>
+              <span class="skill-tag">Data Modeling</span>
+              <span class="skill-tag">Dashboards</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <i class="fa-brands fa-python skill-icon"></i>
+
+            <h3>Python Analytics</h3>
+
+            <p>
+              Data preparation, exploratory analysis, statistical investigation,
+              feature engineering, and analytical automation.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">Python</span>
+              <span class="skill-tag">Pandas</span>
+              <span class="skill-tag">NumPy</span>
+              <span class="skill-tag">Jupyter</span>
+              <span class="skill-tag">scikit-learn</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <i class="fa-solid fa-chart-line skill-icon"></i>
+
+            <h3>Statistics & Analytics</h3>
+
+            <p>
+              Descriptive analysis, correlation, cohort analysis,
+              segmentation, risk analysis, and experiment-oriented thinking.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">Statistics</span>
+              <span class="skill-tag">Cohorts</span>
+              <span class="skill-tag">RFM</span>
+              <span class="skill-tag">Correlation</span>
+              <span class="skill-tag">A/B Thinking</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <i class="fa-solid fa-code-branch skill-icon"></i>
+
+            <h3>Reproducible Workflow</h3>
+
+            <p>
+              Version-controlled analytical projects with structured notebooks,
+              SQL scripts, documentation, and reproducible pipelines.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">Git</span>
+              <span class="skill-tag">GitHub</span>
+              <span class="skill-tag">Jupyter</span>
+              <span class="skill-tag">ETL</span>
+            </div>
+
+          </div>
+
+
+          <div class="skill-card reveal">
+
+            <i class="fa-solid fa-comments skill-icon"></i>
+
+            <h3>Data Storytelling</h3>
+
+            <p>
+              Communicating technical findings through concise narratives,
+              meaningful KPIs, and business-oriented recommendations.
+            </p>
+
+            <div class="skill-tags">
+              <span class="skill-tag">Storytelling</span>
+              <span class="skill-tag">KPI Design</span>
+              <span class="skill-tag">Insights</span>
+              <span class="skill-tag">Recommendations</span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         APPROACH
+    ========================== -->
+
+    <section class="approach" id="approach">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            How I Work
+          </div>
+
+          <h2>
+            From messy data to a useful answer.
+          </h2>
+
+          <p>
+            Every project follows a structured analytical workflow designed
+            to make the reasoning visible — not just the final chart.
+          </p>
+
+        </div>
+
+
+        <div class="approach-grid">
+
+          <div class="approach-card reveal">
+            <span class="approach-number">01 / FRAME</span>
+
+            <h3>Define</h3>
+
+            <p>
+              Start with the business problem. Define the population,
+              KPI, decision, and analytical question before touching the data.
+            </p>
+          </div>
+
+
+          <div class="approach-card reveal">
+            <span class="approach-number">02 / PREPARE</span>
+
+            <h3>Validate</h3>
+
+            <p>
+              Inspect missing values, duplicates, data types, relationships,
+              outliers, and structural issues before analysis.
+            </p>
+          </div>
+
+
+          <div class="approach-card reveal">
+            <span class="approach-number">03 / ANALYZE</span>
+
+            <h3>Investigate</h3>
+
+            <p>
+              Use SQL, Python, statistics, segmentation, and time-based
+              analysis to identify meaningful patterns.
+            </p>
+          </div>
+
+
+          <div class="approach-card reveal">
+            <span class="approach-number">04 / COMMUNICATE</span>
+
+            <h3>Recommend</h3>
+
+            <p>
+              Convert the strongest findings into a clear story:
+              what happened, why it matters, and what should happen next.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         PROJECTS
+    ========================== -->
+
+    <section class="projects" id="projects">
+
+      <div class="section-container">
+
+        <div class="section-heading reveal">
+
+          <div class="eyebrow">
+            Selected Work
+          </div>
+
+          <h2>
+            Case studies built around real analytical questions.
+          </h2>
+
+          <p>
+            Each project is structured as a complete analytical story:
+            business context, data preparation, technical analysis,
+            visualization, finding, and implication.
+          </p>
+
+        </div>
+
+
+        <div class="project-list">
+
+
+          <!-- PROJECT 01 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-visual">
+
+              <div>
+                <span class="project-number">01</span>
+                <span class="project-domain">Financial Analytics</span>
+              </div>
+
+              <div>
+
+                <h3 class="project-visual-title">
+                  Stock Market
+                  Intelligence
+                </h3>
+
+                <div class="project-mini-chart">
+                  <span style="height:38%"></span>
+                  <span style="height:58%"></span>
+                  <span style="height:43%"></span>
+                  <span style="height:72%"></span>
+                  <span style="height:65%"></span>
+                  <span style="height:88%"></span>
+                  <span style="height:74%"></span>
+                  <span style="height:96%"></span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <h3>
+                Stock Market Intelligence Dashboard
+              </h3>
+
+              <p class="project-summary">
+                An end-to-end financial analytics project combining market
+                data, technical indicators, predictive modeling, and portfolio
+                simulation to investigate risk-adjusted investment decisions.
+              </p>
+
+
+              <div class="project-meta">
+
+                <div class="meta-box">
+                  <span>Question</span>
+                  <strong>
+                    How do risk and return change across a technology-stock portfolio?
+                  </strong>
+                </div>
+
+                <div class="meta-box">
+                  <span>Analysis</span>
+                  <strong>
+                    Technical indicators + time-series validation + simulation
+                  </strong>
+                </div>
+
+                <div class="meta-box">
+                  <span>Output</span>
+                  <strong>
+                    Interactive analytical dashboard
+                  </strong>
+                </div>
+
+              </div>
+
+
+              <div class="story">
+
+                <div class="story-item">
+                  <span class="story-label">Context</span>
+                  <p>
+                    Compare five major technology stocks while avoiding
+                    simplistic return-only comparisons.
+                  </p>
+                </div>
+
+                <div class="story-item">
+                  <span class="story-label">Approach</span>
+                  <p>
+                    Built technical indicators including RSI, MACD and Bollinger
+                    Bands, followed by Gradient Boosting classification with
+                    time-aware validation and Monte Carlo portfolio simulation.
+                  </p>
+                </div>
+
+                <div class="story-item">
+                  <span class="story-label">Finding</span>
+                  <p>
+                    The simulated portfolio analysis produced a highest
+                    observed risk-adjusted configuration with a Sharpe Ratio
+                    of approximately 1.225 within the tested scenario.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="insight-box">
+
+                <span>Portfolio Finding</span>
+
+                <p>
+                  Portfolio construction should be evaluated through both
+                  expected return and risk-adjusted performance rather than
+                  looking at individual stock returns alone.
+                </p>
+
+              </div>
+
+
+              <div class="project-tech">
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>scikit-learn</span>
+                <span>Monte Carlo</span>
+                <span>Plotly</span>
+                <span>Financial Analysis</span>
+              </div>
+
+
+              <div class="project-links">
+
+                <a
+                  href="https://github.com/Salma-fathi/stock-market-intelligence"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  GitHub
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 02 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-visual">
+
+              <div>
+                <span class="project-number">02</span>
+                <span class="project-domain">Fraud & Risk</span>
+              </div>
+
+              <div>
+
+                <h3 class="project-visual-title">
+                  Transaction
+                  Analytics
+                </h3>
+
+                <div class="project-mini-chart">
+                  <span style="height:52%"></span>
+                  <span style="height:31%"></span>
+                  <span style="height:72%"></span>
+                  <span style="height:44%"></span>
+                  <span style="height:91%"></span>
+                  <span style="height:61%"></span>
+                  <span style="height:79%"></span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <h3>
+                Financial Transaction & Fraud Analytics
+              </h3>
+
+              <p class="project-summary">
+                A structured transaction analytics project designed to
+                investigate fraud patterns, customer behavior, and the role
+                of region and transaction channel in risk concentration.
+              </p>
+
+
+              <div class="project-meta">
+
+                <div class="meta-box">
+                  <span>Question</span>
+                  <strong>
+                    Where and when does transaction risk concentrate?
+                  </strong>
+                </div>
+
+                <div class="meta-box">
+                  <span>Analysis</span>
+                  <strong>
+                    Star schema + RFM + fraud pattern analysis
+                  </strong>
+                </div>
+
+                <div class="meta-box">
+                  <span>Output</span>
+                  <strong>
+                    Analytical model + BI dashboard concept
+                  </strong>
+                </div>
+
+              </div>
+
+
+              <div class="story">
+
+                <div class="story-item">
+                  <span class="story-label">Context</span>
+                  <p>
+                    Financial transaction data can contain behavioral and
+                    operational signals that are difficult to interpret from
+                    raw transaction tables alone.
+                  </p>
+                </div>
+
+                <div class="story-item">
+                  <span class="story-label">Approach</span>
+                  <p>
+                    Designed a star-schema structure, transformed transaction
+                    data, performed customer RFM analysis, and investigated
+                    fraud concentration across channels and regions.
+                  </p>
+                </div>
+
+                <div class="story-item">
+                  <span class="story-label">Finding</span>
+                  <p>
+                    The analysis highlighted differences in risk concentration
+                    across customer segments, regions, and transaction channels,
+                    creating a basis for targeted monitoring.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="insight-box">
+
+                <span>Portfolio Finding</span>
+
+                <p>
+                  Fraud analysis becomes more actionable when transaction-level
+                  signals are connected with customer behavior and operational
+                  dimensions.
+                </p>
+
+              </div>
+
+
+              <div class="project-tech">
+                <span>SQL</span>
+                <span>Python</span>
+                <span>Pandas</span>
+                <span>SQLite</span>
+                <span>Star Schema</span>
+                <span>Power BI</span>
+              </div>
+
+
+              <div class="project-links">
+
+                <a
+                  href="https://github.com/Salma-fathi/Financial-Analysis-Project"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  GitHub
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 03 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-visual">
+
+              <div>
+                <span class="project-number">03</span>
+                <span class="project-domain">Customer Analytics</span>
+              </div>
+
+              <div>
+
+                <h3 class="project-visual-title">
+                  Olist Customer
+                  Intelligence
+                </h3>
+
+                <div class="project-mini-chart">
+                  <span style="height:74%"></span>
+                  <span style="height:54%"></span>
+                  <span style="height:39%"></span>
+                  <span style="height:61%"></span>
+                  <span style="height:29%"></span>
+                  <span style="height:45%"></span>
+                  <span style="height:34%"></span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <h3>
+                Olist Customer Intelligence: RFM & Retention
+              </h3>
+
+              <p class="project-summary">
+                A customer analytics case study using PostgreSQL and Power BI
+                to understand repeat purchasing, customer value, retention,
+                and geographic patterns in Brazilian e-commerce data.
+              </p>
+
+
+              <div class="project-meta">
+
+                <div class="meta-box">
+                  <span>Question</span>
+                  <strong>
+                    What does customer retention look like, and which segments
+                    deserve attention?
+                  </strong>
+                </div>
+
+                <div class="meta-box">
+                  <span>Analysis</span>
+                  <strong>
+                    RFM segmentation + cohorts + geography
+                  </strong>
+                </div>
+
+                <div class="meta-box">
+                  <span>Output</span>
+                  <strong>
+                    PostgreSQL model + Power BI analysis
+                  </strong>
+                </div>
+
+              </div>
+
+
+              <div class="story">
+
+                <div class="story-item">
+                  <span class="story-label">Context</span>
+                  <p>
+                    A large e-commerce dataset provides customer, order,
+                    product, payment, and geographic information but requires
+                    careful modeling before meaningful retention analysis.
+                  </p>
+                </div>
+
+                <div class="story-item">
+                  <span class="story-label">Approach</span>
+                  <p>
+                    Built SQL-based RFM scoring and customer segments,
+                    investigated repeat purchasing and cohort behavior,
+                    and created Power BI views for geographic and segment analysis.
+                  </p>
+                </div>
+
+                <div class="story-item">
+                  <span class="story-label">Finding</span>
+                  <p>
+                    The analyzed sample showed a repeat-purchase rate of
+                    approximately 3.12%, indicating a substantial retention
+                    challenge within the dataset.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="insight-box">
+
+                <span>Portfolio Finding</span>
+
+                <p>
+                  A low repeat-purchase rate shifts the business question from
+                  simply acquiring more customers toward understanding early
+                  customer experience and re-engagement opportunities.
+                </p>
+
+              </div>
+
+
+              <div class="project-tech">
+                <span>PostgreSQL</span>
+                <span>SQL</span>
+                <span>Power BI</span>
+                <span>DAX</span>
+                <span>RFM</span>
+                <span>Cohort Analysis</span>
+              </div>
+
+
+              <div class="project-links">
+
+                <a
+                  href="https://github.com/Salma-fathi/Olist-Customer-Intelligence-RFM"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  GitHub
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- PROJECT 04 -->
+
+          <article class="project-card reveal">
+
+            <div class="project-visual">
+
+              <div>
+                <span class="project-number">04</span>
+                <span class="project-domain">Healthcare Analytics</span>
+              </div>
+
+              <div>
+
+                <h3 class="project-visual-title">
+                  Healthcare
+                  Readmission
+                </h3>
+
+                <div class="project-mini-chart">
+                  <span style="height:42%"></span>
+                  <span style="height:67%"></span>
+                  <span style="height:52%"></span>
+                  <span style="height:84%"></span>
+                  <span style="height:63%"></span>
+                  <span style="height:94%"></span>
+                  <span style="height:73%"></span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="project-content">
+
+              <h3>
+                Healthcare Analytics: Deep SQL Insights
+              </h3>
+
+              <p class="project-summary">
+                A healthcare analytics project focused on patient readmission
+                patterns, medication burden, admission characteristics, and
+                risk stratification using advanced SQL.
+              </p>
+
+
+              <div class="project-meta">
+
+                <div class="meta-box">
+                  <span>Question</span>
+                  <strong>
+                    Which patient and encounter characteristics are associated
+                    with readmission?
+                  </strong>
+                </div>
+
+                <div class="meta-box">
+                  <span>Analysis</span>
+                  <strong>
+                    CTEs + window functions + quintile analysis
+                  </strong>
+                </div>
+
+                <div class="meta-box">
+                  <span>Output</span>
+                  <strong>
+                    Analytical SQL model + risk insights
+                  </strong>
+                </div>
+
+              </div>
+
+
+              <div class="story">
+
+                <div class="story-item">
+                  <span class="story-label">Context</span>
+                  <p>
+                    Hospital readmissions can be investigated by connecting
+                    patient characteristics with encounter-level behavior
+                    and treatment-related variables.
+                  </p>
+                </div>
+
+                <div class="story-item">
+                  <span class="story-label">Approach</span>
+                  <p>
+                    Structured the dataset into analytical dimensions and facts,
+                    then used CTEs, window functions, and quintile analysis
+                    to investigate readmission-related patterns.
+                  </p>
+                </div>
+
+                <div class="story-item">
+                  <span class="story-label">Finding</span>
+                  <p>
+                    The analysis identified differences in readmission patterns
+                    across medication-load groups and encounter characteristics,
+                    supporting a more structured approach to risk investigation.
+                  </p>
+                </div>
+
+              </div>
+
+
+              <div class="insight-box">
+
+                <span>Portfolio Finding</span>
+
+                <p>
+                  Readmission analysis is more useful when patient-level
+                  characteristics are combined with encounter context instead
+                  of relying on a single risk variable.
+                </p>
+
+              </div>
+
+
+              <div class="project-tech">
+                <span>SQL</span>
+                <span>SQLite</span>
+                <span>CTEs</span>
+                <span>Window Functions</span>
+                <span>Data Modeling</span>
+                <span>Healthcare Analytics</span>
+              </div>
+
+
+              <div class="project-links">
+
+                <a
+                  href="https://github.com/Salma-fathi/Healthcare-Analytics-SQL"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="project-link"
+                >
+                  <i class="fa-brands fa-github"></i>
+                  GitHub
+                </a>
+
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         RECRUITER SECTION
+    ========================== -->
+
+    <section class="recruiter">
+
+      <div class="section-container">
+
+        <div class="recruiter-grid">
+
+          <div class="reveal">
+
+            <div class="eyebrow" style="color:#c7ddd8;">
+              For Hiring Teams
+            </div>
+
+            <h2>
+              What you can expect from my work.
+            </h2>
+
+            <p class="recruiter-copy">
+              I care about the reasoning behind an analysis as much as the
+              final dashboard. My portfolio is designed to make that reasoning
+              easy to inspect.
+            </p>
+
+          </div>
+
+
+          <div class="recruiter-list reveal">
+
+            <div class="recruiter-item">
+              <i class="fa-solid fa-check"></i>
+              <span>
+                SQL-first analytical thinking rather than dashboard-only work.
+              </span>
+            </div>
+
+            <div class="recruiter-item">
+              <i class="fa-solid fa-check"></i>
+              <span>
+                Clear separation between data preparation, analysis,
+                visualization, finding, and recommendation.
+              </span>
+            </div>
+
+            <div class="recruiter-item">
+              <i class="fa-solid fa-check"></i>
+              <span>
+                Reproducible projects with documented assumptions and
+                transparent methodology.
+              </span>
+            </div>
+
+            <div class="recruiter-item">
+              <i class="fa-solid fa-check"></i>
+              <span>
+                Business-oriented communication: what happened, why it matters,
+                and what action the analysis suggests.
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         CONTACT
+    ========================== -->
+
+    <section class="contact" id="contact">
+
+      <div class="section-container">
+
+        <div class="contact-grid">
+
+          <div class="reveal">
+
+            <div class="eyebrow">
+              Contact
+            </div>
+
+            <h2>
+              Let's talk
+              <span style="color:var(--primary)">data.</span>
+            </h2>
+
+            <p class="contact-copy">
+              I am open to Data Analyst, BI Analyst, and analytics-focused
+              opportunities where I can combine SQL, BI, Python, and
+              statistical thinking to solve meaningful business problems.
+            </p>
+
+
+            <div class="contact-links">
+
+              <a
+                href="mailto:salmafathelrhman@gmail.com"
+                class="contact-link"
+              >
+                <i class="fa-solid fa-envelope"></i>
+                <span>salmafathelrhman@gmail.com</span>
+              </a>
+
+              <a
+                href="https://www.linkedin.com/in/salma-mohammed"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+                <i class="fa-brands fa-linkedin"></i>
+                <span>linkedin.com/in/salma-mohammed</span>
+              </a>
+
+              <a
+                href="https://github.com/Salma-fathi"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="contact-link"
+              >
+                <i class="fa-brands fa-github"></i>
+                <span>github.com/Salma-fathi</span>
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="contact-card reveal">
+
+            <h3>
+              Looking for an analyst?
+            </h3>
+
+            <p>
+              If you're looking for someone who can go beyond producing
+              charts and actually investigate the data behind a business
+              question, I'd be happy to connect.
+            </p>
+
+            <a
+              href="mailto:salmafathelrhman@gmail.com"
+              class="btn"
+            >
+              Start a Conversation
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- =========================
+       FOOTER
+  ========================== -->
+
+  <footer>
+
+    <div class="footer-inner">
+
+      <p>
+        © 2026 Salma Mohammed. Built with data, curiosity & purpose.
+      </p>
+
+      <div class="footer-links">
+
+        <a
+          href="https://github.com/Salma-fathi"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="GitHub"
+        >
+          <i class="fa-brands fa-github"></i>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/salma-mohammed"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="LinkedIn"
+        >
+          <i class="fa-brands fa-linkedin"></i>
+        </a>
+
+        <a
+          href="mailto:salmafathelrhman@gmail.com"
+          aria-label="Email"
+        >
+          <i class="fa-solid fa-envelope"></i>
+        </a>
+
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    /* =========================
+       Mobile Navigation
+    ========================== */
+
+    const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+    const navLinks = document.getElementById("navLinks");
+
+    mobileMenuBtn.addEventListener("click", () => {
+
+      const isOpen = navLinks.classList.toggle("open");
+
+      mobileMenuBtn.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      mobileMenuBtn.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+
+    });
+
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", () => {
+
+        navLinks.classList.remove("open");
+
+        mobileMenuBtn.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        mobileMenuBtn.innerHTML =
+          '<i class="fa-solid fa-bars"></i>';
+
+      });
+
+    });
+
+
+    /* =========================
+       Query Console
+    ========================== */
+
+    const queries = {
+
+      healthcare: {
+
+        code: `
+<span class="code-keyword">WITH</span> readmission_risk <span class="code-keyword">AS</span> (
+
+  <span class="code-keyword">SELECT</span>
+      patient_nbr,
+      age,
+      readmitted,
+      num_medications,
+
+      <span class="code-keyword">NTILE</span>(5)
+        <span class="code-keyword">OVER</span> (
+          <span class="code-keyword">ORDER BY</span> num_medications
+        ) <span class="code-keyword">AS</span> medication_quintile
+
+  <span class="code-keyword">FROM</span> Fact_Encounters
+
+  <span class="code-keyword">WHERE</span> readmitted = <span class="code-string">'&lt;30'</span>
+)
+
+<span class="code-keyword">SELECT</span> *
+<span class="code-keyword">FROM</span> readmission_risk;
+        `,
+
+        result: `
+<span class="result-label">-- ANALYTICAL OUTPUT</span>
+
+patient_nbr     age      medication_q    readmitted
+----------------------------------------------------
+88795           [70-80]       Q5             &lt;30
+43104           [60-70]       Q4             &lt;30
+20155           [50-60]       Q5             &lt;30
+
+<span class="code-comment">-- Insight: compare readmission patterns
+-- across medication-load groups.</span>
+        `
+      },
+
+
+      rfm: {
+
+        code: `
+<span class="code-keyword">SELECT</span>
+    customer_unique_id,
+
+    <span class="code-keyword">NTILE</span>(5)
+      <span class="code-keyword">OVER</span>(
+        <span class="code-keyword">ORDER BY</span> recency <span class="code-keyword">DESC</span>
+      ) <span class="code-keyword">AS</span> R_score,
+
+    <span class="code-keyword">NTILE</span>(5)
+      <span class="code-keyword">OVER</span>(
+        <span class="code-keyword">ORDER BY</span> frequency
+      ) <span class="code-keyword">AS</span> F_score,
+
+    <span class="code-keyword">NTILE</span>(5)
+      <span class="code-keyword">OVER</span>(
+        <span class="code-keyword">ORDER BY</span> monetary
+      ) <span class="code-keyword">AS</span> M_score
+
+<span class="code-keyword">FROM</span> customer_rfm;
+        `,
+
+        result: `
+<span class="result-label">-- CUSTOMER SEGMENTATION</span>
+
+customer_id       R     F     M       segment
+-----------------------------------------------
+C10291            5     5     5       Champions
+C44281            1     2     2       Lost
+C90172            4     3     4       Loyal
+
+<span class="code-comment">-- Insight: prioritize retention actions
+-- according to customer value and recency.</span>
+        `
+      },
+
+
+      fraud: {
+
+        code: `
+<span class="code-keyword">SELECT</span>
+    region,
+    channel,
+
+    <span class="code-keyword">COUNT</span>(*) <span class="code-keyword">AS</span> transactions,
+
+    <span class="code-keyword">SUM</span>(
+      <span class="code-keyword">CASE</span>
+        <span class="code-keyword">WHEN</span> is_fraud = 1
+        <span class="code-keyword">THEN</span> 1
+        <span class="code-keyword">ELSE</span> 0
+      <span class="code-keyword">END</span>
+    ) <span class="code-keyword">AS</span> fraud_cases
+
+<span class="code-keyword">FROM</span> Fact_Transactions
+
+<span class="code-keyword">GROUP BY</span>
+    region,
+    channel
+
+<span class="code-keyword">ORDER BY</span>
+    fraud_cases <span class="code-keyword">DESC</span>;
+        `,
+
+        result: `
+<span class="result-label">-- RISK CONCENTRATION</span>
+
+region        channel       fraud_cases
+----------------------------------------
+Region A      Online             482
+Region C      Mobile             391
+Region B      Online             276
+
+<span class="code-comment">-- Insight: investigate high-risk
+-- region/channel combinations.</span>
+        `
+      },
+
+
+      stock: {
+
+        code: `
+<span class="code-keyword">prices</span>["MA_20"] =
+    prices["Close"].rolling(20).mean()
+
+<span class="code-keyword">prices</span>["MA_50"] =
+    prices["Close"].rolling(50).mean()
+
+signal =
+    prices["MA_20"] &gt; prices["MA_50"]
+
+portfolio =
+    monte_carlo_simulation(
+        returns,
+        simulations=5000
+    )
+        `,
+
+        result: `
+<span class="result-label">-- PORTFOLIO ANALYSIS</span>
+
+Asset      Weight       Risk-Adjusted Score
+-------------------------------------------
+AAPL       31.4%             1.18
+TSLA       14.7%             0.91
+GOOGL      24.3%             1.12
+MSFT       29.6%             1.23
+
+<span class="code-comment">-- Best tested configuration:
+-- Sharpe Ratio ≈ 1.225</span>
+        `
+      }
+
+    };
+
+
+    const queryContent =
+      document.getElementById("queryContent");
+
+    const consoleTabs =
+      document.querySelectorAll(".console-tab");
+
+
+    function renderQuery(type) {
+
+      const query = queries[type];
+
+      queryContent.innerHTML = `
+        <div class="code-line">${query.code}</div>
+        <div class="console-result">
+          <div class="result-box">${query.result}</div>
+        </div>
+      `;
+
+    }
+
+
+    consoleTabs.forEach(tab => {
+
+      tab.addEventListener("click", () => {
+
+        consoleTabs.forEach(item =>
+          item.classList.remove("active")
+        );
+
+        tab.classList.add("active");
+
+        renderQuery(tab.dataset.query);
+
+      });
+
+    });
+
+
+    renderQuery("healthcare");
+
+
+    /* =========================
+       Reveal on Scroll
+    ========================== */
+
+    const revealElements =
+      document.querySelectorAll(".reveal");
+
+    const observer =
+      new IntersectionObserver(
+        entries => {
+
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.classList.add("visible");
+
+              observer.unobserve(entry.target);
+
             }
-        };
 
-        function renderQc(key) {
-            const d = qcData[key];
-            const codeEl = document.getElementById('qc-code');
-            const resultEl = document.getElementById('qc-result');
-            codeEl.innerHTML = d.code.map((line, i) =>
-                `<div class="qc-line"><span class="qc-num">${i + 1}</span><span>${line}</span></div>`
-            ).join('');
-            let rowsHtml = d.rows.map(r =>
-                `<tr><td>${r[0]}</td><td>${r[1]}</td><td class="${r[3] === 'risk' ? 'qc-risk' : ''}">${r[2]}</td></tr>`
-            ).join('');
-            resultEl.innerHTML = `
-                <div class="qc-result-label">${d.resultLabel}</div>
-                <table class="qc-table">
-                    <tr><th>${d.headers[0]}</th><th>${d.headers[1]}</th><th>${d.headers[2]}</th></tr>
-                    ${rowsHtml}
-                </table>`;
+          });
+
+        },
+        {
+          threshold: 0.12
         }
-
-        document.querySelectorAll('.qc-tab').forEach(tab => {
-            tab.addEventListener('click', () => {
-                document.querySelectorAll('.qc-tab').forEach(t => {
-                    t.classList.remove('active');
-                    t.style.opacity = '0.45';
-                    t.style.background = 'none';
-                    t.style.color = '#8FA39D';
-                    t.style.borderBottom = 'none';
-                    t.style.marginBottom = '0';
-                });
-                tab.classList.add('active');
-                tab.style.opacity = '1';
-                tab.style.background = '#1B2A28';
-                tab.style.color = '#7FB0A8';
-                tab.style.borderBottom = '2px solid #7FB0A8';
-                tab.style.marginBottom = '-1px';
-                renderQc(tab.dataset.tab);
-            });
-        });
-
-        renderQc('healthcare');
-    </script>
-
-    <!-- ===== ABOUT ME ===== -->
-    <section id="about" class="section bg-gray-soft">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid lg:grid-cols-2 gap-16 items-center">
-                <div class="reveal order-2 lg:order-1">
-                    <div class="relative">
-                        <div class="w-full max-w-lg mx-auto aspect-square bg-gray-soft rounded-lg flex items-center justify-center border border-gray-border shadow-card">
-                            <svg viewBox="0 0 400 400" class="w-4/5 h-4/5">
-                                <rect x="40" y="70" width="320" height="260" rx="6" fill="#F9FAF6" stroke="#D3D9CC"
-                                    stroke-width="1.5" />
-                                <rect x="40" y="70" width="320" height="36" rx="6" fill="#EAEEE6" />
-                                <circle cx="64" cy="88" r="5" fill="#B54834" />
-                                <circle cx="82" cy="88" r="5" fill="#B5842E" />
-                                <circle cx="100" cy="88" r="5" fill="#4B7A4E" />
-                                <text x="330" y="92" text-anchor="end" font-family="IBM Plex Mono" font-size="10"
-                                    fill="#7C8A80">analysis.py</text>
-
-                                <rect x="60" y="126" width="130" height="90" rx="4" fill="#EAEEE6"
-                                    stroke="#D3D9CC" />
-                                <rect x="72" y="196" width="14" height="12" fill="#2F6E68" />
-                                <rect x="92" y="180" width="14" height="28" fill="#2F6E68" opacity="0.75" />
-                                <rect x="112" y="160" width="14" height="48" fill="#2F6E68" opacity="0.55" />
-                                <rect x="132" y="145" width="14" height="63" fill="#2F6E68" opacity="0.4" />
-                                <rect x="152" y="170" width="14" height="38" fill="#2F6E68" opacity="0.3" />
-
-                                <rect x="210" y="126" width="130" height="90" rx="4" fill="#EAEEE6"
-                                    stroke="#D3D9CC" />
-                                <polyline points="222,195 240,175 258,185 276,155 294,168 312,140 328,150"
-                                    fill="none" stroke="#B54834" stroke-width="2.5" stroke-linecap="round"
-                                    stroke-linejoin="round" />
-                                <circle cx="328" cy="150" r="3.5" fill="#B54834" />
-
-                                <rect x="60" y="232" width="280" height="16" rx="2" fill="#D3D9CC" />
-                                <rect x="60" y="256" width="220" height="10" rx="2" fill="#D3D9CC" opacity="0.7" />
-                                <rect x="60" y="274" width="180" height="10" rx="2" fill="#D3D9CC" opacity="0.5" />
-                                <rect x="60" y="292" width="140" height="10" rx="2" fill="#D3D9CC" opacity="0.35" />
-
-                                <text x="192" y="245" font-family="IBM Plex Mono" font-size="10" fill="#3E4A45"
-                                    font-weight="600">readmission_rate_pct</text>
-                            </svg>
-                        </div>
-                        <div
-                            class="absolute -bottom-6 -right-6 bg-white rounded-lg shadow-card p-4 border border-gray-border">
-                            <div class="flex items-center gap-3">
-                                <div
-                                    class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-primary text-xl">
-                                    <i class="fa-solid fa-graduation-cap"></i></div>
-                                <div>
-                                    <div class="font-display font-bold text-sm text-dark">BSc Statistics & CS</div>
-                                    <div class="text-xs text-text-muted">University of Khartoum</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal" style="transition-delay:0.2s;">
-                    <span class="eyebrow">About Me</span>
-                    <h2 class="section-title mb-6">Bridging the Gap Between<br>Raw Data & Real Decisions</h2>
-                    <p class="text-text-body text-lg leading-relaxed mb-6">
-                        I am a results-driven Data Analyst and Business Intelligence professional with a proven track
-                        record of transforming complex datasets into clear, actionable insights. My work sits at the
-                        intersection of clean engineering and clear communication — I build the pipelines and models,
-                        then translate them into dashboards executives actually use.
-                    </p>
-                    <p class="text-text-body leading-relaxed mb-8">
-                        With a background in Statistics and Computer Science from the University of Khartoum, I've
-                        built end-to-end analytics projects across e-commerce, finance, and healthcare data, and I
-                        have developed a strong point of view: <strong class="text-dark">good analytics is only as
-                            valuable as the action it enables.</strong>
-                    </p>
-                    <div class="space-y-3 mb-8">
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary text-xs">
-                                <i class="fa-solid fa-certificate"></i></div><span class="text-sm text-text-body">Power
-                                BI Professional (PL-300) — In Progress</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-primary-light flex items-center justify-center text-primary text-xs">
-                                <i class="fa-solid fa-certificate"></i></div><span class="text-sm text-text-body">Google
-                                Analytics Certified</span>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div
-                                class="w-8 h-8 rounded-lg bg-accent-light flex items-center justify-center text-accent text-xs">
-                                <i class="fa-solid fa-certificate"></i></div><span
-                                class="text-sm text-text-body">Advanced SQL for Analytics</span>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-3">
-                        <span class="tag-chip">E-Commerce</span>
-                        <span class="tag-chip sql">FinTech</span>
-                        <span class="tag-chip powerbi">Healthcare</span>
-                        <span class="tag-chip">Supply Chain</span>
-                        <span class="tag-chip">Manufacturing</span>
-                        <span class="tag-chip">Real Estate</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== SKILLS (BENTO GRID) ===== -->
-    <section id="skills" class="section">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <span class="eyebrow">Tools & Technologies</span>
-                <h2 class="section-title">My Tech Stack</h2>
-                <p class="section-subtitle mx-auto">A curated toolkit of technologies I use to build end-to-end
-                    analytics solutions — from data ingestion to executive dashboards.</p>
-            </div>
-            <div class="bento-grid reveal">
-                <div class="bento-card large">
-                    <div class="flex items-start justify-between mb-6">
-                        <div
-                            class="w-14 h-14 rounded-lg bg-primary-light flex items-center justify-center text-primary text-2xl">
-                            <i class="fa-solid fa-database"></i></div>
-                        <span
-                            class="text-xs font-display font-semibold text-text-muted bg-gray-soft px-3 py-1 rounded-full">Core</span>
-                    </div>
-                    <h3 class="font-display font-bold text-xl text-dark mb-3">Data Engineering</h3>
-                    <p class="text-text-body text-sm leading-relaxed mb-6">Building robust ETL pipelines, designing
-                        dimensional models, and ensuring data quality across the entire analytics lifecycle.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag-chip sql">SQL</span><span class="tag-chip">PostgreSQL</span><span
-                            class="tag-chip">dbt</span><span class="tag-chip">ETL</span><span
-                            class="tag-chip">BigQuery</span>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-primary text-xl mb-4">
-                        <i class="fa-brands fa-python"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-2">Analytics & ML</h3>
-                    <p class="text-text-body text-sm mb-4">Predictive modeling, statistical analysis, and automated
-                        reporting pipelines.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag-chip python">Python</span><span class="tag-chip">Pandas</span><span
-                            class="tag-chip ml">scikit-learn</span><span class="tag-chip">Jupyter</span>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center text-accent text-xl mb-4">
-                        <i class="fa-solid fa-chart-pie"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-2">Visualization & BI</h3>
-                    <p class="text-text-body text-sm mb-4">Interactive dashboards with drill-downs, KPI monitoring, and
-                        automated alerts.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag-chip powerbi">Power BI</span><span class="tag-chip">Plotly</span><span
-                            class="tag-chip">Tableau</span><span class="tag-chip">DAX</span>
-                    </div>
-                </div>
-                <div class="bento-card wide">
-                    <div class="flex items-start gap-6">
-                        <div
-                            class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center text-accent text-xl flex-shrink-0">
-                            <i class="fa-brands fa-git-alt"></i></div>
-                        <div>
-                            <h3 class="font-display font-bold text-lg text-dark mb-2">Infrastructure & DevOps</h3>
-                            <p class="text-text-body text-sm mb-4">Version-controlled workflows, CI/CD for data
-                                pipelines, and containerized deployments.</p>
-                            <div class="flex flex-wrap gap-2">
-                                <span class="tag-chip">Git</span><span class="tag-chip">GitHub Actions</span><span
-                                    class="tag-chip">Docker</span><span class="tag-chip">Streamlit</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-accent-light flex items-center justify-center text-accent text-xl mb-4">
-                        <i class="fa-solid fa-users"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-2">Communication</h3>
-                    <p class="text-text-body text-sm mb-4">Translating technical findings into business narratives for
-                        stakeholders.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag-chip">Storytelling</span><span class="tag-chip">Stakeholder Mgmt</span>
-                    </div>
-                </div>
-                <div class="bento-card">
-                    <div
-                        class="w-12 h-12 rounded-xl bg-primary-light flex items-center justify-center text-primary text-xl mb-4">
-                        <i class="fa-solid fa-lightbulb"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-2">Methodology</h3>
-                    <p class="text-text-body text-sm mb-4">STAR framework, agile analytics, and hypothesis-driven
-                        problem solving.</p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tag-chip">STAR</span><span class="tag-chip">Agile</span><span class="tag-chip">A/B
-                            Testing</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== HOW I WORK ===== -->
-    <section class="section bg-gray-soft">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <span class="eyebrow">Analytical Depth</span>
-                <h2 class="section-title">How I Work</h2>
-                <p class="section-subtitle mx-auto">Every project follows a structured methodology designed to pass both
-                    recruiter scanning and technical screening.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-8 reveal">
-                <div
-                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group relative">
-                    <span class="font-mono text-xs text-text-muted absolute top-6 right-8">01</span>
-                    <div
-                        class="w-14 h-14 rounded-lg bg-primary-light flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-broom"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-3">Data Cleaning</h3>
-                    <ul class="space-y-3 text-sm text-text-body">
-                        <li class="flex items-start gap-2"><i
-                                class="fa-solid fa-check text-primary text-xs mt-1"></i><span>Clear before/after
-                                snapshots of messy source data</span></li>
-                        <li class="flex items-start gap-2"><i
-                                class="fa-solid fa-check text-primary text-xs mt-1"></i><span>Document deduplication,
-                                null handling, and structural modeling</span></li>
-                        <li class="flex items-start gap-2"><i
-                                class="fa-solid fa-check text-primary text-xs mt-1"></i><span>Explain how cleaning
-                                changed downstream outcomes</span></li>
-                    </ul>
-                </div>
-                <div
-                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group relative">
-                    <span class="font-mono text-xs text-text-muted absolute top-6 right-8">02</span>
-                    <div
-                        class="w-14 h-14 rounded-lg bg-primary-light flex items-center justify-center text-primary text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-star"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-3">STAR Framework</h3>
-                    <ul class="space-y-3 text-sm text-text-body">
-                        <li class="flex items-start gap-2"><span
-                                class="font-display font-bold text-primary text-xs mt-0.5">S</span><span><strong>Situation:</strong>
-                                The business blocker or risk</span></li>
-                        <li class="flex items-start gap-2"><span
-                                class="font-display font-bold text-primary text-xs mt-0.5">T</span><span><strong>Task:</strong>
-                                Exactly what you owned</span></li>
-                        <li class="flex items-start gap-2"><span
-                                class="font-display font-bold text-primary text-xs mt-0.5">A</span><span><strong>Action:</strong>
-                                SQL joins, Python transforms, validation</span></li>
-                        <li class="flex items-start gap-2"><span
-                                class="font-display font-bold text-primary text-xs mt-0.5">R</span><span><strong>Result:</strong>
-                                Measurable revenue or operational impact</span></li>
-                    </ul>
-                </div>
-                <div
-                    class="bg-white rounded-lg p-8 border border-gray-border hover:border-primary transition-all duration-300 hover:shadow-card-hover group relative">
-                    <span class="font-mono text-xs text-text-muted absolute top-6 right-8">03</span>
-                    <div
-                        class="w-14 h-14 rounded-lg bg-accent-light flex items-center justify-center text-accent text-2xl mb-6 group-hover:scale-110 transition-transform">
-                        <i class="fa-solid fa-code"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-3">Technical Screening</h3>
-                    <ul class="space-y-3 text-sm text-text-body">
-                        <li class="flex items-start gap-2"><i
-                                class="fa-solid fa-check text-primary text-xs mt-1"></i><span>SQL window functions, CTE
-                                optimization, dimensional modeling</span></li>
-                        <li class="flex items-start gap-2"><i
-                                class="fa-solid fa-check text-primary text-xs mt-1"></i><span>Star-schema thinking for
-                                warehouse-style analytics</span></li>
-                        <li class="flex items-start gap-2"><i
-                                class="fa-solid fa-check text-primary text-xs mt-1"></i><span>One line reserved for the
-                                exact business metric improved</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ===== PROJECTS (BENTO GRID) ===== -->
-    <section id="projects" class="section">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between mb-16 reveal">
-                <div>
-                    <span class="eyebrow">Case Studies</span>
-                    <h2 class="section-title">Featured Projects</h2>
-                    <p class="section-subtitle mt-3 max-w-xl">End-to-end analytics projects — from raw data to executive
-                        dashboards — each measured against real business outcomes.</p>
-                </div>
-                <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
-                    class="btn-secondary mt-6 lg:mt-0 w-fit"><i class="fa-brands fa-github"></i> View All on GitHub</a>
-            </div>
-
-            <!-- Bento Grid for Projects -->
-            <div class="bento-grid projects-grid">
-
-                <!-- PROJECT 1: Stock Market Intelligence -->
-                <article class="bento-card large project-card reveal" style="transition-delay:0.05s;">
-                    <div class="project-image-wrap"
-                        style="height:200px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
-                        <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&h=500&fit=crop"
-                            alt="Stock market analysis dashboard showing price trends and risk metrics">
-                        <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                    class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2"><span
-                            class="font-mono text-xs font-medium text-primary">01 / 04</span></div>
-                    <h3 class="project-title">Stock Market Intelligence Dashboard</h3>
-                    <p class="project-desc">Full analytics pipeline for 5 major tech stocks — data collection,
-                        technical indicators, ML price-direction modeling, and portfolio optimization via Monte
-                        Carlo simulation.</p>
-                    <div class="star-block">
-                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">Investors
-                                need a structured way to compare stock risk/return and build a diversified
-                                portfolio.</span></div>
-                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Build an
-                                end-to-end pipeline: collect price data, compute risk metrics, model price
-                                direction, and optimize portfolio weights.</span></div>
-                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Pulled
-                                data via yfinance, engineered technical indicators (RSI, MACD, Bollinger Bands),
-                                trained a Gradient Boosting classifier with time-series validation, and ran a
-                                5,000-iteration Monte Carlo simulation for portfolio optimization.</span></div>
-                        <div class="star-row"><span class="star-label">Result</span><span class="star-text">Identified
-                                an optimal portfolio allocation (Sharpe Ratio 1.225) and shipped an interactive
-                                Plotly Dash app with 4 analysis views.</span></div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="tag-chip python">Python</span><span class="tag-chip ml">Scikit-learn</span><span
-                            class="tag-chip">Plotly Dash</span>
-                    </div>
-                    <div class="flex gap-3 mt-auto">
-                        <a href="https://github.com/Salma-fathi/stock-market-intelligence" target="_blank"
-                            rel="noopener noreferrer" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                class="fa-brands fa-github"></i> View on GitHub</a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 2: Financial Transaction & Fraud Analytics -->
-                <article class="bento-card project-card reveal" style="transition-delay:0.15s;">
-                    <div class="project-image-wrap"
-                        style="height:180px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
-                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop"
-                            alt="Financial transaction dashboard showing fraud trends and customer segments">
-                        <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                    class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2"><span
-                            class="font-mono text-xs font-medium text-primary">02 / 04</span></div>
-                    <h3 class="project-title">Financial Transaction &amp; Fraud Analytics</h3>
-                    <p class="project-desc">Star-schema data warehouse and Python analysis pipeline covering fraud
-                        pattern detection, RFM customer segmentation, and time-series transaction trends.</p>
-                    <div class="star-block">
-                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">A
-                                business needs to spot high-risk transaction channels and understand customer
-                                purchasing behavior for targeted retention.</span></div>
-                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Build a
-                                relational data model and run analytics to surface fraud patterns and customer
-                                segments.</span></div>
-                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Built a
-                                SQLite star schema, ran RFM (Recency, Frequency, Monetary) segmentation in
-                                Python/Pandas, and analyzed cyclical fraud trends by region and channel.</span>
-                        </div>
-                        <div class="star-row"><span class="star-label">Result</span><span class="star-text">Surfaced
-                                fraud-prone regions/channels and clear customer segments, visualized in a Power BI
-                                dashboard concept.</span></div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="tag-chip sql">SQL</span><span class="tag-chip python">Python</span><span
-                            class="tag-chip powerbi">Power BI</span>
-                    </div>
-                    <div class="flex gap-3 mt-auto">
-                        <a href="https://github.com/Salma-fathi/Financial-Analysis-Project" target="_blank"
-                            rel="noopener noreferrer" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                class="fa-brands fa-github"></i> View on GitHub</a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 3: Olist Customer Intelligence & RFM -->
-                <article class="bento-card project-card reveal" style="transition-delay:0.18s;">
-                    <div class="project-image-wrap"
-                        style="height:180px;margin:-28px -28px 20px -28px;border-radius:20px 20px 0 0;">
-                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop"
-                            alt="RFM customer segmentation dashboard showing purchase recency, frequency, and monetary heatmap">
-                        <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                    class="fa-solid fa-eye mr-2"></i>Preview Dashboard</span></div>
-                    </div>
-                    <div class="flex items-center gap-2 mb-2"><span
-                            class="font-mono text-xs font-medium text-primary">03 / 04</span></div>
-                    <h3 class="project-title">Olist Customer Intelligence: RFM &amp; Retention Analytics</h3>
-                    <p class="project-desc">End-to-end PostgreSQL + Power BI case study on ~96K Brazilian e-commerce
-                        customers — RFM segmentation, cohort retention, and geographic revenue analysis surfaced in
-                        an executive dashboard.</p>
-                    <div class="star-block">
-                        <div class="star-row"><span class="star-label">Situation</span><span class="star-text">Leadership
-                                needed a clear view of which customers drive revenue and where retention was leaking,
-                                but the existing dashboard had geocoding errors and an unreadable RFM matrix.</span></div>
-                        <div class="star-row"><span class="star-label">Task</span><span class="star-text">Build the RFM
-                                scoring logic in PostgreSQL, then diagnose and fix the Power BI report so segmentation
-                                and geography insights were accurate and readable.</span></div>
-                        <div class="star-row"><span class="star-label">Action</span><span class="star-text">Wrote SQL to
-                                compute Recency/Frequency/Monetary quintile scores and segment labels, fixed a state-code
-                                geocoding bug via a DAX-mapped calculated column, and applied conditional-formatting to
-                                turn a sparse 5×5 R×F matrix into a readable heatmap.</span></div>
-                        <div class="star-row"><span class="star-label">Result</span><span class="star-text">Uncovered a
-                                3.12% repeat-purchase rate (well below the ~20–30% e-commerce benchmark) and a strong
-                                Recency–Frequency correlation, reframing retention strategy around early recency
-                                decline as a churn signal.</span></div>
-                    </div>
-                    <div class="flex flex-wrap gap-2 mb-5">
-                        <span class="tag-chip sql">PostgreSQL</span><span class="tag-chip powerbi">Power BI</span><span
-                            class="tag-chip">DAX</span>
-                    </div>
-                    <div class="flex gap-3 mt-auto">
-                        <a href="https://github.com/Salma-fathi/Olist-Customer-Intelligence-RFM" target="_blank"
-                            rel="noopener noreferrer" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                class="fa-brands fa-github"></i> View on GitHub</a>
-                    </div>
-                </article>
-
-                <!-- PROJECT 4: Healthcare Analytics SQL (Wide) -->
-                <article class="bento-card wide project-card reveal" style="transition-delay:0.2s;">
-                    <div class="flex flex-col md:flex-row gap-6 h-full">
-                        <div class="md:w-2/5">
-                            <div class="project-image-wrap"
-                                style="height:100%;min-height:200px;margin:-28px 0 -28px -28px;border-radius:20px 0 0 20px;">
-                                <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=600&h=500&fit=crop"
-                                    alt="Healthcare analytics dashboard showing patient readmission risk">
-                                <div class="project-image-overlay"><span class="text-white text-sm font-medium"><i
-                                            class="fa-solid fa-eye mr-2"></i>Preview Schema</span></div>
-                            </div>
-                        </div>
-                        <div class="md:w-3/5 flex flex-col">
-                            <div class="flex items-center gap-2 mb-2"><span
-                                    class="font-mono text-xs font-medium text-primary">04 / 04</span></div>
-                            <h3 class="project-title">Healthcare Analytics: Deep SQL Insights</h3>
-                            <p class="project-desc">Star-schema SQL analysis of a 10-year diabetic hospital
-                                readmission dataset (130 US hospitals), using window functions and CTEs to
-                                stratify patient risk.</p>
-                            <div class="star-block">
-                                <div class="star-row"><span class="star-label">Situation</span><span
-                                        class="star-text">Public patient encounter data needed structure before
-                                        readmission risk and resource-use patterns could be analyzed.</span></div>
-                                <div class="star-row"><span class="star-label">Task</span><span class="star-text">Identify
-                                        high-risk patient groups and understand what drives readmission and
-                                        resource utilization.</span></div>
-                                <div class="star-row"><span class="star-label">Action</span><span
-                                        class="star-text">Modeled the data as a star schema in SQLite, then wrote
-                                        advanced SQL (window functions, CTEs, quintile analysis) to build patient
-                                        risk profiles.</span></div>
-                                <div class="star-row"><span class="star-label">Result</span><span
-                                        class="star-text">A queryable risk-stratification model showing how
-                                        medication load and admission type relate to readmission rates.</span>
-                                </div>
-                            </div>
-                            <div class="flex flex-wrap gap-2 mb-5">
-                                <span class="tag-chip sql">SQL</span><span class="tag-chip">SQLite</span><span
-                                    class="tag-chip python">Python</span>
-                                <span class="tag-chip powerbi">Power BI</span>
-                            </div>
-                            <div class="flex gap-3 mt-auto">
-                                <a href="https://github.com/Salma-fathi/Healthcare-Analytics-SQL" target="_blank"
-                                    rel="noopener noreferrer" class="btn-primary flex-1 justify-center text-xs py-2.5"><i
-                                        class="fa-brands fa-github"></i> View on GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-                </article>
-
-            </div>
-        </div>
-    </section>
+      );
 
 
-    <!-- ===== CONTACT ===== -->
-    <section id="contact" class="section">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16 reveal">
-                <span class="eyebrow">Get In Touch</span>
-                <h2 class="section-title">Let's Build Something<br>Together</h2>
-                <p class="section-subtitle mx-auto">Have a data challenge or analytics opportunity? I would love to hear
-                    about it. Reach out and let's discuss how we can turn your data into decisions.</p>
-            </div>
-            <div class="grid md:grid-cols-3 gap-6 mb-16 reveal">
-                <a href="mailto:salmafathelrhman@gmail.com" class="contact-card group">
-                    <div
-                        class="contact-icon bg-primary-light text-primary group-hover:bg-primary group-hover:text-white transition-all">
-                        <i class="fa-solid fa-envelope"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-1">Email</h3>
-                    <p class="text-text-muted text-sm">salmafathelrhman@gmail.com</p>
-                </a>
-                <a href="https://www.linkedin.com/in/salma-mohammed" target="_blank" rel="noopener noreferrer"
-                    class="contact-card group">
-                    <div
-                        class="contact-icon bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                        <i class="fa-brands fa-linkedin"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-1">LinkedIn</h3>
-                    <p class="text-text-muted text-sm">/in/salma-mohammed</p>
-                </a>
-                <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
-                    class="contact-card group">
-                    <div
-                        class="contact-icon bg-gray-soft text-text-body group-hover:bg-dark-soft group-hover:text-white transition-all">
-                        <i class="fa-brands fa-github"></i></div>
-                    <h3 class="font-display font-bold text-lg text-dark mb-1">GitHub</h3>
-                    <p class="text-text-muted text-sm">@Salma-fathi</p>
-                </a>
-            </div>
-            <div class="max-w-2xl mx-auto reveal">
-                <div class="bg-white rounded-lg border border-gray-border p-8 shadow-card">
-                    <form
-                        action="https://formspree.io/f/xaqragdq"
-                        method="POST"
-                        id="contact-form">
-                        <div class="grid md:grid-cols-2 gap-6 mb-6">
-                            <div>
-                                <label class="block text-sm font-medium text-dark mb-2">Name</label>
-                                <input type="text" name="name" required placeholder="Your name"
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-border bg-gray-soft text-dark placeholder-text-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-                            </div>
-                            <div>
-                                <label class="block text-sm font-medium text-dark mb-2">Email</label>
-                                <input type="email" name="email" required placeholder="you@company.com"
-                                    class="w-full px-4 py-3 rounded-xl border border-gray-border bg-gray-soft text-dark placeholder-text-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-                            </div>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-dark mb-2">Subject</label>
-                            <input type="text" name="subject" placeholder="Project inquiry / Collaboration"
-                                class="w-full px-4 py-3 rounded-xl border border-gray-border bg-gray-soft text-dark placeholder-text-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all">
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-sm font-medium text-dark mb-2">Message</label>
-                            <textarea rows="4" name="message" required placeholder="Tell me about your project, timeline, and goals..."
-                                class="w-full px-4 py-3 rounded-xl border border-gray-border bg-gray-soft text-dark placeholder-text-muted focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"></textarea>
-                        </div>
-                        <button type="submit" class="btn-primary w-full justify-center"><i
-                                class="fa-solid fa-paper-plane"></i> Send Message</button>
-                        <p id="form-status" class="text-sm text-center mt-4"></p>
-                    </form>
-                    <script>
-                        const contactForm = document.getElementById('contact-form');
-                        const formStatus = document.getElementById('form-status');
-                        if (contactForm) {
-                            contactForm.addEventListener('submit', async function (e) {
-                                e.preventDefault();
-                                const data = new FormData(contactForm);
-                                try {
-                                    const response = await fetch(contactForm.action, {
-                                        method: 'POST',
-                                        body: data,
-                                        headers: { 'Accept': 'application/json' }
-                                    });
-                                    if (response.ok) {
-                                        formStatus.textContent = "Thanks — your message was sent! I'll get back to you soon.";
-                                        formStatus.style.color = '#16a34a';
-                                        contactForm.reset();
-                                    } else {
-                                        formStatus.textContent = "Something went wrong. Please email me directly instead.";
-                                        formStatus.style.color = '#dc2626';
-                                    }
-                                } catch (err) {
-                                    formStatus.textContent = "Something went wrong. Please email me directly instead.";
-                                    formStatus.style.color = '#dc2626';
-                                }
-                            });
-                        }
-                    </script>
-                </div>
-            </div>
-        </div>
-    </section>
+    revealElements.forEach(element => {
 
-    <!-- ===== FOOTER ===== -->
-    <footer class="bg-gray-soft border-t border-gray-border">
-        <div class="max-w-7xl mx-auto px-6 py-12">
-            <div class="flex flex-col md:flex-row items-center justify-between gap-6">
-                <div class="text-center md:text-left">
-                    <div class="font-display font-bold text-xl text-dark tracking-tight">Salma<span
-                            class="text-primary">.</span></div>
-                    <p class="text-text-muted text-sm mt-1">Data Analyst & BI Specialist — Turning data into decisions.
-                    </p>
-                </div>
-                <div class="flex items-center gap-6">
-                    <a href="https://github.com/Salma-fathi" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-xl bg-white border border-gray-border flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-all"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/salma-mohammed" target="_blank" rel="noopener noreferrer"
-                        class="w-10 h-10 rounded-xl bg-white border border-gray-border flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-all"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a href="mailto:salmafathelrhman@gmail.com"
-                        class="w-10 h-10 rounded-xl bg-white border border-gray-border flex items-center justify-center text-text-muted hover:text-primary hover:border-primary transition-all"><i
-                            class="fa-solid fa-envelope"></i></a>
-                </div>
-            </div>
-            <div class="border-t border-gray-border mt-8 pt-8 text-center">
-                <p class="text-text-muted text-sm">2026 Salma Mohammed. All rights reserved. Built with care.</p>
-            </div>
-        </div>
-    </footer>
+      observer.observe(element);
 
-    <!-- ===== JAVASCRIPT ===== -->
-    <script>
-        function toggleMobileNav() { document.getElementById('mobile-nav').classList.toggle('open'); }
-        function closeMobileNav() { document.getElementById('mobile-nav').classList.remove('open'); }
+    });
 
-        const revealObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                    revealObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.07, rootMargin: '0px 0px -50px 0px' });
 
-        document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+    /* =========================
+       Active Navigation
+    ========================== */
 
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('.nav-link');
+    const sections =
+      document.querySelectorAll("main section[id]");
 
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (scrollY >= sectionTop - 200) { current = section.getAttribute('id'); }
-            });
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#' + current) { link.classList.add('active'); }
-            });
-            const navbar = document.getElementById('navbar');
-            if (window.scrollY > 20) { navbar.style.boxShadow = '0 4px 20px rgba(0,0,0,0.06)'; }
-            else { navbar.style.boxShadow = 'none'; }
-        });
+    const navItems =
+      document.querySelectorAll(".nav-links a:not(.nav-cta)");
 
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
-            });
-        });
 
-        const staggerObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    const children = entry.target.querySelectorAll('.reveal');
-                    children.forEach((child, i) => { setTimeout(() => child.classList.add('visible'), i * 100); });
-                    staggerObserver.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
+    const sectionObserver =
+      new IntersectionObserver(
+        entries => {
 
-        document.querySelectorAll('.bento-grid, .projects-grid').forEach(grid => staggerObserver.observe(grid));
-    </script>
+          entries.forEach(entry => {
+
+            if (entry.isIntersecting) {
+
+              navItems.forEach(item => {
+
+                item.classList.remove("active");
+                item.removeAttribute("aria-current");
+
+              });
+
+              const active =
+                document.querySelector(
+                  `.nav-links a[href="#${entry.target.id}"]`
+                );
+
+              if (active) {
+
+                active.classList.add("active");
+                active.setAttribute(
+                  "aria-current",
+                  "page"
+                );
+
+              }
+
+            }
+
+          });
+
+        },
+        {
+          rootMargin: "-35% 0px -55% 0px"
+        }
+      );
+
+
+    sections.forEach(section =>
+      sectionObserver.observe(section)
+    );
+
+  </script>
+
 </body>
-
 </html>
