@@ -185,7 +185,7 @@ Each featured project is written to answer three recruiter questions fast: what 
 
 ## 🚀 Portfolio Website
 
-Visit my interactive portfolio at: **[https://salma-fathi.github.io/salma-portfolio/](https://salma-fathi.github.io/salma-portfolio/)**
+Visit my interactive portfolio at: **[https://salma-fathi.github.io/salma-portfolio/index.html](https://salma-fathi.github.io/salma-portfolio/index.html)**
 
 The portfolio features:
 - Professional profile and summary
