@@ -180,7 +180,7 @@ Each featured project is written to answer three recruiter questions fast: what 
 - **Email:** [salmafathelrhman@gmail.com](mailto:salmafathelrhman@gmail.com)
 - **Phone:** +971 50 874 7965
 - **Location:** Dubai, UAE
-- **LinkedIn:** [linkedin.com/in/salma-mohammed](https://linkedin.com/in/salma-mohammed)
+- **LinkedIn:** [linkedin.com/in/salma-mohammed](https://www.linkedin.com/in/salma-mohammed-3155a61a4/?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BbPwtjWgIQ76waBPBh%2FCYFA%3D%3D)
 - **GitHub:** [github.com/salma-portfolio](https://github.com/Salma-fathi/salma-portfolio)
 
 ## 🚀 Portfolio Website
